@@ -621,8 +621,9 @@
 }
 
 .cw-award-link {
-  display: inline-block;
+  display: block;
   max-width: 260px;
+  margin: 0 auto; /* 颁奖图在 cw-award 内水平居中 */
 }
 
 .award-image {
@@ -743,9 +744,27 @@
   color: var(--ink-4);
 }
 
-/* ---------- 联赛规则 ---------- */
+/* ---------- 联赛规则 / 竞猜规则 ---------- */
+.rules-heading {
+  margin: 16px 0 6px;
+  font-family: var(--font-kai);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.rules-heading:first-child {
+  margin-top: 0;
+}
+
+.rules-heading::before {
+  content: "◆ ";
+  color: var(--ink-3);
+}
+
 .rules {
-  margin: 0;
+  margin: 0 0 10px;
   padding-left: 20px;
 }
 
@@ -757,6 +776,17 @@
 
 .rules strong {
   font-family: var(--font-yan);
+  color: var(--ink-3);
+}
+
+.rules ul {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+
+.rules ul li {
+  padding: 2px 0;
+  font-size: 13px;
   color: var(--ink-3);
 }
 

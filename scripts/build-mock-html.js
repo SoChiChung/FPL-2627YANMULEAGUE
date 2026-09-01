@@ -21,6 +21,8 @@ import { resolveCurrentGameweek } from '../src/utils/gameweek.js';
 import { formatDateTimeBeijing } from '../src/utils/date.js';
 import { getCountdownParts, formatCountdown } from '../src/utils/countdown.js';
 import { calculatePicks3PrizePool, getPicks3CurrentPool } from '../src/services/picks3Service.js';
+import { getLeaderboardData, resolveLeaderboardAvatarBaseName } from '../src/services/predictionService.js';
+import { leagueRulesHtml } from '../src/components/LeagueRules.js';
 
 const OUT_DIR = 'mock';
 const OUT_HTML = `${OUT_DIR}/mock.html`;
@@ -176,6 +178,75 @@ function picks3RowHtml({ gameweek, row, winner, avatarFile, through }) {
         </li>`;
 }
 
+/* ---- 联赛分数排名静态快照（与线上 LeagueStandings 同构） ---- */
+const STANDINGS_FALLBACK = [
+  { entry_name: 'BaBaXi', player_name: 'Xi Yang', event_total: 135, total: 206 },
+  { entry_name: 'Isaac FC', player_name: 'Isaac Greyson', event_total: 121, total: 198 },
+  { entry_name: 'Sunny Smoke', player_name: 'Classic Winner', event_total: 116, total: 191 },
+  { entry_name: 'Blue Hour', player_name: 'Ryyyy', event_total: 110, total: 183 },
+  { entry_name: 'GW Hunters', player_name: 'Demo Player', event_total: 108, total: 180 },
+];
+
+async function loadStandingsSnapshot() {
+  let results = null;
+  let meta = { source: '演示数据', updatedAt: null };
+  try {
+    const data = JSON.parse(await readFile('public/data/leagueStandings.json', 'utf8'));
+    results = data.results || null;
+    meta = {
+      leagueId: data.league?.id,
+      leagueName: data.league?.name,
+      source: data.source || 'data/leagueStandings.json',
+      updatedAt: data.updatedAt || null,
+    };
+  } catch {
+    results = STANDINGS_FALLBACK;
+  }
+  if (!results || !results.length) results = STANDINGS_FALLBACK;
+
+  const top10 = (rows, scoreKey) =>
+    [...rows]
+      .sort((a, b) => b[scoreKey] - a[scoreKey])
+      .slice(0, 10)
+      .map((r, i) => ({ ...r, displayRank: i + 1 }));
+
+  return { meta, eventTop10: top10(results, 'event_total'), totalTop10: top10(results, 'total') };
+}
+
+function standingsPanel(title, scoreLabel, rows, scoreKey) {
+  if (!rows.length) {
+    return `
+      <div class="standings-panel">
+        <h3>${esc(title)}</h3>
+        <div class="empty-state"><p class="empty-title">暂无排名数据</p></div>
+      </div>`;
+  }
+  return `
+    <div class="standings-panel">
+      <h3>${esc(title)}</h3>
+      <ol class="standings-list">
+        ${rows.map((row) => standingsRow(row, scoreLabel, scoreKey)).join('')}
+      </ol>
+    </div>`;
+}
+
+function standingsRow(row, scoreLabel, scoreKey) {
+  const rankClass = row.displayRank <= 3 ? ` r${row.displayRank}` : '';
+  return `
+    <li class="standings-row">
+      <span class="lb-rank${rankClass}">${row.displayRank}</span>
+      <div class="standings-team">
+        <strong>${esc(row.entry_name || row.entryName || '—')}</strong>
+        <span>${esc(row.player_name || row.playerName || 'Manager')}</span>
+      </div>
+      <div class="standings-score">
+        <strong>${esc(String(row[scoreKey] ?? 0))}</strong>
+        <span>${esc(scoreLabel)}</span>
+      </div>
+      <span class="rank-move neutral">-</span>
+    </li>`;
+}
+
 async function main() {
   const config = JSON.parse(await readFile('public/config.json', 'utf8'));
   const cache = JSON.parse(await readFile('public/data/cachedSquads.json', 'utf8'));
@@ -251,8 +322,34 @@ async function main() {
     )
   ).join('\n');
 
-  const leaderboard = config.predictionLeaderboard || {};
-  const lbEntries = [...(leaderboard.entries || [])].sort((a, b) => b.prize - a.prize);
+  // 竞猜总榜：与线上一致，由原始竞猜记录自动汇总排序（不写回配置）
+  const { pool: lbPool, entries: lbEntries } = getLeaderboardData(config);
+  const lbRowsHtml = (
+    await Promise.all(
+      lbEntries.map(async (entry, i) => {
+        // 头像复用 Picks 3（pick3weeklywinner 目录），匹配不到用首字占位
+        const baseName = resolveLeaderboardAvatarBaseName(config, entry);
+        const file = baseName ? await findAssetFile('pick3weeklywinner', baseName) : null;
+        const avatar = file
+          ? `<img class="avatar avatar-sm" src="assets/pick3weeklywinner/${esc(file)}" alt="${esc(entry.username)}" />`
+          : `<span class="avatar avatar-sm avatar-fallback">${esc((entry.username || '?').trim().charAt(0) || '?')}</span>`;
+        const subline = entry.wins > 1 ? `获奖 ${entry.wins} 次` : (entry.prediction || '竞猜获奖');
+        return `
+          <li class="lb-item">
+            <span class="lb-rank${i < 3 ? ` r${i + 1}` : ''}">${i + 1}</span>
+            ${avatar}
+            <div class="lb-meta">
+              <div class="lb-name">${esc(entry.username)}</div>
+              <div class="lb-pred">${esc(subline)}</div>
+            </div>
+            <span class="lb-prize">¥${entry.totalPrize}</span>
+          </li>`;
+      }),
+    )
+  ).join('\n');
+
+  // 联赛分数排名（静态快照：读 data/leagueStandings.json，缺失时用演示行）
+  const standings = await loadStandingsSnapshot();
 
   const html = `<!DOCTYPE html>
 <!-- ============================================================
@@ -304,21 +401,6 @@ async function main() {
 ${classicRows}
         </div>
       </section>
-
-      <section class="card" aria-labelledby="rulesTitle">
-        <div class="card-header">
-          <h2 class="card-title" id="rulesTitle">联赛规则</h2>
-        </div>
-        // <ol class="rules">
-        //   <li>联赛共 <strong>${esc(config.league.totalGameweeks)}</strong> 轮，与 FPL 官方赛季同步。</li>
-        //   <li>每轮以 FPL 官方 <strong>Deadline</strong> 时间为刷新节点，截止后结算该轮周最佳。</li>
-        //   <li>每轮记录本联赛<b>周最佳</b>（该轮总分最高者）。</li>
-        //   <li>周最佳由<b>后台配置</b> FPL ID、微信名、微信头像后展示，前端只负责渲染。</li>
-        //   <li>由于 FPL 账号与微信身份难以自动匹配，微信信息由后台<b>手动维护</b>。</li>
-        //   <li>页面仅展示<b>已确认</b>的数据；未配置的轮次显示“暂未公布”。</li>
-        // </ol>
-        
-      </section>
     </div>
 
     <div class="column column-side">
@@ -341,22 +423,28 @@ ${p3List}
           <h2 class="card-title" id="lbTitle">竞猜排行榜</h2>
           <div class="prize-pool">
             <span class="prize-pool-label">累计奖池</span>
-            <span class="prize-pool-amount">¥${leaderboard.totalPrizePool ?? 0}</span>
+            <span class="prize-pool-amount">¥${lbPool}</span>
           </div>
         </div>
         <ol class="leaderboard">
-${lbEntries.map((e, i) => `
-          <li class="lb-item">
-            <span class="lb-rank${i < 3 ? ` r${i + 1}` : ''}">${i + 1}</span>
-            <img class="avatar avatar-sm" src="assets/avatar-wangwu.svg" alt="${esc(e.username)}" />
-            <div class="lb-meta">
-              <div class="lb-name">${esc(e.username)}</div>
-              <div class="lb-pred">${esc(e.prediction || '竞猜内容待补充')}</div>
-            </div>
-            <span class="lb-prize">¥${e.prize}</span>
-          </li>`).join('\n')}
+${lbRowsHtml}
         </ol>
       </section>
+
+      <section class="card standings-card" aria-labelledby="standingsTitle">
+        <div class="card-header standings-header">
+          <div>
+            <h2 class="card-title" id="standingsTitle">联赛分数排名</h2>
+            <p class="standings-sub">联赛号 ${standings.meta.leagueId ?? '—'} · ${esc(standings.meta.source)} · ${standings.meta.updatedAt ? esc(new Date(standings.meta.updatedAt).toLocaleString('zh-CN', { hour12: false })) : '演示数据'}</p>
+          </div>
+        </div>
+        <div class="standings-grid">
+          ${standingsPanel('单轮分数前十', '本轮', standings.eventTop10, 'event_total')}
+          ${standingsPanel('总分前十', '总分', standings.totalTop10, 'total')}
+        </div>
+      </section>
+
+      ${leagueRulesHtml(config.league.totalGameweeks)}
     </div>
   </main>
 

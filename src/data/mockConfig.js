@@ -31,6 +31,7 @@ export const mockConfig = {
     name: '18岁的蓝在sunny时刻——26/27烟幕二群联赛',
     season: '2026/27',
     totalGameweeks: 38,
+    classicLeagueId: 12968,
   },
   gameweeks: buildGameweeks(38),
   classicWinners: [
@@ -63,11 +64,12 @@ export const mockConfig = {
   },
   predictionLeaderboard: {
     totalPrizePool: 190,
+    // 原始竞猜记录（一条 = 一次获奖）；总榜由前端自动汇总排序
     entries: [
       {
         username: 'Ryyyy',
-        avatar: 'assets/avatar-wangwu.svg',
-        prediction: '冠军球队竞猜',
+        awardImageBaseName: 'GW2',
+        prediction: 'pick3获奖',
         prize: 10,
       },
     ],

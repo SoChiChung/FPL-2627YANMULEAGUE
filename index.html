@@ -54,7 +54,7 @@
   <!-- ==================== 主内容区：桌面双栏 / 移动端单列 ==================== -->
   <main class="container layout">
 
-    <!-- ---- 主栏：Classic Weekly Winner 手风琴 + 联赛规则 ---- -->
+    <!-- ---- 主栏：Classic Weekly Winner 手风琴 ---- -->
     <div class="column column-main">
       <section class="card" aria-labelledby="classicTitle">
         <div class="card-header">
@@ -66,14 +66,9 @@
           <div class="loading">加载中…</div>
         </div>
       </section>
-
-      <!-- 联赛规则（src/components/LeagueRules.js 渲染） -->
-      <div id="leagueRulesView">
-        <div class="loading">加载中…</div>
-      </div>
     </div>
 
-    <!-- ---- 侧栏：Picks 3 + 竞猜排行榜 ---- -->
+    <!-- ---- 侧栏：Picks 3 → 竞猜排行榜 → 联赛排名 → 联赛规则 ---- -->
     <div class="column column-side">
       <!-- Picks 3 Weekly Winner（src/components/Picks3Module.js 渲染） -->
       <div id="picks3View">
@@ -97,6 +92,11 @@
       <!-- FPL Classic 联赛分数排名（src/components/LeagueStandings.js 渲染） -->
       <div id="leagueStandingsView">
         <div class="loading">联赛排名加载中…</div>
+      </div>
+
+      <!-- 联赛规则（src/components/LeagueRules.js 渲染，右侧列末尾） -->
+      <div id="leagueRulesView">
+        <div class="loading">加载中…</div>
       </div>
     </div>
   </main>

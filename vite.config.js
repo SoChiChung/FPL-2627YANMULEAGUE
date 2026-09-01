@@ -7,6 +7,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: './',
   server: {
-    port: 5173,
+    // 默认 5173；被占用时（如用户已运行 npm start）可由预览工具通过 PORT 分配空闲端口
+    port: Number(process.env.PORT) || 5173,
   },
 });
