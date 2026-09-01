@@ -1,0 +1,201 @@
+{
+  "_comment": "管理员维护的主配置（手工编辑）。Vite 的 public 目录：文件实际存放于 public/ 下，但前端代码里访问时不带 public/ 前缀（如 assets/...）。阵容数据由 scripts/build-fpl-cache.js 生成到 data/cachedSquads.json，前端只读缓存。",
+  "league": {
+    "name": "18岁的蓝在sunny时刻——26/27烟幕二群联赛",
+    "season": "2026/27",
+    "totalGameweeks": 38
+  },
+  "gameweeks": [
+    {
+      "gameweek": 1,
+      "deadline": "2026-08-22T01:30:00+08:00"
+    },
+    {
+      "gameweek": 2,
+      "deadline": "2026-08-29T01:30:00+08:00"
+    },
+    {
+      "gameweek": 3,
+      "deadline": "2026-09-05T01:30:00+08:00"
+    },
+    {
+      "gameweek": 4,
+      "deadline": "2026-09-12T20:30:00+08:00"
+    },
+    {
+      "gameweek": 5,
+      "deadline": "2026-09-19T01:30:00+08:00"
+    },
+    {
+      "gameweek": 6,
+      "deadline": "2026-10-10T18:00:00+08:00"
+    },
+    {
+      "gameweek": 7,
+      "deadline": "2026-10-17T18:00:00+08:00"
+    },
+    {
+      "gameweek": 8,
+      "deadline": "2026-10-24T01:30:00+08:00"
+    },
+    {
+      "gameweek": 9,
+      "deadline": "2026-10-31T19:00:00+08:00"
+    },
+    {
+      "gameweek": 10,
+      "deadline": "2026-11-07T21:30:00+08:00"
+    },
+    {
+      "gameweek": 11,
+      "deadline": "2026-11-21T21:30:00+08:00"
+    },
+    {
+      "gameweek": 12,
+      "deadline": "2026-11-28T21:30:00+08:00"
+    },
+    {
+      "gameweek": 13,
+      "deadline": "2026-12-03T02:30:00+08:00"
+    },
+    {
+      "gameweek": 14,
+      "deadline": "2026-12-05T21:30:00+08:00"
+    },
+    {
+      "gameweek": 15,
+      "deadline": "2026-12-12T21:30:00+08:00"
+    },
+    {
+      "gameweek": 16,
+      "deadline": "2026-12-19T21:30:00+08:00"
+    },
+    {
+      "gameweek": 17,
+      "deadline": "2026-12-26T21:30:00+08:00"
+    },
+    {
+      "gameweek": 18,
+      "deadline": "2026-12-31T02:30:00+08:00"
+    },
+    {
+      "gameweek": 19,
+      "deadline": "2027-01-02T21:30:00+08:00"
+    },
+    {
+      "gameweek": 20,
+      "deadline": "2027-01-07T02:30:00+08:00"
+    },
+    {
+      "gameweek": 21,
+      "deadline": "2027-01-16T21:30:00+08:00"
+    },
+    {
+      "gameweek": 22,
+      "deadline": "2027-01-23T21:30:00+08:00"
+    },
+    {
+      "gameweek": 23,
+      "deadline": "2027-01-30T21:30:00+08:00"
+    },
+    {
+      "gameweek": 24,
+      "deadline": "2027-02-06T21:30:00+08:00"
+    },
+    {
+      "gameweek": 25,
+      "deadline": "2027-02-11T02:30:00+08:00"
+    },
+    {
+      "gameweek": 26,
+      "deadline": "2027-02-20T21:30:00+08:00"
+    },
+    {
+      "gameweek": 27,
+      "deadline": "2027-02-27T21:30:00+08:00"
+    },
+    {
+      "gameweek": 28,
+      "deadline": "2027-03-04T02:30:00+08:00"
+    },
+    {
+      "gameweek": 29,
+      "deadline": "2027-03-13T21:30:00+08:00"
+    },
+    {
+      "gameweek": 30,
+      "deadline": "2027-03-20T21:30:00+08:00"
+    },
+    {
+      "gameweek": 31,
+      "deadline": "2027-04-10T20:30:00+08:00"
+    },
+    {
+      "gameweek": 32,
+      "deadline": "2027-04-17T20:30:00+08:00"
+    },
+    {
+      "gameweek": 33,
+      "deadline": "2027-04-24T20:30:00+08:00"
+    },
+    {
+      "gameweek": 34,
+      "deadline": "2027-05-01T20:30:00+08:00"
+    },
+    {
+      "gameweek": 35,
+      "deadline": "2027-05-08T20:30:00+08:00"
+    },
+    {
+      "gameweek": 36,
+      "deadline": "2027-05-15T20:30:00+08:00"
+    },
+    {
+      "gameweek": 37,
+      "deadline": "2027-05-23T20:30:00+08:00"
+    },
+    {
+      "gameweek": 38,
+      "deadline": "2027-05-30T21:30:00+08:00"
+    }
+  ],
+  "classicWinners": [
+    {
+      "gameweek": 1,
+      "fplId": "18092",
+      "wechatName": ",",
+      "avatarBaseName": "GW1",
+      "awardImageBaseName": "GW1"
+    },
+    {
+      "gameweek": 2,
+      "fplId": "1440306",
+      "wechatName": "IsáacGrëysõn",
+      "avatarBaseName": "GW2",
+      "awardImageBaseName": "GW2"
+    }
+  ],
+  "picks3WeeklyWinners": [
+    {
+      "gameweek": 2,
+      "winnerName": "Ryyyy",
+      "avatarBaseName": "GW2",
+      "prize": 10
+    }
+  ],
+  "picks3PrizePool": {
+    "basePrizePerWeek": 5,
+    "currentGameweek": 2
+  },
+  "predictionLeaderboard": {
+    "totalPrizePool": 190,
+    "entries": [
+      {
+        "username": "Ryyyy",
+        "avatar": "assets/avatar-wangwu.svg",
+        "prediction": "冠军球队竞猜",
+        "prize": 10
+      }
+    ]
+  }
+}

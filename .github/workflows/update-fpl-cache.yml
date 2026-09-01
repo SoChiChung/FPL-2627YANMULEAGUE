@@ -1,0 +1,39 @@
+name: update-fpl-cache
+
+# 真实数据流水线：每轮 Deadline 后自动调 FPL 官方 API，
+# 生成 public/data/cachedSquads.json 并提交，GitHub Pages 随后部署。
+# 页面运行时永远只读静态缓存，不发外部请求。
+
+on:
+  schedule:
+    # FPL Deadline 多为周五晚（英国）≈ 中国周六凌晨；工作日每天 21:30（UTC 13:30）跑一次兜底
+    - cron: '30 13 * * 2-6'
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 生成阵容静态缓存（真实 FPL API）
+        run: node scripts/build-fpl-cache.js --real
+
+      - name: 有变更时提交（[skip ci] 防止循环触发）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet public/data/cachedSquads.json; then
+            git add public/data/cachedSquads.json
+            git commit -m "[skip ci] 更新 FPL 阵容缓存"
+            git push
+          else
+            echo "缓存无变化，跳过提交"
+          fi

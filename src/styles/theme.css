@@ -1,0 +1,57 @@
+/* ============================================================
+ * theme.css — 深藏青 × 奶黄 × 蓝紫 报纸主题（Open Design 出品）
+ * 底色：#162442 深藏青（呼应「18岁的蓝」）
+ * 主文字：#f2d57f 奶黄
+ * 强调：#52689a 蓝紫
+ * 字体文件放 src/styles/fonts/（本目录相对路径引用），
+ * 未放置时自动降级到本地楷体 / 系统字体，不影响显示。
+ * ============================================================ */
+
+@font-face {
+  font-family: "江西拙楷";
+  src: local("江西拙楷"), local("JiangXiZhuoKai"),
+       url("fonts/江西拙楷.ttf") format("truetype"),
+       url("fonts/JiangXiZhuoKai.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "刻石录颜体";
+  src: local("刻石录颜体"), local("KeShiLuYanTi"),
+       url("fonts/刻石录颜体.ttf") format("truetype"),
+       url("fonts/KeShiLuYanTi.ttf") format("truetype");
+}
+
+:root {
+  /* 底色：深藏青系 */
+  --paper: #162442;          /* 页面底色 */
+  --paper-2: #1d2c56;        /* 卡片面 */
+  --paper-3: #263a6e;        /* 更高一档 / hover */
+
+  /* 墨色：奶黄 + 蓝紫 */
+  --ink: #f2d57f;            /* 主文字：奶黄 */
+  --ink-2: #52689a;          /* 强调：蓝紫 */
+  --ink-3: #9db1d9;          /* 次级文字：亮蓝紫（深底可读）*/
+  --ink-4: #6e80ad;          /* 弱化文字 */
+
+  /* 线：奶黄 */
+  --line: rgba(242, 213, 127, 0.20);
+  --line-strong: #f2d57f;
+
+  /* 高亮块：深藏青 */
+  --accent: #162442;
+  --accent-deep: #0d1830;
+
+  /* 状态 */
+  --ok: #3d7a5a;
+  --warn: #b4512d;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-card: 3px 3px 0 rgba(242, 213, 127, 0.12);
+
+  --font-kai: "江西拙楷", "JiangXiZhuoKai", "ZhuoKai", "STKaiti", "KaiTi", serif;
+  --font-yan: "刻石录颜体", "KeShiLuYanTi", "YanTi", "STKaiti", "KaiTi", serif;
+  --font-body: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+
+  --avatar-size: 48px;
+}

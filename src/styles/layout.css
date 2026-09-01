@@ -1,0 +1,101 @@
+/* ============================================================
+ * layout.css — 页面骨架
+ * ============================================================ */
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- 报头 Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(22, 36, 66, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px double var(--ink);
+  padding: 14px 0 16px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  min-width: 0;
+}
+
+.brand-name {
+  margin: 0;
+  font-family: var(--font-kai);
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.brand-season {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 10px 2px 0;
+  font-family: var(--font-kai);
+  font-size: 13px;
+  color: var(--ink-3);
+  border-top: 1px solid var(--ink-3);
+  letter-spacing: 0.12em;
+}
+
+.brand-season::before {
+  content: "◆ ";
+  color: var(--ink);
+}
+
+/* ---------- 主布局 ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 24px;
+  align-items: start;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.column {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  border-top: 1px solid var(--ink);
+  padding: 16px 0;
+  color: var(--ink-3);
+  font-size: 12px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .site-header {
+    position: static;
+  }
+}

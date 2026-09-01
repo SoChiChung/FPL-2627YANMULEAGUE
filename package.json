@@ -1,0 +1,23 @@
+{
+  "name": "fpl-league-site",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "FPL 私人联赛静态展示站（GitHub Pages + Vite）。前端由 Vite 构建；cachedSquads.json 由构建脚本生成，页面运行时只读静态缓存。",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:cache": "node scripts/build-fpl-cache.js",
+    "build:cache:real": "node scripts/build-fpl-cache.js --real",
+    "sync:gameweeks": "node scripts/sync-gameweeks.js",
+    "build:mock": "node scripts/build-mock-html.js"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "_generatedBy": "scripts/build-fpl-cache.js",
+  "_mode": "real",
+  "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。",
+  "squads": [
+    {
+      "gameweek": 1,
+      "fplId": "18092",
+      "totalPoints": 92,
+      "captain": "Ødegaard",
+      "viceCaptain": "Haaland",
+      "players": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 6
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 9
+        },
+        {
+          "name": "Maguire",
+          "position": "DEF",
+          "club": "MUN",
+          "points": 1
+        },
+        {
+          "name": "Ballard",
+          "position": "DEF",
+          "club": "SUN",
+          "points": 0
+        },
+        {
+          "name": "Ødegaard",
+          "position": "MID",
+          "club": "ARS",
+          "points": 22,
+          "isCaptain": true
+        },
+        {
+          "name": "M.Sangaré",
+          "position": "MID",
+          "club": "BRE",
+          "points": 14
+        },
+        {
+          "name": "Stach",
+          "position": "MID",
+          "club": "LEE",
+          "points": 13
+        },
+        {
+          "name": "B.Fernandes",
+          "position": "MID",
+          "club": "MUN",
+          "points": 2
+        },
+        {
+          "name": "Tzolis",
+          "position": "MID",
+          "club": "ARS",
+          "points": 6
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 2,
+          "isViceCaptain": true
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 11
+        }
+      ],
+      "bench": [
+        {
+          "name": "Kinsky",
+          "position": "GK",
+          "club": "TOT",
+          "points": 2
+        },
+        {
+          "name": "Brobbey",
+          "position": "FWD",
+          "club": "SUN",
+          "points": 2
+        },
+        {
+          "name": "Van Hecke",
+          "position": "DEF",
+          "club": "TOT",
+          "points": 1
+        },
+        {
+          "name": "Mitchell",
+          "position": "DEF",
+          "club": "CRY",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "gameweek": 2,
+      "fplId": "1440306",
+      "totalPoints": 151,
+      "captain": "B.Fernandes",
+      "viceCaptain": "Haaland",
+      "players": [
+        {
+          "name": "Lammens",
+          "position": "GK",
+          "club": "MUN",
+          "points": 2
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 11
+        },
+        {
+          "name": "Ballard",
+          "position": "DEF",
+          "club": "SUN",
+          "points": 8
+        },
+        {
+          "name": "Ajer",
+          "position": "DEF",
+          "club": "BRE",
+          "points": 3
+        },
+        {
+          "name": "B.Fernandes",
+          "position": "MID",
+          "club": "MUN",
+          "points": 46,
+          "isCaptain": true
+        },
+        {
+          "name": "Mbeumo",
+          "position": "MID",
+          "club": "MUN",
+          "points": 11
+        },
+        {
+          "name": "Szoboszlai",
+          "position": "MID",
+          "club": "LIV",
+          "points": 4
+        },
+        {
+          "name": "Schade",
+          "position": "MID",
+          "club": "BRE",
+          "points": 10
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 13,
+          "isViceCaptain": true
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 9
+        },
+        {
+          "name": "Calvert-Lewin",
+          "position": "FWD",
+          "club": "LEE",
+          "points": 8
+        }
+      ],
+      "bench": [
+        {
+          "name": "Petrović",
+          "position": "GK",
+          "club": "BOU",
+          "points": 3
+        },
+        {
+          "name": "van Ewijk",
+          "position": "DEF",
+          "club": "COV",
+          "points": 2
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 13
+        },
+        {
+          "name": "Thomas",
+          "position": "DEF",
+          "club": "COV",
+          "points": 8
+        }
+      ]
+    }
+  ]
+}
