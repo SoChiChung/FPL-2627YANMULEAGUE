@@ -4,11 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>18岁的蓝在sunny时刻——26/27烟幕二群联赛</title>
-  <!-- 样式分层：theme（设计令牌）→ base（重置/基础）→ layout（布局）→ components（组件） -->
-  <link rel="stylesheet" href="/src/styles/theme.css" />
-  <link rel="stylesheet" href="/src/styles/base.css" />
-  <link rel="stylesheet" href="/src/styles/layout.css" />
-  <link rel="stylesheet" href="/src/styles/components.css" />
 </head>
 <body>
   <div class="print-frame" aria-hidden="true">
@@ -108,7 +103,7 @@
     </div>
   </footer>
 
-  <!-- 入口：Vite 构建（dev 直接跑，build 产物相对路径，兼容 GitHub Pages 子路径） -->
-  <script type="module" src="/src/main.js"></script>
+  <!-- 入口：Vite 会将 JS 与 CSS 一起构建为 dist 资源，兼容 GitHub Pages 子路径 -->
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
