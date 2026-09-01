@@ -29,12 +29,19 @@ GitHub Pages 没有后端，页面运行时**只读静态文件**，浏览器不
 npm run sync:gameweeks    # 从 bootstrap-static 同步真实 DDL（转北京时间）到 config.json
 npm run build:cache       # Mock 模式（本地演示，无需联网）
 npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL API 生成真实阵容
+npm run build:standings   # 拉取 Classic 联赛 12968 排名，生成 data/leagueStandings.json
 ```
 
 3. 产物写入 `public/data/cachedSquads.json`（头部 `_mode: "real"` 标记真实数据），随仓库提交
 4. GitHub Actions（`.github/workflows/update-fpl-cache.yml`）每轮 Deadline 后自动执行第 2、3 步
 
-前端读取优先级：`data/cachedSquads.json` 缓存（真实数据）→ Mock 生成兜底。
+前端读取优先级：
+
+- 阵容：`data/cachedSquads.json` 缓存（真实数据）→ Mock 生成兜底
+- 联赛分数排名：`data/leagueStandings.json` 缓存 → FPL standings API 尝试直连 → Mock 兜底
+
+联赛排名使用 `https://fantasy.premierleague.com/api/leagues-classic/12968/standings/`，
+页面展示“单轮分数前十”和“总分前十”。并列分数使用相同展示名次，但结果仍严格限制为 10 人以内。
 
 时间显示：所有 DDL 统一按**北京时间（UTC+8）**解析与显示，
 不随访问者时区变化；`npm run sync:gameweeks` 写入的即为 +08:00 偏移。
@@ -55,7 +62,7 @@ npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL AP
 
 ```jsonc
 {
-  "league": { "name": "...", "season": "2026/27", "totalGameweeks": 38 },
+  "league": { "name": "...", "season": "2026/27", "totalGameweeks": 38, "classicLeagueId": 12968 },
   "gameweeks": [{ "gameweek": 1, "deadline": "2026-08-15T18:30:00+08:00" }],
   "classicWinners": [
     { "gameweek": 1, "fplId": "18092", "wechatName": "某某",
@@ -88,6 +95,7 @@ npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL AP
 ├── public/                 # Vite public 目录（运行时路径不带 public/ 前缀）
 │   ├── config.json         # 管理员主配置
 │   ├── data/cachedSquads.json  # 构建产物，前端只读
+│   ├── data/leagueStandings.json # Classic 联赛排名缓存
 │   └── assets/             # 头像 / 颁奖图
 ├── src/
 │   ├── main.js             # 组合根
@@ -95,6 +103,6 @@ npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL AP
 │   ├── data/               # mockConfig（兜底）+ mockSquads（生成器）
 │   ├── services/           # config / squad / prediction / picks3 / fplApiClient
 │   ├── utils/              # date / countdown / gameweek / image
-│   └── components/         # Header / ClassicWinnerList / SquadView / Picks3Module / ...
-└── scripts/build-fpl-cache.js  # FPL API → 静态缓存构建器
+│   └── components/         # Header / ClassicWinnerList / SquadView / Picks3Module / LeagueStandings / ...
+└── scripts/                # FPL API → 静态缓存构建器
 ```

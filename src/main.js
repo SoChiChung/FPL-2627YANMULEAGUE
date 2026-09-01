@@ -17,6 +17,7 @@ import { renderHeader, updateCountdownText } from './components/Header.js';
 import { renderClassicWinnerList } from './components/ClassicWinnerList.js';
 import { renderPicks3Module } from './components/Picks3Module.js';
 import { renderPredictionLeaderboard } from './components/PredictionLeaderboard.js';
+import { renderLeagueStandings } from './components/LeagueStandings.js';
 import { renderLeagueRules } from './components/LeagueRules.js';
 
 /* ---------- 全局状态 ---------- */
@@ -35,6 +36,7 @@ const els = {
   picks3View: null,
   prizePoolAmount: null,
   leaderboardView: null,
+  leagueStandingsView: null,
   leagueRulesView: null,
   footerNote: null,
 };
@@ -63,6 +65,7 @@ async function init() {
     picks3View: document.getElementById('picks3View'),
     prizePoolAmount: document.getElementById('prizePoolAmount'),
     leaderboardView: document.getElementById('leaderboardView'),
+    leagueStandingsView: document.getElementById('leagueStandingsView'),
     leagueRulesView: document.getElementById('leagueRulesView'),
     footerNote: document.getElementById('footerNote'),
   });
@@ -86,6 +89,7 @@ function renderAll() {
     currentGameweek: gwState.gameweek,
   });
   renderPredictionLeaderboard(els.leaderboardView, els.prizePoolAmount, config);
+  renderLeagueStandings(els.leagueStandingsView, config);
   renderLeagueRules(els.leagueRulesView, config.league.totalGameweeks);
 }
 

@@ -7,16 +7,50 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.65;
   color: var(--ink);
   background:
+    radial-gradient(620px 460px at 50% 20%, rgba(242, 213, 127, 0.15), transparent 68%),
     radial-gradient(900px 420px at 88% -6%, rgba(123, 146, 201, 0.16), transparent 60%),
     radial-gradient(700px 380px at -8% 108%, rgba(242, 213, 127, 0.09), transparent 55%),
     var(--paper);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(242, 213, 127, 0.26) 0 1.2px, transparent 1.3px);
+  background-size: 9px 9px;
+  opacity: 0.78;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.7) 18%, transparent 74%);
+}
+
+body::after {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(242, 213, 127, 0.13), transparent 32%),
+    radial-gradient(circle at 50% 62%, rgba(82, 104, 154, 0.16), transparent 48%);
+  mix-blend-mode: screen;
+}
+
+.site-header,
+.layout,
+.site-footer {
+  position: relative;
+  z-index: 2;
 }
 
 img {

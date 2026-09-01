@@ -11,6 +11,23 @@
   <link rel="stylesheet" href="/src/styles/components.css" />
 </head>
 <body>
+  <div class="print-frame" aria-hidden="true">
+    <span class="corner-mark corner-mark-tl"></span>
+    <span class="corner-mark corner-mark-tr"></span>
+    <span class="corner-mark corner-mark-bl"></span>
+    <span class="corner-mark corner-mark-br"></span>
+  </div>
+  <div class="page-watermark" aria-hidden="true">烟幕</div>
+  <div class="side-title side-title-left" aria-hidden="true">煙幕二群聯賽</div>
+  <div class="side-title side-title-right" aria-hidden="true">🔅18岁的蓝在sunny时刻 ·</div>
+  <div class="diamond-field" aria-hidden="true">
+    <span class="diamond diamond-a">◆</span>
+    <span class="diamond diamond-b">◆</span>
+    <span class="diamond diamond-c">◆</span>
+    <span class="diamond diamond-d">◆</span>
+    <span class="diamond diamond-e">◆</span>
+    <span class="diamond diamond-f">◆</span>
+  </div>
 
   <!-- ==================== 顶部 Header：联赛信息 + 当前 GW 倒计时 ==================== -->
   <header class="site-header">
@@ -76,6 +93,11 @@
           <div class="loading">加载中…</div>
         </div>
       </section>
+
+      <!-- FPL Classic 联赛分数排名（src/components/LeagueStandings.js 渲染） -->
+      <div id="leagueStandingsView">
+        <div class="loading">联赛排名加载中…</div>
+      </div>
     </div>
   </main>
 

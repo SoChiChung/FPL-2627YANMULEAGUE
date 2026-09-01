@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "build:cache": "node scripts/build-fpl-cache.js",
     "build:cache:real": "node scripts/build-fpl-cache.js --real",
+    "build:standings": "node scripts/build-league-standings.js",
     "sync:gameweeks": "node scripts/sync-gameweeks.js",
     "build:mock": "node scripts/build-mock-html.js"
   },

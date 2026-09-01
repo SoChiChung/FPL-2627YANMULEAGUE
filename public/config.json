@@ -3,7 +3,8 @@
   "league": {
     "name": "18岁的蓝在sunny时刻——26/27烟幕二群联赛",
     "season": "2026/27",
-    "totalGameweeks": 38
+    "totalGameweeks": 38,
+    "classicLeagueId": 12968
   },
   "gameweeks": [
     {
@@ -192,8 +193,8 @@
     "entries": [
       {
         "username": "Ryyyy",
-        "avatar": "assets/avatar-wangwu.svg",
-        "prediction": "冠军球队竞猜",
+        "awardImageBaseName": "GW2",
+        "prediction": "pick3获奖",
         "prize": 10
       }
     ]
