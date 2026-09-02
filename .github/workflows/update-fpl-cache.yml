@@ -7,7 +7,7 @@ name: update-fpl-cache
 on:
   schedule:
     # FPL Deadline 多为周五晚（英国）≈ 中国周六凌晨；工作日每天 21:30（UTC 13:30）跑一次兜底
-    - cron: '30 13 * * 2-6'
+    - cron: '*/30 * * * *'
   workflow_dispatch: # 支持手动触发
 
 permissions:
