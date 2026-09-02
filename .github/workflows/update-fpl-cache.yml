@@ -26,13 +26,16 @@ jobs:
       - name: 生成阵容静态缓存（真实 FPL API）
         run: node scripts/build-fpl-cache.js --real
 
+      - name: 生成联赛排行榜静态缓存（真实 FPL API）
+        run: node scripts/build-league-standings.js
+
       - name: 有变更时提交（[skip ci] 防止循环触发）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet public/data/cachedSquads.json; then
-            git add public/data/cachedSquads.json
-            git commit -m "[skip ci] 更新 FPL 阵容缓存"
+          if ! git diff --quiet public/data/cachedSquads.json public/data/leagueStandings.json; then
+            git add public/data/cachedSquads.json public/data/leagueStandings.json
+            git commit -m "[skip ci] 更新 FPL 静态缓存"
             git push
           else
             echo "缓存无变化，跳过提交"
