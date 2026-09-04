@@ -1,6 +1,6 @@
 {
   "source": "FPL API leagues-classic/12968/standings",
-  "updatedAt": "2026-09-04T21:59:01.672Z",
+  "updatedAt": "2026-09-04T23:47:51.451Z",
   "league": {
     "admin_entry": 6837,
     "closed": false,
@@ -162,22 +162,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 4324509,
-      "entry_name": "London Celtics",
-      "event_total": 0,
-      "last_rank": 2,
-      "player_name": "Saul Qian",
+      "entry": 11440,
+      "entry_name": "ddddzzz",
+      "event_total": 29,
+      "last_rank": 81,
+      "player_name": "hengda zhu",
       "rank": 14,
       "rank_sort": 14,
       "total": 199
     },
     {
       "club_badge_src": null,
-      "entry": 11440,
-      "entry_name": "ddddzzz",
-      "event_total": 29,
-      "last_rank": 81,
-      "player_name": "hengda zhu",
+      "entry": 4324509,
+      "entry_name": "London Celtics",
+      "event_total": 0,
+      "last_rank": 2,
+      "player_name": "Saul Qian",
       "rank": 14,
       "rank_sort": 15,
       "total": 199
@@ -205,23 +205,23 @@
       "total": 198
     },
     {
-      "club_badge_src": null,
-      "entry": 6685956,
-      "entry_name": "pedri",
-      "event_total": 3,
-      "last_rank": 10,
-      "player_name": "krez pedri",
-      "rank": 18,
-      "rank_sort": 18,
-      "total": 197
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/348231/117f39e1-dbe7-4b02-b81c-ea4257e25b9c.png",
       "entry": 389939,
       "entry_name": "Team Blue",
       "event_total": 3,
       "last_rank": 10,
       "player_name": "Enzo Wang",
+      "rank": 18,
+      "rank_sort": 18,
+      "total": 197
+    },
+    {
+      "club_badge_src": null,
+      "entry": 6685956,
+      "entry_name": "pedri",
+      "event_total": 3,
+      "last_rank": 10,
+      "player_name": "krez pedri",
       "rank": 18,
       "rank_sort": 19,
       "total": 197
@@ -260,23 +260,23 @@
       "total": 196
     },
     {
-      "club_badge_src": null,
-      "entry": 2459181,
-      "entry_name": "何时才能上铂金",
-      "event_total": 16,
-      "last_rank": 37,
-      "player_name": "我是 鬼嗨",
-      "rank": 21,
-      "rank_sort": 23,
-      "total": 196
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/52596/0fb4797b-ad2c-4ed8-9330-c892203e45c8.png",
       "entry": 52596,
       "entry_name": "Crimson Typhoon",
       "event_total": 0,
       "last_rank": 4,
       "player_name": "Stephen Teng",
+      "rank": 21,
+      "rank_sort": 23,
+      "total": 196
+    },
+    {
+      "club_badge_src": null,
+      "entry": 2459181,
+      "entry_name": "何时才能上铂金",
+      "event_total": 16,
+      "last_rank": 37,
+      "player_name": "我是 鬼嗨",
       "rank": 21,
       "rank_sort": 24,
       "total": 196
@@ -315,23 +315,23 @@
       "total": 194
     },
     {
-      "club_badge_src": null,
-      "entry": 28651,
-      "entry_name": "利兹门神特夯福德",
-      "event_total": 0,
-      "last_rank": 10,
-      "player_name": "前第一边锋 萨默维尔",
-      "rank": 27,
-      "rank_sort": 28,
-      "total": 194
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/7842/705a8b97-18a0-44c3-a870-465f45ead3ce.png",
       "entry": 7842,
       "entry_name": "GQ Team",
       "event_total": 3,
       "last_rank": 14,
       "player_name": "Xiaofan Qian",
+      "rank": 27,
+      "rank_sort": 28,
+      "total": 194
+    },
+    {
+      "club_badge_src": null,
+      "entry": 28651,
+      "entry_name": "利兹门神特夯福德",
+      "event_total": 0,
+      "last_rank": 10,
+      "player_name": "前第一边锋 萨默维尔",
       "rank": 27,
       "rank_sort": 29,
       "total": 194
@@ -392,23 +392,23 @@
       "total": 189
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/25756/7fe9b0f8-3da3-4039-9572-3bb73862a912.png",
-      "entry": 25756,
-      "entry_name": "五禧丸子",
-      "event_total": 0,
-      "last_rank": 19,
-      "player_name": "Solly March",
-      "rank": 35,
-      "rank_sort": 35,
-      "total": 187
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/14385/3e6b2b30-fa6b-4db1-ac6e-9b471aef040b.png",
       "entry": 14385,
       "entry_name": "这是排名专用的大号",
       "event_total": 3,
       "last_rank": 26,
       "player_name": "DD DD",
+      "rank": 35,
+      "rank_sort": 35,
+      "total": 187
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/25756/7fe9b0f8-3da3-4039-9572-3bb73862a912.png",
+      "entry": 25756,
+      "entry_name": "五禧丸子",
+      "event_total": 0,
+      "last_rank": 19,
+      "player_name": "Solly March",
       "rank": 35,
       "rank_sort": 36,
       "total": 187
@@ -491,17 +491,6 @@
       "total": 185
     },
     {
-      "club_badge_src": null,
-      "entry": 5941965,
-      "entry_name": "全军出击",
-      "event_total": 0,
-      "last_rank": 24,
-      "player_name": "KONG W",
-      "rank": 44,
-      "rank_sort": 44,
-      "total": 185
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/30153/0e86854e-a3d3-479d-9e9b-87e46d71e10a.png",
       "entry": 13130,
       "entry_name": "光之围棋俱乐部",
@@ -509,7 +498,7 @@
       "last_rank": 29,
       "player_name": "进藤 光",
       "rank": 44,
-      "rank_sort": 45,
+      "rank_sort": 44,
       "total": 185
     },
     {
@@ -519,6 +508,17 @@
       "event_total": 0,
       "last_rank": 24,
       "player_name": "Yuanshun Jin",
+      "rank": 44,
+      "rank_sort": 45,
+      "total": 185
+    },
+    {
+      "club_badge_src": null,
+      "entry": 5941965,
+      "entry_name": "全军出击",
+      "event_total": 0,
+      "last_rank": 24,
+      "player_name": "KONG W",
       "rank": 44,
       "rank_sort": 46,
       "total": 185
@@ -547,22 +547,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 24176,
-      "entry_name": "Baros15-NCU",
-      "event_total": 3,
-      "last_rank": 34,
-      "player_name": "J Y",
+      "entry": 5911072,
+      "entry_name": "Wu's Team",
+      "event_total": 4,
+      "last_rank": 37,
+      "player_name": "Wu Chao",
       "rank": 49,
       "rank_sort": 49,
       "total": 184
     },
     {
       "club_badge_src": null,
-      "entry": 5911072,
-      "entry_name": "Wu's Team",
-      "event_total": 4,
-      "last_rank": 37,
-      "player_name": "Wu Chao",
+      "entry": 24176,
+      "entry_name": "Baros15-NCU",
+      "event_total": 3,
+      "last_rank": 34,
+      "player_name": "J Y",
       "rank": 49,
       "rank_sort": 50,
       "total": 184
@@ -602,22 +602,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 692985,
-      "entry_name": "The normal kop",
-      "event_total": 14,
-      "last_rank": 89,
-      "player_name": "Gray Yin",
+      "entry": 9570,
+      "entry_name": "枪迷平原君",
+      "event_total": 0,
+      "last_rank": 29,
+      "player_name": "枪迷 平原君",
       "rank": 54,
       "rank_sort": 54,
       "total": 182
     },
     {
       "club_badge_src": null,
-      "entry": 9570,
-      "entry_name": "枪迷平原君",
-      "event_total": 0,
-      "last_rank": 29,
-      "player_name": "枪迷 平原君",
+      "entry": 692985,
+      "entry_name": "The normal kop",
+      "event_total": 14,
+      "last_rank": 89,
+      "player_name": "Gray Yin",
       "rank": 54,
       "rank_sort": 55,
       "total": 182
@@ -800,22 +800,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 261617,
-      "entry_name": "Old Trafford United",
+      "entry": 153505,
+      "entry_name": "不败之师",
       "event_total": 3,
-      "last_rank": 65,
-      "player_name": "All Template No Differentials",
+      "last_rank": 60,
+      "player_name": "凉瓜 熊",
       "rank": 72,
       "rank_sort": 72,
       "total": 177
     },
     {
       "club_badge_src": null,
-      "entry": 153505,
-      "entry_name": "不败之师",
+      "entry": 261617,
+      "entry_name": "Old Trafford United",
       "event_total": 3,
-      "last_rank": 60,
-      "player_name": "凉瓜 熊",
+      "last_rank": 65,
+      "player_name": "All Template No Differentials",
       "rank": 72,
       "rank_sort": 73,
       "total": 177
@@ -833,22 +833,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 1288096,
-      "entry_name": "Michaelxu",
+      "entry": 36660,
+      "entry_name": "Blue Lions",
       "event_total": 3,
       "last_rank": 60,
-      "player_name": "Michael Xu",
+      "player_name": "Leo Gong",
       "rank": 74,
       "rank_sort": 75,
       "total": 177
     },
     {
       "club_badge_src": null,
-      "entry": 36660,
-      "entry_name": "Blue Lions",
+      "entry": 1288096,
+      "entry_name": "Michaelxu",
       "event_total": 3,
       "last_rank": 60,
-      "player_name": "Leo Gong",
+      "player_name": "Michael Xu",
       "rank": 74,
       "rank_sort": 76,
       "total": 177
@@ -866,22 +866,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 7027068,
-      "entry_name": "J FC",
-      "event_total": 0,
-      "last_rank": 48,
-      "player_name": "Justin Chen",
+      "entry": 24244,
+      "entry_name": "猪排",
+      "event_total": 3,
+      "last_rank": 67,
+      "player_name": "猪 排",
       "rank": 77,
       "rank_sort": 78,
       "total": 176
     },
     {
       "club_badge_src": null,
-      "entry": 24244,
-      "entry_name": "猪排",
-      "event_total": 3,
-      "last_rank": 67,
-      "player_name": "猪 排",
+      "entry": 7027068,
+      "entry_name": "J FC",
+      "event_total": 0,
+      "last_rank": 48,
+      "player_name": "Justin Chen",
       "rank": 77,
       "rank_sort": 79,
       "total": 176
@@ -910,13 +910,24 @@
     },
     {
       "club_badge_src": null,
+      "entry": 3046737,
+      "entry_name": "African Andy Lau",
+      "event_total": 3,
+      "last_rank": 71,
+      "player_name": "Jerry Ping",
+      "rank": 82,
+      "rank_sort": 82,
+      "total": 175
+    },
+    {
+      "club_badge_src": null,
       "entry": 19148,
       "entry_name": "僵Baros15",
       "event_total": 9,
       "last_rank": 107,
       "player_name": "僵尸 B15",
       "rank": 82,
-      "rank_sort": 82,
+      "rank_sort": 83,
       "total": 175
     },
     {
@@ -926,17 +937,6 @@
       "event_total": 3,
       "last_rank": 71,
       "player_name": "DDD D",
-      "rank": 82,
-      "rank_sort": 83,
-      "total": 175
-    },
-    {
-      "club_badge_src": null,
-      "entry": 3046737,
-      "entry_name": "African Andy Lau",
-      "event_total": 3,
-      "last_rank": 71,
-      "player_name": "Jerry Ping",
       "rank": 82,
       "rank_sort": 84,
       "total": 175
@@ -976,46 +976,24 @@
     },
     {
       "club_badge_src": null,
-      "entry": 365628,
-      "entry_name": "Phil Chongun",
-      "event_total": 3,
-      "last_rank": 75,
-      "player_name": "Zhichong Zhang",
-      "rank": 88,
-      "rank_sort": 88,
-      "total": 174
-    },
-    {
-      "club_badge_src": null,
       "entry": 16766,
       "entry_name": "Krez",
       "event_total": 0,
       "last_rank": 60,
       "player_name": "Krez Gavi",
       "rank": 88,
-      "rank_sort": 89,
-      "total": 174
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/700678/41c30021-8ec7-419e-bd2c-5a214b32a782.png",
-      "entry": 700678,
-      "entry_name": "Ryyyyyyy",
-      "event_total": 16,
-      "last_rank": 153,
-      "player_name": "Ryan Yuan",
-      "rank": 90,
-      "rank_sort": 90,
+      "rank_sort": 88,
       "total": 174
     },
     {
       "club_badge_src": null,
-      "entry": 700554,
-      "entry_name": "GGA",
+      "entry": 365628,
+      "entry_name": "Phil Chongun",
       "event_total": 3,
       "last_rank": 75,
-      "player_name": "Georgia Zhu",
-      "rank": 90,
-      "rank_sort": 91,
+      "player_name": "Zhichong Zhang",
+      "rank": 88,
+      "rank_sort": 89,
       "total": 174
     },
     {
@@ -1026,16 +1004,38 @@
       "last_rank": 65,
       "player_name": "Ethan Yang",
       "rank": 90,
-      "rank_sort": 92,
+      "rank_sort": 90,
+      "total": 174
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/700678/41c30021-8ec7-419e-bd2c-5a214b32a782.png",
+      "entry": 700678,
+      "entry_name": "Ryyyyyyy",
+      "event_total": 16,
+      "last_rank": 153,
+      "player_name": "Ryan Yuan",
+      "rank": 90,
+      "rank_sort": 91,
       "total": 174
     },
     {
       "club_badge_src": null,
-      "entry": 93912,
-      "entry_name": "药药",
+      "entry": 700554,
+      "entry_name": "GGA",
       "event_total": 3,
-      "last_rank": 81,
-      "player_name": "Romeo Zhao",
+      "last_rank": 75,
+      "player_name": "Georgia Zhu",
+      "rank": 90,
+      "rank_sort": 92,
+      "total": 174
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/5125036/ae1b6062-0c6b-41c7-9039-e699b7946440.png",
+      "entry": 10210,
+      "entry_name": "猪肚鸡",
+      "event_total": 0,
+      "last_rank": 67,
+      "player_name": "猪 肚鸡",
       "rank": 93,
       "rank_sort": 93,
       "total": 173
@@ -1052,12 +1052,12 @@
       "total": 173
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/5125036/ae1b6062-0c6b-41c7-9039-e699b7946440.png",
-      "entry": 10210,
-      "entry_name": "猪肚鸡",
-      "event_total": 0,
-      "last_rank": 67,
-      "player_name": "猪 肚鸡",
+      "club_badge_src": null,
+      "entry": 93912,
+      "entry_name": "药药",
+      "event_total": 3,
+      "last_rank": 81,
+      "player_name": "Romeo Zhao",
       "rank": 93,
       "rank_sort": 95,
       "total": 173
@@ -1129,17 +1129,6 @@
       "total": 171
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/22545/6b9a481b-2719-4feb-81b2-36144a92b5e9.png",
-      "entry": 22545,
-      "entry_name": "紫菜鱼皮",
-      "event_total": 3,
-      "last_rank": 89,
-      "player_name": "景旸 徐",
-      "rank": 101,
-      "rank_sort": 102,
-      "total": 171
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/35528/d70a831f-acf2-4c8f-9adf-830edd8174cf.png",
       "entry": 35528,
       "entry_name": "Proper Brexit Tackle",
@@ -1147,18 +1136,18 @@
       "last_rank": 81,
       "player_name": "Donald Trump",
       "rank": 101,
-      "rank_sort": 103,
+      "rank_sort": 102,
       "total": 171
     },
     {
-      "club_badge_src": null,
-      "entry": 135728,
-      "entry_name": "NMIXX Kyujin",
-      "event_total": 0,
-      "last_rank": 75,
-      "player_name": "Jang Kyujin",
-      "rank": 104,
-      "rank_sort": 104,
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/22545/6b9a481b-2719-4feb-81b2-36144a92b5e9.png",
+      "entry": 22545,
+      "entry_name": "紫菜鱼皮",
+      "event_total": 3,
+      "last_rank": 89,
+      "player_name": "景旸 徐",
+      "rank": 101,
+      "rank_sort": 103,
       "total": 171
     },
     {
@@ -1169,7 +1158,7 @@
       "last_rank": 89,
       "player_name": "Romeo Zhao",
       "rank": 104,
-      "rank_sort": 105,
+      "rank_sort": 104,
       "total": 171
     },
     {
@@ -1180,16 +1169,27 @@
       "last_rank": 75,
       "player_name": "Yang Zhao",
       "rank": 104,
+      "rank_sort": 105,
+      "total": 171
+    },
+    {
+      "club_badge_src": null,
+      "entry": 135728,
+      "entry_name": "NMIXX Kyujin",
+      "event_total": 0,
+      "last_rank": 75,
+      "player_name": "Jang Kyujin",
+      "rank": 104,
       "rank_sort": 106,
       "total": 171
     },
     {
       "club_badge_src": null,
-      "entry": 3693328,
-      "entry_name": "FC Nanking",
-      "event_total": 3,
-      "last_rank": 98,
-      "player_name": "Sheng Zhao",
+      "entry": 405814,
+      "entry_name": "无敌花间游",
+      "event_total": 13,
+      "last_rank": 153,
+      "player_name": "Fute Gaoooooooo",
       "rank": 107,
       "rank_sort": 107,
       "total": 171
@@ -1207,11 +1207,11 @@
     },
     {
       "club_badge_src": null,
-      "entry": 405814,
-      "entry_name": "无敌花间游",
-      "event_total": 13,
-      "last_rank": 153,
-      "player_name": "Fute Gaoooooooo",
+      "entry": 3693328,
+      "entry_name": "FC Nanking",
+      "event_total": 3,
+      "last_rank": 98,
+      "player_name": "Sheng Zhao",
       "rank": 107,
       "rank_sort": 109,
       "total": 171
@@ -1283,25 +1283,14 @@
       "total": 169
     },
     {
-      "club_badge_src": null,
-      "entry": 18910,
-      "entry_name": "后腰不会's Team",
-      "event_total": 3,
-      "last_rank": 113,
-      "player_name": "后腰不会 任意球",
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/8856933/72cb3a3d-b81c-4d4b-abc5-6f5d38f59709.png",
+      "entry": 8856933,
+      "entry_name": "Hansi's Team",
+      "event_total": 0,
+      "last_rank": 89,
+      "player_name": "Hansi Lyu",
       "rank": 116,
       "rank_sort": 116,
-      "total": 168
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/2354042/86b97857-e4c3-4fc1-ac32-e00a2b67ec47.png",
-      "entry": 2836415,
-      "entry_name": "LIMEILI",
-      "event_total": 3,
-      "last_rank": 113,
-      "player_name": "Shan Lin",
-      "rank": 116,
-      "rank_sort": 117,
       "total": 168
     },
     {
@@ -1312,16 +1301,27 @@
       "last_rank": 89,
       "player_name": "Pluto Du",
       "rank": 116,
+      "rank_sort": 117,
+      "total": 168
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/2354042/86b97857-e4c3-4fc1-ac32-e00a2b67ec47.png",
+      "entry": 2836415,
+      "entry_name": "LIMEILI",
+      "event_total": 3,
+      "last_rank": 113,
+      "player_name": "Shan Lin",
+      "rank": 116,
       "rank_sort": 118,
       "total": 168
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/8856933/72cb3a3d-b81c-4d4b-abc5-6f5d38f59709.png",
-      "entry": 8856933,
-      "entry_name": "Hansi's Team",
-      "event_total": 0,
-      "last_rank": 89,
-      "player_name": "Hansi Lyu",
+      "club_badge_src": null,
+      "entry": 18910,
+      "entry_name": "后腰不会's Team",
+      "event_total": 3,
+      "last_rank": 113,
+      "player_name": "后腰不会 任意球",
       "rank": 116,
       "rank_sort": 119,
       "total": 168
@@ -1361,35 +1361,13 @@
     },
     {
       "club_badge_src": null,
-      "entry": 36050,
-      "entry_name": "正义必胜",
-      "event_total": 3,
-      "last_rank": 113,
-      "player_name": "WinK Gooner",
-      "rank": 123,
-      "rank_sort": 123,
-      "total": 168
-    },
-    {
-      "club_badge_src": null,
       "entry": 14156,
       "entry_name": "这瓜保熟吗",
       "event_total": 3,
       "last_rank": 113,
       "player_name": "绿皮西瓜 酱",
       "rank": 123,
-      "rank_sort": 124,
-      "total": 168
-    },
-    {
-      "club_badge_src": null,
-      "entry": 26958,
-      "entry_name": "美凌格团赛分格",
-      "event_total": 0,
-      "last_rank": 89,
-      "player_name": "Madridista Swatow",
-      "rank": 123,
-      "rank_sort": 125,
+      "rank_sort": 123,
       "total": 168
     },
     {
@@ -1399,6 +1377,28 @@
       "event_total": 3,
       "last_rank": 113,
       "player_name": "Qin Gary",
+      "rank": 123,
+      "rank_sort": 124,
+      "total": 168
+    },
+    {
+      "club_badge_src": null,
+      "entry": 36050,
+      "entry_name": "正义必胜",
+      "event_total": 3,
+      "last_rank": 113,
+      "player_name": "WinK Gooner",
+      "rank": 123,
+      "rank_sort": 125,
+      "total": 168
+    },
+    {
+      "club_badge_src": null,
+      "entry": 26958,
+      "entry_name": "美凌格团赛分格",
+      "event_total": 0,
+      "last_rank": 89,
+      "player_name": "Madridista Swatow",
       "rank": 123,
       "rank_sort": 126,
       "total": 168
@@ -1427,22 +1427,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 83983,
-      "entry_name": "Nagasaki Soyo",
-      "event_total": 0,
-      "last_rank": 101,
-      "player_name": "soyo nagasaki",
+      "entry": 19977,
+      "entry_name": "Xi9Li",
+      "event_total": 3,
+      "last_rank": 119,
+      "player_name": "Danny Huang",
       "rank": 129,
       "rank_sort": 129,
       "total": 167
     },
     {
       "club_badge_src": null,
-      "entry": 19977,
-      "entry_name": "Xi9Li",
-      "event_total": 3,
-      "last_rank": 119,
-      "player_name": "Danny Huang",
+      "entry": 83983,
+      "entry_name": "Nagasaki Soyo",
+      "event_total": 0,
+      "last_rank": 101,
+      "player_name": "soyo nagasaki",
       "rank": 129,
       "rank_sort": 130,
       "total": 167
@@ -1459,23 +1459,23 @@
       "total": 167
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/14803/af231498-7235-48ab-b3e2-7d00fc85b21b.png",
-      "entry": 14803,
-      "entry_name": "ZhallWin",
-      "event_total": 3,
-      "last_rank": 122,
-      "player_name": "KikiMao Yan",
-      "rank": 132,
-      "rank_sort": 132,
-      "total": 166
-    },
-    {
       "club_badge_src": null,
       "entry": 5726325,
       "entry_name": "Xue's Team",
       "event_total": 0,
       "last_rank": 107,
       "player_name": "Xue Yuan",
+      "rank": 132,
+      "rank_sort": 132,
+      "total": 166
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/14803/af231498-7235-48ab-b3e2-7d00fc85b21b.png",
+      "entry": 14803,
+      "entry_name": "ZhallWin",
+      "event_total": 3,
+      "last_rank": 122,
+      "player_name": "KikiMao Yan",
       "rank": 132,
       "rank_sort": 133,
       "total": 166
@@ -1558,23 +1558,23 @@
       "total": 165
     },
     {
-      "club_badge_src": null,
-      "entry": 18077,
-      "entry_name": "xia",
-      "event_total": 1,
-      "last_rank": 122,
-      "player_name": "xia ain",
-      "rank": 141,
-      "rank_sort": 141,
-      "total": 164
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/30963/0dc33abc-005d-4935-a7d3-1aed5517b829.png",
       "entry": 30963,
       "entry_name": "香香软软的big b",
       "event_total": 3,
       "last_rank": 128,
       "player_name": "big bee",
+      "rank": 141,
+      "rank_sort": 141,
+      "total": 164
+    },
+    {
+      "club_badge_src": null,
+      "entry": 18077,
+      "entry_name": "xia",
+      "event_total": 1,
+      "last_rank": 122,
+      "player_name": "xia ain",
       "rank": 141,
       "rank_sort": 142,
       "total": 164
@@ -1592,35 +1592,24 @@
     },
     {
       "club_badge_src": null,
-      "entry": 29882,
-      "entry_name": "Tissier's Team",
-      "event_total": 3,
-      "last_rank": 136,
-      "player_name": "Tissier Chi",
-      "rank": 144,
-      "rank_sort": 144,
-      "total": 163
-    },
-    {
-      "club_badge_src": null,
       "entry": 74544,
       "entry_name": "Kw",
       "event_total": 1,
       "last_rank": 126,
       "player_name": "Kevin Chen",
       "rank": 144,
-      "rank_sort": 145,
+      "rank_sort": 144,
       "total": 163
     },
     {
       "club_badge_src": null,
-      "entry": 60622,
-      "entry_name": "Tristan FC",
+      "entry": 29882,
+      "entry_name": "Tissier's Team",
       "event_total": 3,
       "last_rank": 136,
-      "player_name": "Tristan Lee",
-      "rank": 146,
-      "rank_sort": 146,
+      "player_name": "Tissier Chi",
+      "rank": 144,
+      "rank_sort": 145,
       "total": 163
     },
     {
@@ -1631,7 +1620,7 @@
       "last_rank": 147,
       "player_name": "Leo Lew",
       "rank": 146,
-      "rank_sort": 147,
+      "rank_sort": 146,
       "total": 163
     },
     {
@@ -1642,18 +1631,7 @@
       "last_rank": 136,
       "player_name": "Zanshuo Wang",
       "rank": 146,
-      "rank_sort": 148,
-      "total": 163
-    },
-    {
-      "club_badge_src": null,
-      "entry": 270108,
-      "entry_name": "我抬第一御林军军长",
-      "event_total": 19,
-      "last_rank": 220,
-      "player_name": "Zering Gromit",
-      "rank": 146,
-      "rank_sort": 149,
+      "rank_sort": 147,
       "total": 163
     },
     {
@@ -1663,6 +1641,28 @@
       "event_total": 20,
       "last_rank": 224,
       "player_name": "Victor Pan",
+      "rank": 146,
+      "rank_sort": 148,
+      "total": 163
+    },
+    {
+      "club_badge_src": null,
+      "entry": 60622,
+      "entry_name": "Tristan FC",
+      "event_total": 3,
+      "last_rank": 136,
+      "player_name": "Tristan Lee",
+      "rank": 146,
+      "rank_sort": 149,
+      "total": 163
+    },
+    {
+      "club_badge_src": null,
+      "entry": 270108,
+      "entry_name": "我抬第一御林军军长",
+      "event_total": 19,
+      "last_rank": 220,
+      "player_name": "Zering Gromit",
       "rank": 146,
       "rank_sort": 150,
       "total": 163
@@ -1723,17 +1723,6 @@
       "total": 162
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/10773/6e844bf8-108e-4991-8c80-02589f0b4031.png",
-      "entry": 10773,
-      "entry_name": "企鹅",
-      "event_total": 0,
-      "last_rank": 128,
-      "player_name": "企 鹅",
-      "rank": 156,
-      "rank_sort": 156,
-      "total": 161
-    },
-    {
       "club_badge_src": null,
       "entry": 58186,
       "entry_name": "GenericTemplatePick",
@@ -1741,7 +1730,7 @@
       "last_rank": 153,
       "player_name": "Vincent Wang",
       "rank": 156,
-      "rank_sort": 157,
+      "rank_sort": 156,
       "total": 161
     },
     {
@@ -1751,6 +1740,17 @@
       "event_total": 0,
       "last_rank": 128,
       "player_name": "JUST FOR FUN",
+      "rank": 156,
+      "rank_sort": 157,
+      "total": 161
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/10773/6e844bf8-108e-4991-8c80-02589f0b4031.png",
+      "entry": 10773,
+      "entry_name": "企鹅",
+      "event_total": 0,
+      "last_rank": 128,
+      "player_name": "企 鹅",
       "rank": 156,
       "rank_sort": 158,
       "total": 161
@@ -1790,22 +1790,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 136660,
-      "entry_name": "Xiaobubu",
+      "entry": 8824203,
+      "entry_name": "Shuo FC",
       "event_total": 0,
       "last_rank": 136,
-      "player_name": "Bin Chiang",
+      "player_name": "Zanshuo Wang",
       "rank": 162,
       "rank_sort": 162,
       "total": 160
     },
     {
       "club_badge_src": null,
-      "entry": 8824203,
-      "entry_name": "Shuo FC",
+      "entry": 136660,
+      "entry_name": "Xiaobubu",
       "event_total": 0,
       "last_rank": 136,
-      "player_name": "Zanshuo Wang",
+      "player_name": "Bin Chiang",
       "rank": 162,
       "rank_sort": 163,
       "total": 160
@@ -1823,46 +1823,24 @@
     },
     {
       "club_badge_src": null,
-      "entry": 20597,
-      "entry_name": "普通人阿七's Team",
-      "event_total": 0,
-      "last_rank": 147,
-      "player_name": "普通人阿七 xp",
-      "rank": 164,
-      "rank_sort": 165,
-      "total": 160
-    },
-    {
-      "club_badge_src": null,
-      "entry": 37538,
-      "entry_name": "FantasyShuo",
-      "event_total": 0,
-      "last_rank": 136,
-      "player_name": "Wang Zanshuo",
-      "rank": 164,
-      "rank_sort": 166,
-      "total": 160
-    },
-    {
-      "club_badge_src": null,
-      "entry": 4145934,
-      "entry_name": "Rifle",
-      "event_total": 0,
-      "last_rank": 136,
-      "player_name": "Rifle Wong",
-      "rank": 164,
-      "rank_sort": 167,
-      "total": 160
-    },
-    {
-      "club_badge_src": null,
       "entry": 521264,
       "entry_name": "In Liz We Truss",
       "event_total": 3,
       "last_rank": 160,
       "player_name": "Michael Zhang",
       "rank": 164,
-      "rank_sort": 168,
+      "rank_sort": 165,
+      "total": 160
+    },
+    {
+      "club_badge_src": null,
+      "entry": 20597,
+      "entry_name": "普通人阿七's Team",
+      "event_total": 0,
+      "last_rank": 147,
+      "player_name": "普通人阿七 xp",
+      "rank": 164,
+      "rank_sort": 166,
       "total": 160
     },
     {
@@ -1873,7 +1851,18 @@
       "last_rank": 160,
       "player_name": "LAD LAD",
       "rank": 164,
-      "rank_sort": 169,
+      "rank_sort": 167,
+      "total": 160
+    },
+    {
+      "club_badge_src": null,
+      "entry": 4145934,
+      "entry_name": "Rifle",
+      "event_total": 0,
+      "last_rank": 136,
+      "player_name": "Rifle Wong",
+      "rank": 164,
+      "rank_sort": 168,
       "total": 160
     },
     {
@@ -1884,19 +1873,19 @@
       "last_rank": 160,
       "player_name": "結城 結弦",
       "rank": 164,
-      "rank_sort": 170,
+      "rank_sort": 169,
       "total": 160
     },
     {
       "club_badge_src": null,
-      "entry": 15216,
-      "entry_name": "Shrimps",
-      "event_total": 3,
-      "last_rank": 165,
-      "player_name": "Lee Chris",
-      "rank": 171,
-      "rank_sort": 171,
-      "total": 159
+      "entry": 37538,
+      "entry_name": "FantasyShuo",
+      "event_total": 0,
+      "last_rank": 136,
+      "player_name": "Wang Zanshuo",
+      "rank": 164,
+      "rank_sort": 170,
+      "total": 160
     },
     {
       "club_badge_src": null,
@@ -1905,6 +1894,17 @@
       "event_total": 3,
       "last_rank": 165,
       "player_name": "BA Swatow",
+      "rank": 171,
+      "rank_sort": 171,
+      "total": 159
+    },
+    {
+      "club_badge_src": null,
+      "entry": 15216,
+      "entry_name": "Shrimps",
+      "event_total": 3,
+      "last_rank": 165,
+      "player_name": "Lee Chris",
       "rank": 171,
       "rank_sort": 172,
       "total": 159
@@ -1944,22 +1944,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 290074,
-      "entry_name": "GY FC",
-      "event_total": 3,
-      "last_rank": 136,
-      "player_name": "Geoff Yu",
+      "entry": 1842011,
+      "entry_name": "city",
+      "event_total": 9,
+      "last_rank": 197,
+      "player_name": "manchester city",
       "rank": 176,
       "rank_sort": 176,
       "total": 159
     },
     {
       "club_badge_src": null,
-      "entry": 1842011,
-      "entry_name": "city",
-      "event_total": 9,
-      "last_rank": 197,
-      "player_name": "manchester city",
+      "entry": 290074,
+      "entry_name": "GY FC",
+      "event_total": 3,
+      "last_rank": 136,
+      "player_name": "Geoff Yu",
       "rank": 176,
       "rank_sort": 177,
       "total": 159
@@ -2021,35 +2021,13 @@
     },
     {
       "club_badge_src": null,
-      "entry": 22531,
-      "entry_name": "suixi",
-      "event_total": 0,
-      "last_rank": 153,
-      "player_name": "Smirk yang",
+      "entry": 235047,
+      "entry_name": "最怕日日要煲靓汤",
+      "event_total": 25,
+      "last_rank": 258,
+      "player_name": "ARS Kinder",
       "rank": 183,
       "rank_sort": 183,
-      "total": 158
-    },
-    {
-      "club_badge_src": null,
-      "entry": 359580,
-      "entry_name": "BlueCo out",
-      "event_total": 0,
-      "last_rank": 153,
-      "player_name": "Carl Chen",
-      "rank": 183,
-      "rank_sort": 184,
-      "total": 158
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/1660325/728b0be5-e18a-4691-82c9-e2c6b5fbf371.png",
-      "entry": 2565628,
-      "entry_name": "rulaishafo",
-      "event_total": 3,
-      "last_rank": 176,
-      "player_name": "S Zhang",
-      "rank": 183,
-      "rank_sort": 185,
       "total": 158
     },
     {
@@ -2060,30 +2038,41 @@
       "last_rank": 176,
       "player_name": "杨 C罗",
       "rank": 183,
+      "rank_sort": 184,
+      "total": 158
+    },
+    {
+      "club_badge_src": null,
+      "entry": 359580,
+      "entry_name": "BlueCo out",
+      "event_total": 0,
+      "last_rank": 153,
+      "player_name": "Carl Chen",
+      "rank": 183,
+      "rank_sort": 185,
+      "total": 158
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/1660325/728b0be5-e18a-4691-82c9-e2c6b5fbf371.png",
+      "entry": 2565628,
+      "entry_name": "rulaishafo",
+      "event_total": 3,
+      "last_rank": 176,
+      "player_name": "S Zhang",
+      "rank": 183,
       "rank_sort": 186,
       "total": 158
     },
     {
       "club_badge_src": null,
-      "entry": 235047,
-      "entry_name": "最怕日日要煲靓汤",
-      "event_total": 25,
-      "last_rank": 258,
-      "player_name": "ARS Kinder",
+      "entry": 22531,
+      "entry_name": "suixi",
+      "event_total": 0,
+      "last_rank": 153,
+      "player_name": "Smirk yang",
       "rank": 183,
       "rank_sort": 187,
       "total": 158
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/16436/5e53869f-75a4-41a9-9a85-d6612731d9fe.png",
-      "entry": 6837,
-      "entry_name": "B站微博公众小红书请关注紫葱酱ovvO",
-      "event_total": 5,
-      "last_rank": 184,
-      "player_name": "世界要你努力去考取功名 但是真诚才是最大本领",
-      "rank": 188,
-      "rank_sort": 188,
-      "total": 157
     },
     {
       "club_badge_src": null,
@@ -2093,8 +2082,30 @@
       "last_rank": 178,
       "player_name": "Roman YYDS",
       "rank": 188,
+      "rank_sort": 188,
+      "total": 157
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/16436/5e53869f-75a4-41a9-9a85-d6612731d9fe.png",
+      "entry": 6837,
+      "entry_name": "B站微博公众小红书请关注紫葱酱ovvO",
+      "event_total": 5,
+      "last_rank": 184,
+      "player_name": "世界要你努力去考取功名 但是真诚才是最大本领",
+      "rank": 188,
       "rank_sort": 189,
       "total": 157
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/126616/7cb6bd29-2a25-4ac5-ab5c-6f6d1dc24501.png",
+      "entry": 376438,
+      "entry_name": "GGMU",
+      "event_total": 9,
+      "last_rank": 210,
+      "player_name": "Luis Lee",
+      "rank": 190,
+      "rank_sort": 190,
+      "total": 156
     },
     {
       "club_badge_src": null,
@@ -2104,7 +2115,7 @@
       "last_rank": 183,
       "player_name": "Siyuan Fan",
       "rank": 190,
-      "rank_sort": 190,
+      "rank_sort": 191,
       "total": 156
     },
     {
@@ -2115,30 +2126,8 @@
       "last_rank": 165,
       "player_name": "Adam Wu",
       "rank": 190,
-      "rank_sort": 191,
-      "total": 156
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/126616/7cb6bd29-2a25-4ac5-ab5c-6f6d1dc24501.png",
-      "entry": 376438,
-      "entry_name": "GGMU",
-      "event_total": 9,
-      "last_rank": 210,
-      "player_name": "Luis Lee",
-      "rank": 190,
       "rank_sort": 192,
       "total": 156
-    },
-    {
-      "club_badge_src": null,
-      "entry": 708791,
-      "entry_name": "Brunomagic",
-      "event_total": 3,
-      "last_rank": 184,
-      "player_name": "Stephen Curry",
-      "rank": 193,
-      "rank_sort": 193,
-      "total": 155
     },
     {
       "club_badge_src": null,
@@ -2147,6 +2136,17 @@
       "event_total": 3,
       "last_rank": 184,
       "player_name": "Ivan Li",
+      "rank": 193,
+      "rank_sort": 193,
+      "total": 155
+    },
+    {
+      "club_badge_src": null,
+      "entry": 708791,
+      "entry_name": "Brunomagic",
+      "event_total": 3,
+      "last_rank": 184,
+      "player_name": "Stephen Curry",
       "rank": 193,
       "rank_sort": 194,
       "total": 155
@@ -2175,11 +2175,11 @@
     },
     {
       "club_badge_src": null,
-      "entry": 41618,
-      "entry_name": "Seehow's Team",
-      "event_total": 29,
-      "last_rank": 278,
-      "player_name": "Seehow Bee",
+      "entry": 696859,
+      "entry_name": "AI Trafford",
+      "event_total": 9,
+      "last_rank": 211,
+      "player_name": "Ethan Lin",
       "rank": 197,
       "rank_sort": 197,
       "total": 155
@@ -2197,25 +2197,14 @@
     },
     {
       "club_badge_src": null,
-      "entry": 696859,
-      "entry_name": "AI Trafford",
-      "event_total": 9,
-      "last_rank": 211,
-      "player_name": "Ethan Lin",
+      "entry": 41618,
+      "entry_name": "Seehow's Team",
+      "event_total": 29,
+      "last_rank": 278,
+      "player_name": "Seehow Bee",
       "rank": 197,
       "rank_sort": 199,
       "total": 155
-    },
-    {
-      "club_badge_src": null,
-      "entry": 2794709,
-      "entry_name": "Cat Picked XI",
-      "event_total": 25,
-      "last_rank": 270,
-      "player_name": "Ka Shu Leung",
-      "rank": 200,
-      "rank_sort": 200,
-      "total": 154
     },
     {
       "club_badge_src": null,
@@ -2224,6 +2213,17 @@
       "event_total": 5,
       "last_rank": 198,
       "player_name": "Ray C",
+      "rank": 200,
+      "rank_sort": 200,
+      "total": 154
+    },
+    {
+      "club_badge_src": null,
+      "entry": 2794709,
+      "entry_name": "Cat Picked XI",
+      "event_total": 25,
+      "last_rank": 270,
+      "player_name": "Ka Shu Leung",
       "rank": 200,
       "rank_sort": 201,
       "total": 154
@@ -2273,23 +2273,23 @@
       "total": 153
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/740921/bb749876-b310-4833-8a34-cf6523c363e5.png",
-      "entry": 740921,
-      "entry_name": "僵尸进藤光",
-      "event_total": 0,
-      "last_rank": 184,
-      "player_name": "进藤 光",
-      "rank": 206,
-      "rank_sort": 206,
-      "total": 152
-    },
-    {
       "club_badge_src": null,
       "entry": 253018,
       "entry_name": "中国男足 没希望了",
       "event_total": 3,
       "last_rank": 198,
       "player_name": "社会主义 才是未来",
+      "rank": 206,
+      "rank_sort": 206,
+      "total": 152
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/740921/bb749876-b310-4833-8a34-cf6523c363e5.png",
+      "entry": 740921,
+      "entry_name": "僵尸进藤光",
+      "event_total": 0,
+      "last_rank": 184,
+      "player_name": "进藤 光",
       "rank": 206,
       "rank_sort": 207,
       "total": 152
@@ -2306,12 +2306,12 @@
       "total": 152
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/2076/715e0db5-2f8c-4974-baef-083882e5f28e.png",
-      "entry": 2076,
-      "entry_name": "传来传去不射门，阿尔特塔快走人！",
-      "event_total": 2,
-      "last_rank": 198,
-      "player_name": "比赛催眠，没有对策！ 执教水平，不如波特！",
+      "club_badge_src": null,
+      "entry": 8021,
+      "entry_name": "海绵宝宝's Team",
+      "event_total": 0,
+      "last_rank": 191,
+      "player_name": "海绵宝宝 萨卡",
       "rank": 209,
       "rank_sort": 209,
       "total": 151
@@ -2328,12 +2328,12 @@
       "total": 151
     },
     {
-      "club_badge_src": null,
-      "entry": 8021,
-      "entry_name": "海绵宝宝's Team",
-      "event_total": 0,
-      "last_rank": 191,
-      "player_name": "海绵宝宝 萨卡",
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/2076/715e0db5-2f8c-4974-baef-083882e5f28e.png",
+      "entry": 2076,
+      "entry_name": "传来传去不射门，阿尔特塔快走人！",
+      "event_total": 2,
+      "last_rank": 198,
+      "player_name": "比赛催眠，没有对策！ 执教水平，不如波特！",
       "rank": 209,
       "rank_sort": 211,
       "total": 151
@@ -2351,22 +2351,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 100586,
-      "entry_name": "Fox Latte",
-      "event_total": 3,
-      "last_rank": 205,
-      "player_name": "Alger Lee",
+      "entry": 4521449,
+      "entry_name": "Athras10",
+      "event_total": 0,
+      "last_rank": 191,
+      "player_name": "Vicente LING",
       "rank": 212,
       "rank_sort": 213,
       "total": 151
     },
     {
       "club_badge_src": null,
-      "entry": 4521449,
-      "entry_name": "Athras10",
-      "event_total": 0,
-      "last_rank": 191,
-      "player_name": "Vicente LING",
+      "entry": 100586,
+      "entry_name": "Fox Latte",
+      "event_total": 3,
+      "last_rank": 205,
+      "player_name": "Alger Lee",
       "rank": 212,
       "rank_sort": 214,
       "total": 151
@@ -2383,23 +2383,23 @@
       "total": 151
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/5041229/17601e79-2829-4e42-8d82-cb0d1ef49755.png",
-      "entry": 5041229,
-      "entry_name": "HaHaHaHa-HarryPotter",
-      "event_total": 11,
-      "last_rank": 236,
-      "player_name": "Anthony TEE",
-      "rank": 216,
-      "rank_sort": 216,
-      "total": 150
-    },
-    {
       "club_badge_src": null,
       "entry": 746868,
       "entry_name": "Ytrewq's Team",
       "event_total": 6,
       "last_rank": 220,
       "player_name": "Ytrewq Ytrewq",
+      "rank": 216,
+      "rank_sort": 216,
+      "total": 150
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/5041229/17601e79-2829-4e42-8d82-cb0d1ef49755.png",
+      "entry": 5041229,
+      "entry_name": "HaHaHaHa-HarryPotter",
+      "event_total": 11,
+      "last_rank": 236,
+      "player_name": "Anthony TEE",
       "rank": 216,
       "rank_sort": 217,
       "total": 150
@@ -2427,6 +2427,17 @@
       "total": 149
     },
     {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/6867/cee8b64f-e17a-417f-8eb7-dfc0fdb8bbb2.png",
+      "entry": 6867,
+      "entry_name": "干饭帮手",
+      "event_total": 0,
+      "last_rank": 202,
+      "player_name": "扎卡 反黑小组",
+      "rank": 220,
+      "rank_sort": 220,
+      "total": 149
+    },
+    {
       "club_badge_src": null,
       "entry": 30741,
       "entry_name": "BEK's Team",
@@ -2434,7 +2445,7 @@
       "last_rank": 198,
       "player_name": "BEK S1",
       "rank": 220,
-      "rank_sort": 220,
+      "rank_sort": 221,
       "total": 149
     },
     {
@@ -2444,17 +2455,6 @@
       "event_total": 3,
       "last_rank": 211,
       "player_name": "Zeyu Wang",
-      "rank": 220,
-      "rank_sort": 221,
-      "total": 149
-    },
-    {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/6867/cee8b64f-e17a-417f-8eb7-dfc0fdb8bbb2.png",
-      "entry": 6867,
-      "entry_name": "干饭帮手",
-      "event_total": 0,
-      "last_rank": 202,
-      "player_name": "扎卡 反黑小组",
       "rank": 220,
       "rank_sort": 222,
       "total": 149
@@ -2493,17 +2493,6 @@
       "total": 148
     },
     {
-      "club_badge_src": null,
-      "entry": 1679585,
-      "entry_name": "Tetracycline Guild",
-      "event_total": 0,
-      "last_rank": 205,
-      "player_name": "L zy",
-      "rank": 226,
-      "rank_sort": 226,
-      "total": 148
-    },
-    {
       "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/5559401/3a8849df-079b-4d4a-9320-34e109e21f1f.png",
       "entry": 5559401,
       "entry_name": "ZXCVBNM",
@@ -2511,7 +2500,7 @@
       "last_rank": 261,
       "player_name": "arle k",
       "rank": 226,
-      "rank_sort": 227,
+      "rank_sort": 226,
       "total": 148
     },
     {
@@ -2521,6 +2510,17 @@
       "event_total": 3,
       "last_rank": 219,
       "player_name": "Ffffffffffffim Mai",
+      "rank": 226,
+      "rank_sort": 227,
+      "total": 148
+    },
+    {
+      "club_badge_src": null,
+      "entry": 1679585,
+      "entry_name": "Tetracycline Guild",
+      "event_total": 0,
+      "last_rank": 205,
+      "player_name": "L zy",
       "rank": 226,
       "rank_sort": 228,
       "total": 148
@@ -2582,22 +2582,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 1429337,
-      "entry_name": "小驴超甜",
-      "event_total": 34,
-      "last_rank": 307,
-      "player_name": "东方 大白象",
+      "entry": 435840,
+      "entry_name": "Trent66",
+      "event_total": 0,
+      "last_rank": 220,
+      "player_name": "Yichi Zhang",
       "rank": 234,
       "rank_sort": 234,
       "total": 144
     },
     {
       "club_badge_src": null,
-      "entry": 435840,
-      "entry_name": "Trent66",
-      "event_total": 0,
-      "last_rank": 220,
-      "player_name": "Yichi Zhang",
+      "entry": 1429337,
+      "entry_name": "小驴超甜",
+      "event_total": 34,
+      "last_rank": 307,
+      "player_name": "东方 大白象",
       "rank": 234,
       "rank_sort": 235,
       "total": 144
@@ -2681,22 +2681,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 20755,
-      "entry_name": "九命黑獭薄纱黄家老鬼",
-      "event_total": 4,
-      "last_rank": 238,
-      "player_name": "DAHYUN KIM",
+      "entry": 695365,
+      "entry_name": "大弯曲青年",
+      "event_total": 0,
+      "last_rank": 227,
+      "player_name": "Richie Lin",
       "rank": 243,
       "rank_sort": 243,
       "total": 142
     },
     {
       "club_badge_src": null,
-      "entry": 695365,
-      "entry_name": "大弯曲青年",
-      "event_total": 0,
-      "last_rank": 227,
-      "player_name": "Richie Lin",
+      "entry": 20755,
+      "entry_name": "九命黑獭薄纱黄家老鬼",
+      "event_total": 4,
+      "last_rank": 238,
+      "player_name": "DAHYUN KIM",
       "rank": 243,
       "rank_sort": 244,
       "total": 142
@@ -2758,11 +2758,11 @@
     },
     {
       "club_badge_src": null,
-      "entry": 3324,
-      "entry_name": "僵尸堡",
-      "event_total": 0,
-      "last_rank": 235,
-      "player_name": "李 李",
+      "entry": 673111,
+      "entry_name": "MUJY",
+      "event_total": 11,
+      "last_rank": 270,
+      "player_name": "xibe JY",
       "rank": 250,
       "rank_sort": 250,
       "total": 140
@@ -2780,11 +2780,11 @@
     },
     {
       "club_badge_src": null,
-      "entry": 673111,
-      "entry_name": "MUJY",
-      "event_total": 11,
-      "last_rank": 270,
-      "player_name": "xibe JY",
+      "entry": 3324,
+      "entry_name": "僵尸堡",
+      "event_total": 0,
+      "last_rank": 235,
+      "player_name": "李 李",
       "rank": 250,
       "rank_sort": 252,
       "total": 140
@@ -2835,11 +2835,11 @@
     },
     {
       "club_badge_src": null,
-      "entry": 3051161,
-      "entry_name": "无敌风火轮",
-      "event_total": 19,
-      "last_rank": 291,
-      "player_name": "善良的 枪",
+      "entry": 16501,
+      "entry_name": "Champion Leeds",
+      "event_total": 13,
+      "last_rank": 278,
+      "player_name": "我爱周也 又喜欢田曦薇",
       "rank": 257,
       "rank_sort": 257,
       "total": 139
@@ -2857,22 +2857,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 5231197,
-      "entry_name": "颜飞路",
-      "event_total": 13,
-      "last_rank": 280,
-      "player_name": "glen wang",
+      "entry": 3051161,
+      "entry_name": "无敌风火轮",
+      "event_total": 19,
+      "last_rank": 291,
+      "player_name": "善良的 枪",
       "rank": 257,
       "rank_sort": 259,
       "total": 139
     },
     {
       "club_badge_src": null,
-      "entry": 16501,
-      "entry_name": "Champion Leeds",
+      "entry": 5231197,
+      "entry_name": "颜飞路",
       "event_total": 13,
-      "last_rank": 278,
-      "player_name": "我爱周也 又喜欢田曦薇",
+      "last_rank": 280,
+      "player_name": "glen wang",
       "rank": 257,
       "rank_sort": 260,
       "total": 139
@@ -3000,36 +3000,25 @@
     },
     {
       "club_badge_src": null,
-      "entry": 12692,
-      "entry_name": "Baros15",
-      "event_total": 3,
-      "last_rank": 264,
-      "player_name": "Johnson Yang",
-      "rank": 272,
-      "rank_sort": 272,
-      "total": 134
-    },
-    {
-      "club_badge_src": null,
       "entry": 78666,
       "entry_name": "RAY's Team",
       "event_total": 0,
       "last_rank": 254,
       "player_name": "RAY Char",
       "rank": 272,
-      "rank_sort": 273,
+      "rank_sort": 272,
       "total": 134
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/1423179/e8d40d34-6b5a-4bcf-862d-dfa942b3c75d.png",
-      "entry": 1423179,
-      "entry_name": "僵尸毛",
+      "club_badge_src": null,
+      "entry": 12692,
+      "entry_name": "Baros15",
       "event_total": 3,
-      "last_rank": 266,
-      "player_name": "just doit",
-      "rank": 274,
-      "rank_sort": 274,
-      "total": 133
+      "last_rank": 264,
+      "player_name": "Johnson Yang",
+      "rank": 272,
+      "rank_sort": 273,
+      "total": 134
     },
     {
       "club_badge_src": null,
@@ -3038,6 +3027,17 @@
       "event_total": 3,
       "last_rank": 266,
       "player_name": "Solo Zheng",
+      "rank": 274,
+      "rank_sort": 274,
+      "total": 133
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/1423179/e8d40d34-6b5a-4bcf-862d-dfa942b3c75d.png",
+      "entry": 1423179,
+      "entry_name": "僵尸毛",
+      "event_total": 3,
+      "last_rank": 266,
+      "player_name": "just doit",
       "rank": 274,
       "rank_sort": 275,
       "total": 133
@@ -3088,36 +3088,25 @@
     },
     {
       "club_badge_src": null,
-      "entry": 2541854,
-      "entry_name": "Kacauan",
-      "event_total": 3,
-      "last_rank": 274,
-      "player_name": "Leon Wang",
-      "rank": 280,
-      "rank_sort": 280,
-      "total": 130
-    },
-    {
-      "club_badge_src": null,
       "entry": 1676481,
       "entry_name": "FootballGeniusTuchel",
       "event_total": 3,
       "last_rank": 274,
       "player_name": "Kevin Chen",
       "rank": 280,
-      "rank_sort": 281,
+      "rank_sort": 280,
       "total": 130
     },
     {
       "club_badge_src": null,
-      "entry": 945246,
-      "entry_name": "Blue Panda",
-      "event_total": 0,
-      "last_rank": 272,
-      "player_name": "Fynn Jiang",
-      "rank": 282,
-      "rank_sort": 282,
-      "total": 129
+      "entry": 2541854,
+      "entry_name": "Kacauan",
+      "event_total": 3,
+      "last_rank": 274,
+      "player_name": "Leon Wang",
+      "rank": 280,
+      "rank_sort": 281,
+      "total": 130
     },
     {
       "club_badge_src": null,
@@ -3126,6 +3115,17 @@
       "event_total": 13,
       "last_rank": 297,
       "player_name": "Lik Kee Low",
+      "rank": 282,
+      "rank_sort": 282,
+      "total": 129
+    },
+    {
+      "club_badge_src": null,
+      "entry": 945246,
+      "entry_name": "Blue Panda",
+      "event_total": 0,
+      "last_rank": 272,
+      "player_name": "Fynn Jiang",
       "rank": 282,
       "rank_sort": 283,
       "total": 129
@@ -3363,22 +3363,22 @@
     },
     {
       "club_badge_src": null,
-      "entry": 5324269,
-      "entry_name": "All Leeds Aren’t We?",
+      "entry": 1649401,
+      "entry_name": "MVFC",
       "event_total": 16,
-      "last_rank": 316,
-      "player_name": "Ling Jiang",
+      "last_rank": 318,
+      "player_name": "Zeyuan Wang",
       "rank": 305,
       "rank_sort": 305,
       "total": 116
     },
     {
       "club_badge_src": null,
-      "entry": 1649401,
-      "entry_name": "MVFC",
+      "entry": 5324269,
+      "entry_name": "All Leeds Aren’t We?",
       "event_total": 16,
-      "last_rank": 318,
-      "player_name": "Zeyuan Wang",
+      "last_rank": 316,
+      "player_name": "Ling Jiang",
       "rank": 305,
       "rank_sort": 306,
       "total": 116
@@ -3428,23 +3428,23 @@
       "total": 112
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/18732/eb5b6464-aa0a-4320-af41-1abe0a40cd7f.png",
-      "entry": 13557,
-      "entry_name": "没有大的六的队伍",
-      "event_total": 0,
-      "last_rank": 305,
-      "player_name": "最小的 企鹅",
-      "rank": 310,
-      "rank_sort": 311,
-      "total": 112
-    },
-    {
       "club_badge_src": null,
       "entry": 32185,
       "entry_name": "兜兜转转是冠军",
       "event_total": 3,
       "last_rank": 302,
       "player_name": "Tyler -",
+      "rank": 310,
+      "rank_sort": 311,
+      "total": 112
+    },
+    {
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/18732/eb5b6464-aa0a-4320-af41-1abe0a40cd7f.png",
+      "entry": 13557,
+      "entry_name": "没有大的六的队伍",
+      "event_total": 0,
+      "last_rank": 305,
+      "player_name": "最小的 企鹅",
       "rank": 310,
       "rank_sort": 312,
       "total": 112
