@@ -49,6 +49,13 @@ export const mockConfig = {
       avatarBaseName: 'GW2',
       awardImageBaseName: 'GW2',
     },
+    {
+      gameweek: 3,
+      fplId: '111162',
+      wechatName: 'ZG',
+      avatarBaseName: 'GW3',
+      awardImageBaseName: 'GW3',
+    },
   ],
   picks3WeeklyWinners: [
     {
@@ -57,10 +64,16 @@ export const mockConfig = {
       avatarBaseName: 'GW2',
       prize: 10,
     },
+    {
+      gameweek: 3,
+      winnerName: 'Isaac Chen',
+      avatarBaseName: 'GW3',
+      prize: 5,
+    },
   ],
   picks3PrizePool: {
     basePrizePerWeek: 5,
-    currentGameweek: 2,
+    currentGameweek: 3,
   },
   predictionLeaderboard: {
     totalPrizePool: 190,

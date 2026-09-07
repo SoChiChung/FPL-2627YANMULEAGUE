@@ -85,10 +85,16 @@ export function transformPicksToSquad({ fplId, gameweek, bootstrap, picks, live 
   const captain = players.find((p) => p.isCaptain);
   const vice = players.find((p) => p.isViceCaptain);
 
+  // 总分 = 首发 + 替补的得分之和（live.total_points × multiplier）。
+  // 不用 entry_history.points：该字段在比赛「临时结算」阶段（finished=false）
+  // 会延迟更新（实测 GW3 返回 68，而球员累加已为 88），导致总分偏低、与页面
+  // 展示的每个球员分数之和对不上。改为球员分数累加，保证总分永远自洽。
+  const totalPoints = [...players, ...bench].reduce((sum, p) => sum + p.points, 0);
+
   return {
     gameweek,
     fplId,
-    totalPoints: picks.entry_history?.points ?? 0,
+    totalPoints,
     captain: captain?.name ?? null,
     viceCaptain: vice?.name ?? null,
     players,

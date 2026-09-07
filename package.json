@@ -7,8 +7,9 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/sync-config.js && vite build",
     "preview": "vite preview",
+    "sync:config": "node scripts/sync-config.js",
     "build:cache": "node scripts/build-fpl-cache.js",
     "build:cache:real": "node scripts/build-fpl-cache.js --real",
     "build:standings": "node scripts/build-league-standings.js",

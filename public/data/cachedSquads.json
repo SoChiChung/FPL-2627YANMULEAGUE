@@ -208,6 +208,109 @@
           "points": 8
         }
       ]
+    },
+    {
+      "gameweek": 3,
+      "fplId": "111162",
+      "totalPoints": 88,
+      "captain": "Haaland",
+      "viceCaptain": "Isak",
+      "players": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 3
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 2
+        },
+        {
+          "name": "Vuskovic",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 12
+        },
+        {
+          "name": "Gvardiol",
+          "position": "DEF",
+          "club": "MCI",
+          "points": 8
+        },
+        {
+          "name": "M.Sangaré",
+          "position": "MID",
+          "club": "BRE",
+          "points": 0
+        },
+        {
+          "name": "Wirtz",
+          "position": "MID",
+          "club": "LIV",
+          "points": 3
+        },
+        {
+          "name": "Mbeumo",
+          "position": "MID",
+          "club": "MUN",
+          "points": 8
+        },
+        {
+          "name": "Gakpo",
+          "position": "MID",
+          "club": "LIV",
+          "points": 11
+        },
+        {
+          "name": "Ødegaard",
+          "position": "MID",
+          "club": "ARS",
+          "points": 10
+        },
+        {
+          "name": "Isak",
+          "position": "FWD",
+          "club": "LIV",
+          "points": 13,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 18,
+          "isCaptain": true
+        }
+      ],
+      "bench": [
+        {
+          "name": "Steele",
+          "position": "GK",
+          "club": "BHA",
+          "points": 0
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 0
+        },
+        {
+          "name": "Shaw",
+          "position": "DEF",
+          "club": "MUN",
+          "points": 0
+        },
+        {
+          "name": "Davis",
+          "position": "DEF",
+          "club": "IPS",
+          "points": 0
+        }
+      ]
     }
   ]
 }
