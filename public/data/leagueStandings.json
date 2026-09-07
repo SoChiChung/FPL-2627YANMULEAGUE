@@ -1,6 +1,6 @@
 {
   "source": "FPL API leagues-classic/12968/standings",
-  "updatedAt": "2026-09-07T10:39:16.443Z",
+  "updatedAt": "2026-09-07T16:13:28.541Z",
   "league": {
     "admin_entry": 6837,
     "closed": false,
@@ -920,7 +920,7 @@
       "total": 222
     },
     {
-      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/51543/3591e787-0c52-4a7c-bfd0-32e48f49d499.png",
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/17724/c5905dad-3b19-48f5-b0a7-78decb752f88.png",
       "entry": 17724,
       "entry_name": "Yummy",
       "event_total": 48,
@@ -2207,7 +2207,7 @@
       "total": 202
     },
     {
-      "club_badge_src": null,
+      "club_badge_src": "https://fantasy.premierleague.com/gcs/plfpl-production-adobe-approved/plfpl-production/60622/4ff705cd-0572-4223-adc4-e0e650e2049f.png",
       "entry": 60622,
       "entry_name": "Tristan FC",
       "event_total": 42,
