@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-09-15T08:13:42.117Z",
+  "_generatedAt": "2026-09-15T14:09:44.555Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。",
   "_failures": [],
   "squads": [
@@ -422,8 +422,8 @@
           "points": 0
         }
       ],
-      "status": "live",
-      "fetchedAt": "2026-09-15T08:12:54.481Z"
+      "status": "settled",
+      "fetchedAt": "2026-09-15T14:09:44.554Z"
     }
   ]
 }
