@@ -1,17 +1,37 @@
 name: update-fpl-cache
 
-# 真实数据流水线：每轮 Deadline 后自动调 FPL 官方 API，
-# 生成 public/data/cachedSquads.json 并提交，GitHub Pages 随后部署。
+# 真实数据流水线：调 FPL 官方 API 生成静态缓存并提交，GitHub Pages 随后部署。
 # 页面运行时永远只读静态缓存，不发外部请求。
+#
+# 触发方式三条，互为补充：
+#   1. push 改动 public/config.json（或缓存脚本本身）→ 立即重建
+#      —— 这是缩短「配置已上线、数据还没生成」空窗期的主力。
+#         此前只有定时兜底，新增获奖者后最长要等一个周期，期间前端无数据可用。
+#   2. 每 5 分钟定时兜底，跟进结算中的轮次
+#   3. 手动触发
+#
+# 为什么不会自我循环触发：bot 的提交只改 public/data/**，
+# 不在下面的 paths 白名单内，因此不会再次触发本工作流。
 
 on:
+  push:
+    paths:
+      - 'public/config.json'
+      - 'scripts/build-fpl-cache.js'
+      - 'scripts/build-league-standings.js'
   schedule:
-    # FPL Deadline 多为周五晚（英国）≈ 中国周六凌晨；工作日每天 21:30（UTC 13:30）跑一次兜底
-    - cron: '*/30 * * * *'
+    # 每 5 分钟兜底。注意 GitHub 定时任务在高峰期可能明显延迟，
+    # 所以配置变更一律走 push 触发，不依赖定时的准时性。
+    - cron: '*/5 * * * *'
   workflow_dispatch: # 支持手动触发
 
 permissions:
   contents: write
+
+# 防止定时触发与手动触发并发写同一文件造成 push 冲突
+concurrency:
+  group: fpl-cache
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -40,3 +60,11 @@ jobs:
           else
             echo "缓存无变化，跳过提交"
           fi
+
+      # 构建脚本在有轮次获取失败时以非 0 退出码结束（不会静默跳过），
+      # 这里把具体失败原因打印出来，便于直接定位。
+      - name: 数据获取失败时输出诊断
+        if: failure()
+        run: |
+          echo "::warning::存在获取失败的轮次，详见下方 _failures"
+          grep -A 30 '"_failures"' public/data/cachedSquads.json || true

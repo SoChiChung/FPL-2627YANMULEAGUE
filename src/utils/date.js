@@ -26,6 +26,12 @@ export function formatDateTimeBeijing(d) {
   return `${bj.getUTCFullYear()}-${pad2(bj.getUTCMonth() + 1)}-${pad2(bj.getUTCDate())} ${pad2(bj.getUTCHours())}:${pad2(bj.getUTCMinutes())}`;
 }
 
+/** 按北京时间显示紧凑时间戳 "MM-DD HH:mm"（用于「数据更新于 …」这类标注） */
+export function formatStampBeijing(d) {
+  const bj = new Date(d.getTime() + BEIJING_OFFSET_MS);
+  return `${pad2(bj.getUTCMonth() + 1)}-${pad2(bj.getUTCDate())} ${pad2(bj.getUTCHours())}:${pad2(bj.getUTCMinutes())}`;
+}
+
 export function formatNumber(n) {
   return n.toLocaleString('zh-CN');
 }

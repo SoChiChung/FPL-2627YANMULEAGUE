@@ -62,15 +62,53 @@ npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL AP
 npm run build:standings   # 拉取 Classic 联赛 12968 排名，生成 data/leagueStandings.json
 ```
 
-3. 产物写入 `public/data/cachedSquads.json`（头部 `_mode: "real"` 标记真实数据），随仓库提交
-4. GitHub Actions（`.github/workflows/update-fpl-cache.yml`）每轮 Deadline 后自动执行第 2、3 步
+3. 产物写入 `public/data/cachedSquads.json`，随仓库提交
+4. GitHub Actions（`.github/workflows/update-fpl-cache.yml`）自动执行第 2、3 步：
+   **改动 `public/config.json` 时 push 触发**（主力，立即重建），
+   另有每 5 分钟定时兜底跟进结算中的轮次
 
 前端读取优先级：
 
-- 阵容：`data/cachedSquads.json` 缓存（真实数据）→ Mock 生成兜底
+- 阵容：`data/cachedSquads.json` 缓存 → 缓存未命中显示「数据尚未生成」空状态
 - 联赛分数排名：`data/leagueStandings.json` 缓存 → FPL standings API 尝试直连 → Mock 兜底
 
+### 宁缺毋假：阵容数据不会伪造
+
+缓存未命中时，页面**不会**用 Mock 数组顶替缺失的真实阵容，而是显示明确的空状态。
+Mock 仅在显式演示模式下启用：
+
+```bash
+VITE_DEMO_MOCK=true npm start   # 本地演示才填充示例阵容
+```
+
 时间显示：所有 DDL 统一按**北京时间（UTC+8）**解析与显示，不随访问者时区变化。
+
+### 结算状态与缓存时效
+
+静态缓存的致命问题是「快照会被当成终值」。一条 GW4 的阵容在结算过程中
+每场比赛后都会变，若把它当最终结果展示，页面就会说谎。
+因此构建脚本给每一轮打了 `status`：
+
+| status | 含义 | 前端表现 | 是否自动跟进 |
+| --- | --- | --- | --- |
+| `settled` | 该轮已结算（`events[].finished === true`） | 正常展示，徽标「已公布」 | 否 —— 终值，快照永久有效 |
+| `live` | 该轮进行中，已有比赛结束 | 正常展示 + 「结算中」徽标，标注数据更新时间 | 是，每 5 分钟 |
+| `pending` | DDL 已过但尚无比赛结束 | 空状态「本轮尚未开赛」，分数显示 `—` | 是，每 5 分钟 |
+| `missing` | 缓存中没有该轮 | 空状态「数据尚未生成」 | 是，每 5 分钟 |
+
+判定依据（无需额外网络请求，均来自已拉取的接口）：
+
+- `bootstrap-static` 的 `events[].finished`
+- `event/<gw>/live/` 的 `elements` 长度 —— 该轮**完全未开赛**时为空数组，
+  可据此把「未开赛」与「结算中」干净区分开
+
+前端据此决定是否轮询：只要还有非 `settled` 的轮次，就每 5 分钟重拉一次静态缓存
+（标签页切回前台时补一次）；全部进入终态后自动停止。缓存文件头部的
+`_generatedAt`，以及每轮的 `fetchedAt`，用于展示「数据更新于 …」。
+
+> **更新延迟**：纯静态方案存在固有滞后，实测约 2–3 分钟
+> （CI 调度 + 构建 + Pages 部署 + CDN 缓存）。要逐场比赛级实时，
+> 必须引入代理层转发 FPL API（浏览器无法直连，见上文 CORS 说明）。
 
 ## 资源目录（文件放在 public/ 下，代码里路径不带 public/）
 

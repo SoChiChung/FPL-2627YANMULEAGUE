@@ -572,6 +572,13 @@
   border-style: dashed;
 }
 
+/* 结算中：该轮进行中，分数仍在变化 —— 用暖色与「已公布」区分 */
+.cw-status.is-live {
+  background: rgba(180, 81, 45, 0.22);
+  color: #f0a884;
+  border-color: #b4512d;
+}
+
 .cw-chevron::before {
   content: "";
   display: inline-block;

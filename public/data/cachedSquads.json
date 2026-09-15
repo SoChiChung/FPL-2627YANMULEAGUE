@@ -1,7 +1,9 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。",
+  "_generatedAt": "2026-09-15T08:13:42.117Z",
+  "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。",
+  "_failures": [],
   "squads": [
     {
       "gameweek": 1,
@@ -104,7 +106,9 @@
           "club": "CRY",
           "points": 1
         }
-      ]
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-09-15T08:12:54.007Z"
     },
     {
       "gameweek": 2,
@@ -207,7 +211,9 @@
           "club": "COV",
           "points": 8
         }
-      ]
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-09-15T08:12:54.126Z"
     },
     {
       "gameweek": 3,
@@ -310,7 +316,9 @@
           "club": "IPS",
           "points": 0
         }
-      ]
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-09-15T08:12:54.367Z"
     },
     {
       "gameweek": 4,
@@ -413,7 +421,9 @@
           "club": "COV",
           "points": 0
         }
-      ]
+      ],
+      "status": "live",
+      "fetchedAt": "2026-09-15T08:12:54.481Z"
     }
   ]
 }
