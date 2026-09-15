@@ -311,6 +311,109 @@
           "points": 0
         }
       ]
+    },
+    {
+      "gameweek": 4,
+      "fplId": "14156",
+      "totalPoints": 110,
+      "captain": "João Pedro",
+      "viceCaptain": "Groß",
+      "players": [
+        {
+          "name": "Raya",
+          "position": "GK",
+          "club": "ARS",
+          "points": 14
+        },
+        {
+          "name": "Konsa",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 6
+        },
+        {
+          "name": "De Cuyper",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 11
+        },
+        {
+          "name": "Gvardiol",
+          "position": "DEF",
+          "club": "MCI",
+          "points": 11
+        },
+        {
+          "name": "Szoboszlai",
+          "position": "MID",
+          "club": "LIV",
+          "points": 3
+        },
+        {
+          "name": "B.Fernandes",
+          "position": "MID",
+          "club": "MUN",
+          "points": 2
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 17,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Tzolis",
+          "position": "MID",
+          "club": "ARS",
+          "points": 3
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 9
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 24,
+          "isCaptain": true
+        },
+        {
+          "name": "Calvert-Lewin",
+          "position": "FWD",
+          "club": "LEE",
+          "points": 10
+        }
+      ],
+      "bench": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 0
+        },
+        {
+          "name": "M.Sangaré",
+          "position": "MID",
+          "club": "BRE",
+          "points": 0
+        },
+        {
+          "name": "Justin",
+          "position": "DEF",
+          "club": "LEE",
+          "points": 0
+        },
+        {
+          "name": "van Ewijk",
+          "position": "DEF",
+          "club": "COV",
+          "points": 0
+        }
+      ]
     }
   ]
 }
