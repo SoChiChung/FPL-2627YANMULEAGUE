@@ -181,6 +181,13 @@
       "wechatName": "ZG",
       "avatarBaseName": "GW3",
       "awardImageBaseName": "GW3"
+    },
+        {
+      "gameweek": 4,
+      "fplId": "14156",
+      "wechatName": "行星",
+      "avatarBaseName": "GW4",
+      "awardImageBaseName": "GW4"
     }
   ],
   "picks3WeeklyWinners": [
@@ -195,14 +202,8 @@
       "winnerName": "Isaac Chen",
       "avatarBaseName": "GW3",
       "prize": 5
-    },
-        {
-      "gameweek": 4,
-      "fplId": "14156",
-      "wechatName": "行星",
-      "avatarBaseName": "GW4",
-      "awardImageBaseName": "GW4"
     }
+
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
@@ -220,6 +221,11 @@
       {
         "username": "Isaac Chen",
         "awardImageBaseName": "GW3",
+        "prediction": "pick3获奖",
+        "prize": 5
+      },
+      {
+        "awardImageBaseName": "GW4",
         "prediction": "pick3获奖",
         "prize": 5
       }
