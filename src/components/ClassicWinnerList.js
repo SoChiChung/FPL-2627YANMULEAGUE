@@ -12,8 +12,7 @@
  *   missing 待生成 —— 构建脚本尚未把该轮写入缓存
  *
  * ⚠️ 宁缺毋假：任何情况下都不会用 Mock 数据顶替缺失的真实阵容。
- *    未开赛时头部分数显示「—」而非「0分」，避免被误读为发挥不佳。
- *
+ *    未开赛时头部分数显示「—」而非「0分」，避免被误读为发挥不佳。 *
  * 图片不写死扩展名：
  *   头像     → resolveImageByBaseName(classicWinnerAvatar, avatarBaseName)
  *   颁奖图   → resolveImageByBaseName(classicWinnerWords, awardImageBaseName)
@@ -53,7 +52,6 @@ function badgeFor(winner, status) {
     case 'settled': return { cls: 'is-published', text: '已公布' };
     case 'live': return { cls: 'is-live', text: '结算中' };
     case 'pending': return { cls: 'is-pending', text: '未开赛' };
-    case 'mock': return { cls: 'is-published', text: '演示数据' };
     default: return { cls: 'is-pending', text: '待生成' };
   }
 }

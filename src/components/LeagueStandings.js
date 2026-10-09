@@ -22,7 +22,7 @@ export async function renderLeagueStandings(container, config) {
     const data = await loadLeagueStandings(config);
     const updated = data.meta.updatedAt
       ? new Date(data.meta.updatedAt).toLocaleString('zh-CN', { hour12: false })
-      : '演示数据';
+      : '尚未生成';
 
     container.innerHTML = `
       <section class="card standings-card" aria-labelledby="standingsTitle">
@@ -54,7 +54,10 @@ function standingsTable(title, scoreLabel, rows, scoreKey) {
     return `
       <div class="standings-panel">
         <h3>${escapeHtml(title)}</h3>
-        <div class="empty-state"><p class="empty-title">暂无排名数据</p></div>
+        <div class="empty-state">
+          <p class="empty-title">暂无排名数据</p>
+          <p>运行 <code>npm run build:standings</code> 从 FPL 官方 API 生成真实榜单缓存后即可显示。</p>
+        </div>
       </div>`;
   }
 

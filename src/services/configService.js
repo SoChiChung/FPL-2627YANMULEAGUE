@@ -1,13 +1,19 @@
 /* ============================================================
  * src/services/configService.js — 主配置读取
  *
- * 优先读取根目录 config.json（管理员手工维护的真实配置）；
- * 读取失败（未部署 / 文件缺失 / JSON 损坏）时回退到
- * src/data/mockConfig.js 内置演示配置，保证页面永远可渲染。
+ * 只读取 public/config.json —— 这是管理员手工维护的唯一真实配置源。
+ *
+ * ⚠️ 宁缺毋假：读取失败时**直接抛错**，不再回退任何内置演示配置。
+ *    此前这里会兜底到 src/data/mockConfig.js，一旦 config.json 读取失败，
+ *    页面会静默渲染一套与真实联赛无关的假赛程、假获奖者、假奖池，
+ *    而且只在页脚显示一行小字提示，很容易被忽略。
+ *    配置是页面的地基：地基读不到就该让页面明确报错，而不是画一个假的。
  * ============================================================ */
 
-import { mockConfig } from '../data/mockConfig.js';
+// 注意：文件实际在 public/config.json 下，但运行时访问路径不带 public/ 前缀
+const CONFIG_URL = 'config.json';
 
+/** 校验配置结构；不合法直接抛错，绝不放宽到"能渲染就行" */
 export function validateConfig(config) {
   if (!config || typeof config !== 'object') throw new Error('config 不是合法对象');
   if (!Array.isArray(config.gameweeks) || config.gameweeks.length === 0) {
@@ -17,19 +23,22 @@ export function validateConfig(config) {
 }
 
 /**
- * 返回 { config, source, isDemo }。
- * source：数据来源说明；isDemo：是否使用内置演示配置。
+ * 读取并校验主配置。
+ *
+ * @returns {Promise<{ config: object, source: string }>}
+ * @throws {Error} config.json 不可读 / JSON 损坏 / 结构不合法
  */
 export async function loadConfig() {
+  const res = await fetch(CONFIG_URL, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`${CONFIG_URL} 不可读（HTTP ${res.status}）`);
+
+  let config;
   try {
-    const res = await fetch('config.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const config = await res.json();
-    validateConfig(config);
-    return { config, source: 'config.json', isDemo: false };
+    config = await res.json();
   } catch (err) {
-    console.warn('[configService] config.json 读取失败，回退到内置演示配置：', err);
-    validateConfig(mockConfig);
-    return { config: mockConfig, source: '内置演示配置 src/data/mockConfig.js', isDemo: true };
+    throw new Error(`${CONFIG_URL} 不是合法 JSON：${err.message}`);
   }
+
+  validateConfig(config);
+  return { config, source: CONFIG_URL };
 }

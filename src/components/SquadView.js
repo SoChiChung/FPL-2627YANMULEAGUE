@@ -33,7 +33,7 @@ function renderPlayerRow(p) {
  * 渲染阵容到展开面板内。
  * @param {HTMLElement} container 展开面板的阵容容器（.cw-squad）
  * @param {object} squad 阵容数据（结构见 fplApiClient.transformPicksToSquad）
- * @param {string} sourceLabel 数据来源标注（缓存 / Mock）
+ * @param {string} sourceLabel 数据来源标注（数据来源 + 时效）
  */
 export function renderSquad(container, squad, sourceLabel) {
   // 按位置分组；位置字段统一为 GK/DEF/MID/FWD

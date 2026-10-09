@@ -2,7 +2,7 @@
  * src/main.js — 应用入口（组合根）
  *
  * 职责：
- *   1. 读取主配置（configService：config.json → mockConfig 兜底）
+ *   1. 读取主配置（configService：只读 config.json，读不到直接报错）
  *   2. 解析当前轮次与倒计时（utils/gameweek.js）
  *   3. 渲染 Header / Classic Winner 手风琴 / Picks3 / 排行榜 / 规则
  *   4. 驱动每秒倒计时
@@ -49,7 +49,7 @@ if (typeof document !== 'undefined') {
 }
 
 async function init() {
-  const { config: loaded, source, isDemo } = await loadConfig();
+  const { config: loaded } = await loadConfig();
   config = loaded;
 
   gwState = resolveCurrentGameweek(config.gameweeks, new Date());
@@ -69,10 +69,6 @@ async function init() {
     leagueRulesView: document.getElementById('leagueRulesView'),
     footerNote: document.getElementById('footerNote'),
   });
-
-  if (isDemo && els.footerNote) {
-    els.footerNote.textContent = `演示模式：config.json 不可读，使用内置 Mock 配置（${source}）。部署到 GitHub Pages 后自动读取真实 config.json。`;
-  }
 
   renderAll();
   startCountdown();
@@ -111,11 +107,24 @@ function startCountdown() {
 
 function showFatalError(err) {
   console.error('初始化失败：', err);
+  if (els.leagueName) els.leagueName.textContent = '配置加载失败';
   if (els.classicWinnerList) {
     els.classicWinnerList.innerHTML = `
       <div class="empty-state">
-        <p class="empty-title">初始化失败</p>
+        <p class="empty-title">配置加载失败</p>
+        <p>未能读取 config.json：${escapeHtml(err?.message || String(err))}</p>
         <p>请通过本地服务器预览（npm start），或部署到 GitHub Pages 后访问。</p>
       </div>`;
   }
+}
+
+/** 极简 HTML 转义，仅用于错误提示文案 */
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (ch) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  }[ch]));
 }

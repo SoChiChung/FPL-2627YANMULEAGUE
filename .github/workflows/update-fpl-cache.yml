@@ -44,7 +44,7 @@ jobs:
           node-version: 20
 
       - name: 生成阵容静态缓存（真实 FPL API）
-        run: node scripts/build-fpl-cache.js --real
+        run: node scripts/build-fpl-cache.js
 
       - name: 生成联赛排行榜静态缓存（真实 FPL API）
         run: node scripts/build-league-standings.js

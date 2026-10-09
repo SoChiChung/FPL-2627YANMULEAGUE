@@ -26,7 +26,7 @@
 
 **联赛分数排名（右栏）**
 - Classic 联赛（12968）的"单轮分数前十"与"总分前十"，含名次升降标识
-- 数据由构建脚本从 FPL API 拉取缓存，前端只读；缓存缺失时自动降级尝试直连 → Mock
+- 数据由构建脚本从 FPL API 拉取缓存，前端只读；缓存缺失时尝试直连，仍失败则显示空状态
 
 **联赛规则 / 竞猜规则（右栏末尾）**
 - 联赛规则（参赛资格、周最佳与赛季奖金、Daka 进球奖、名次奖金等）
@@ -36,6 +36,7 @@
 
 ```bash
 npm install
+npm run refresh      # 改完 config.json 后跑这一步：同步派生字段 + 拉真实阵容 + 拉真实榜单
 npm start
 ```
 
@@ -56,10 +57,11 @@ GitHub Pages 没有后端，页面运行时**只读静态文件**，浏览器不
 2. 同步真实 DDL 并生成缓存：
 
 ```bash
-npm run sync:gameweeks    # 从 bootstrap-static 同步真实 DDL（转北京时间）到 config.json
-npm run build:cache       # Mock 模式（本地演示，无需联网）
-npm run build:cache:real  # 真实模式：按 config 里的 fplId 请求 FPL API 生成真实阵容
-npm run build:standings   # 拉取 Classic 联赛 12968 排名，生成 data/leagueStandings.json
+npm run refresh         # 一条命令跑完下面三步（推荐：改完 config.json 后执行）
+npm run sync:config     # 仅同步 config 派生字段（currentGameweek / 排行榜 entries）
+npm run sync:gameweeks  # 从 bootstrap-static 同步真实 DDL（转北京时间）到 config.json
+npm run build:cache     # 按 config 里的 fplId 请求 FPL API 生成真实阵容
+npm run build:standings # 拉取 Classic 联赛 12968 排名，生成 data/leagueStandings.json
 ```
 
 3. 产物写入 `public/data/cachedSquads.json`，随仓库提交
@@ -70,16 +72,32 @@ npm run build:standings   # 拉取 Classic 联赛 12968 排名，生成 data/lea
 前端读取优先级：
 
 - 阵容：`data/cachedSquads.json` 缓存 → 缓存未命中显示「数据尚未生成」空状态
-- 联赛分数排名：`data/leagueStandings.json` 缓存 → FPL standings API 尝试直连 → Mock 兜底
+- 联赛分数排名：`data/leagueStandings.json` 缓存 → FPL standings API 尝试直连 → 空状态
 
-### 宁缺毋假：阵容数据不会伪造
+### 宁缺毋假：全站零 Mock 兜底
 
-缓存未命中时，页面**不会**用 Mock 数组顶替缺失的真实阵容，而是显示明确的空状态。
-Mock 仅在显式演示模式下启用：
+**本项目不存在任何 Mock / 演示 / 占位数据源。** 页面上的每一个分数、每一个队伍名，
+都只能来自 FPL 官方 API 拉取后写入 `public/data/` 的静态缓存。
 
-```bash
-VITE_DEMO_MOCK=true npm start   # 本地演示才填充示例阵容
-```
+历史上的两层兜底均已**彻底删除**：
+
+| 已删除项 | 位置 | 删除原因 |
+| --- | --- | --- |
+| `generateMockSquad()` | `src/data/mockSquads.js`（已删文件） | 用**真实球员名 + 随机分数**生成阵容，产物外观与真实数据无法区分 |
+| `mockConfig` | `src/data/mockConfig.js`（已删文件） | config.json 读失败时静默渲染假赛程 / 假获奖者，只在页脚显示一行小字 |
+| `MOCK_RESULTS` | `src/services/leagueStandingsService.js` | 硬编码 10 支虚构队伍的假榜单 |
+| `VITE_DEMO_MOCK` 开关 | `src/services/squadService.js` | 演示模式开关，已无必要 |
+
+事故记录：2026-09-15 发现 GW4 页面显示伪造的 **94 分**（真实 110 分），
+同时右栏排行榜显示真实的 110 分 —— **同一页面两处数字自相矛盾**。
+根因正是 `generateMockSquad()` 的静默兜底。
+
+现在数据缺失时的行为是**显式空状态**，各模块分别显示：
+
+- 阵容未生成 → 「本轮阵容数据尚未生成」+ 提示运行 `npm run build:cache`
+- config.json 不可读 → 整页报错「配置加载失败」+ 具体 HTTP 原因，不再降级渲染
+- 榜单未生成 → 「暂无排名数据」+ 提示运行 `npm run build:standings`
+- 未开赛轮次 → 分数显示 `—`（不显示 `0分`，避免被误读为发挥失常）
 
 时间显示：所有 DDL 统一按**北京时间（UTC+8）**解析与显示，不随访问者时区变化。
 
@@ -94,7 +112,7 @@ VITE_DEMO_MOCK=true npm start   # 本地演示才填充示例阵容
 | `settled` | 该轮已结算（`events[].finished === true`） | 正常展示，徽标「已公布」 | 否 —— 终值，快照永久有效 |
 | `live` | 该轮进行中，已有比赛结束 | 正常展示 + 「结算中」徽标，标注数据更新时间 | 是，每 5 分钟 |
 | `pending` | DDL 已过但尚无比赛结束 | 空状态「本轮尚未开赛」，分数显示 `—` | 是，每 5 分钟 |
-| `missing` | 缓存中没有该轮 | 空状态「数据尚未生成」 | 是，每 5 分钟 |
+| `missing` | 缓存中没有该轮 | 空状态「本轮阵容数据尚未生成」 | 是，每 5 分钟 |
 
 判定依据（无需额外网络请求，均来自已拉取的接口）：
 
@@ -154,11 +172,6 @@ VITE_DEMO_MOCK=true npm start   # 本地演示才填充示例阵容
 - 竞猜总榜计算实现于 `src/services/predictionService.js`（金额降序 → 次数降序 → 配置顺序），
   原始记录与计算结果分离，不写回配置文件
 
-## 设计稿 Mock（可选）
-
-`npm run build:mock` 从当前配置生成零 JS 的静态设计稿 `mock/`（已 gitignore，不入库），
-包含全部模块的静态渲染，方便交给 Open Design 等工具重写样式。
-
 ## 部署到 GitHub Pages
 
 方式 A（推荐，自动构建）：Settings → Pages → Source 选 **GitHub Actions**，
@@ -179,9 +192,8 @@ VITE_DEMO_MOCK=true npm start   # 本地演示才填充示例阵容
 ├── src/
 │   ├── main.js             # 组合根
 │   ├── styles/             # theme → base → layout → components（+ fonts/ 可选字体）
-│   ├── data/               # mockConfig（兜底）+ mockSquads（生成器）
 │   ├── services/           # config / squad / prediction / picks3 / leagueStandings / fplApiClient
 │   ├── utils/              # date / countdown / gameweek / image
 │   └── components/         # Header / ClassicWinnerList / SquadView / Picks3Module / LeagueStandings / LeagueRules / ...
-└── scripts/                # build-fpl-cache / sync-gameweeks / build-league-standings / build-mock-html
+└── scripts/                # sync-config / sync-gameweeks / build-fpl-cache / build-league-standings
 ```

@@ -3,27 +3,16 @@
  *
  * GitHub Pages 没有后端，且 FPL standings API 当前没有 CORS 头。
  * 因此前端优先读取 scripts/build-league-standings.js 生成的
- * data/leagueStandings.json；缓存缺失时再尝试直连 FPL API，仍失败
- * 则使用 Mock，保证页面可展示。
+ * data/leagueStandings.json；缓存缺失时再尝试直连 FPL API。
+ *
+ * ⚠️ 宁缺毋假：两条路径都拿不到数据时返回空榜（页面显示「暂无排名数据」），
+ *    绝不返回任何虚构的队伍与分数。此前的 MOCK_RESULTS 硬编码假榜单已删除。
  * ============================================================ */
 
 const DEFAULT_LEAGUE_ID = 12968;
 const CACHE_URL = 'data/leagueStandings.json';
 const FPL_BASE = 'https://fantasy.premierleague.com/api';
 const PAGE_LIMIT = 50;
-
-const MOCK_RESULTS = [
-  { entry: 22535, entry_name: 'BaBaXi', player_name: 'Xi Yang', event_total: 135, total: 206, rank: 1, last_rank: 46 },
-  { entry: 1440306, entry_name: 'Isaac FC', player_name: 'Isaac Greyson', event_total: 121, total: 198, rank: 2, last_rank: 8 },
-  { entry: 18092, entry_name: 'Sunny Smoke', player_name: 'Classic Winner', event_total: 116, total: 191, rank: 3, last_rank: 12 },
-  { entry: 73188, entry_name: 'Blue Hour', player_name: 'Ryyyy', event_total: 110, total: 183, rank: 4, last_rank: 4 },
-  { entry: 90217, entry_name: 'GW Hunters', player_name: 'Demo Player', event_total: 108, total: 180, rank: 5, last_rank: 6 },
-  { entry: 32019, entry_name: 'Chain FC', player_name: 'Mock A', event_total: 104, total: 176, rank: 6, last_rank: 9 },
-  { entry: 56233, entry_name: 'Navy Press', player_name: 'Mock B', event_total: 101, total: 172, rank: 7, last_rank: 3 },
-  { entry: 88001, entry_name: 'Halftone XI', player_name: 'Mock C', event_total: 99, total: 170, rank: 8, last_rank: 11 },
-  { entry: 45772, entry_name: 'Smoke Screen', player_name: 'Mock D', event_total: 97, total: 168, rank: 9, last_rank: 7 },
-  { entry: 67554, entry_name: 'Diamond City', player_name: 'Mock E', event_total: 96, total: 166, rank: 10, last_rank: 10 },
-];
 
 export async function loadLeagueStandings(config) {
   const leagueId = config?.league?.classicLeagueId || DEFAULT_LEAGUE_ID;
@@ -48,10 +37,11 @@ export async function loadLeagueStandings(config) {
     });
   }
 
-  return buildStandingsView(MOCK_RESULTS, {
+  // 无数据：返回空榜，由页面渲染「暂无排名数据」空状态
+  return buildStandingsView([], {
     leagueId,
     leagueName: config?.league?.name || '',
-    source: 'Mock standings',
+    source: 'data/leagueStandings.json（尚未生成）',
     updatedAt: null,
   });
 }

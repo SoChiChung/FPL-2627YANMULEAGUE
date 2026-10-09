@@ -57,7 +57,7 @@ const PICKS3_RULES = [
 const rulesList = (rules, total) =>
   rules.map((rule) => `<li>${rule(total)}</li>`).join('');
 
-/** 规则卡片 HTML（纯字符串，供线上渲染与 mock 生成器复用） */
+/** 规则卡片 HTML（纯字符串，便于在渲染层复用与测试） */
 export function leagueRulesHtml(totalGameweeks) {
   const total = escapeHtml(String(totalGameweeks));
   return `
