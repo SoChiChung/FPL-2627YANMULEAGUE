@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-09-15T14:09:44.555Z",
+  "_generatedAt": "2026-10-09T07:08:04.937Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。",
   "_failures": [],
   "squads": [
@@ -424,6 +424,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-09-15T14:09:44.554Z"
+    },
+    {
+      "gameweek": 5,
+      "fplId": "5924618",
+      "totalPoints": 81,
+      "captain": "Haaland",
+      "viceCaptain": "Isak",
+      "players": [
+        {
+          "name": "A.Becker",
+          "position": "GK",
+          "club": "LIV",
+          "points": 8
+        },
+        {
+          "name": "Gabriel",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 1
+        },
+        {
+          "name": "Mitchell",
+          "position": "DEF",
+          "club": "CRY",
+          "points": 7
+        },
+        {
+          "name": "Tarkowski",
+          "position": "DEF",
+          "club": "EVE",
+          "points": 14
+        },
+        {
+          "name": "Semenyo",
+          "position": "MID",
+          "club": "MCI",
+          "points": 17
+        },
+        {
+          "name": "Barnes",
+          "position": "MID",
+          "club": "NEW",
+          "points": 9
+        },
+        {
+          "name": "Saka",
+          "position": "MID",
+          "club": "ARS",
+          "points": 2
+        },
+        {
+          "name": "Yalcouyé",
+          "position": "MID",
+          "club": "BHA",
+          "points": 1
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 12,
+          "isCaptain": true
+        },
+        {
+          "name": "Isak",
+          "position": "FWD",
+          "club": "LIV",
+          "points": 8,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Calvert-Lewin",
+          "position": "FWD",
+          "club": "LEE",
+          "points": 2
+        }
+      ],
+      "bench": [
+        {
+          "name": "Lecomte",
+          "position": "GK",
+          "club": "FUL",
+          "points": 0
+        },
+        {
+          "name": "van Ewijk",
+          "position": "DEF",
+          "club": "COV",
+          "points": 0
+        },
+        {
+          "name": "O'Shea",
+          "position": "DEF",
+          "club": "IPS",
+          "points": 0
+        },
+        {
+          "name": "Slater",
+          "position": "MID",
+          "club": "HUL",
+          "points": 0
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-10-09T07:08:04.936Z"
     }
   ]
 }
