@@ -195,6 +195,13 @@
       "wechatName": "豆腐小煲煲",
       "avatarBaseName": "GW5",
       "awardImageBaseName": "GW5"
+    },
+    {
+      "gameweek": 6,
+      "fplId": "1166053",
+      "wechatName": "博弈",
+      "avatarBaseName": "GW6",
+      "awardImageBaseName": "GW6"
     }
   ],
   "picks3WeeklyWinners": [
@@ -213,7 +220,7 @@
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
-    "currentGameweek": 5
+    "currentGameweek": 6
   },
   "predictionLeaderboard": {
     "totalPrizePool": 190,

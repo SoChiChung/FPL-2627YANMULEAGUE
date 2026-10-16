@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-09T07:15:34.553Z",
+  "_generatedAt": "2026-10-16T16:36:05.350Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -529,6 +529,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-10-09T07:15:34.547Z"
+    },
+    {
+      "gameweek": 6,
+      "fplId": "1166053",
+      "totalPoints": 102,
+      "captain": "João Pedro",
+      "viceCaptain": "Palmer",
+      "players": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 9
+        },
+        {
+          "name": "Konsa",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 4
+        },
+        {
+          "name": "De Cuyper",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 15
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 9
+        },
+        {
+          "name": "Cherki",
+          "position": "MID",
+          "club": "MCI",
+          "points": 10
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 6
+        },
+        {
+          "name": "Palmer",
+          "position": "MID",
+          "club": "CHE",
+          "points": 8,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Rogers",
+          "position": "MID",
+          "club": "CHE",
+          "points": 9
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 6
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 24,
+          "isCaptain": true
+        },
+        {
+          "name": "Wissa",
+          "position": "FWD",
+          "club": "NEW",
+          "points": 2
+        }
+      ],
+      "bench": [
+        {
+          "name": "Lammens",
+          "position": "GK",
+          "club": "MUN",
+          "points": 0
+        },
+        {
+          "name": "Maguire",
+          "position": "DEF",
+          "club": "MUN",
+          "points": 0
+        },
+        {
+          "name": "M.Sangaré",
+          "position": "MID",
+          "club": "BRE",
+          "points": 0
+        },
+        {
+          "name": "van Ewijk",
+          "position": "DEF",
+          "club": "COV",
+          "points": 0
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-10-16T16:36:05.348Z"
     }
   ]
 }
