@@ -1125,3 +1125,284 @@ details.cw-row[open] .cw-chevron::before {
 .p3-row.p3-win {
   grid-template-columns: 46px 40px minmax(0, 1fr) auto;
 }
+
+/* ============================================================
+ * 每轮选人统计（队长 / 转入 / 转出）—— 瀑布流
+ * ============================================================ */
+
+.ms-card {
+  margin-top: 0;
+}
+
+.ms-header {
+  align-items: flex-start;
+}
+
+.ms-sub {
+  margin: 4px 0 0;
+  color: var(--ink-4);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ms-gw-badge {
+  flex-shrink: 0;
+  font-family: var(--font-yan);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 瀑布流容器 ---------- */
+/* 用 CSS 多列实现：三个榜单自上而下填充，自动错落成瀑布状 */
+.ms-columns {
+  column-count: 3;
+  column-gap: 14px;
+  column-fill: balance;
+}
+
+.ms-panel {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0 0 14px;
+  border: 1px solid rgba(242, 213, 127, 0.24);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 24, 48, 0.34);
+  overflow: hidden;
+}
+
+.ms-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px dashed var(--line);
+  background: linear-gradient(120deg, rgba(242, 213, 127, 0.10), transparent 70%);
+}
+
+.ms-panel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  font-family: var(--font-yan);
+  font-size: 15px;
+  font-weight: 800;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink-3);
+  color: var(--ink-3);
+}
+
+/* 三类榜单用不同色相区分：转入=蓝紫 / 转出=暖褐 / 队长=奶黄 */
+.ms-panel-in .ms-panel-icon {
+  border-color: #7d93c9;
+  color: #a9bbec;
+}
+
+.ms-panel-out .ms-panel-icon {
+  border-color: #b4512d;
+  color: #f0a884;
+}
+
+.ms-panel-cap .ms-panel-icon {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(242, 213, 127, 0.16);
+}
+
+.ms-panel-title {
+  margin: 0;
+  font-family: var(--font-kai);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.ms-panel-hint {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--ink-4);
+}
+
+/* ---------- 条目 ---------- */
+.ms-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ms-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 9px;
+  align-items: center;
+  padding: 9px 12px;
+  border-bottom: 1px dashed rgba(242, 213, 127, 0.14);
+}
+
+.ms-row:last-child {
+  border-bottom: none;
+}
+
+.ms-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  font-family: var(--font-yan);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-3);
+  background: var(--paper-3);
+  border: 1px solid var(--ink-4);
+  border-radius: 50%;
+  font-variant-numeric: tabular-nums;
+}
+
+.ms-rank.r1 {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--accent);
+}
+
+.ms-rank.r2 {
+  background: var(--ink-2);
+  border-color: var(--ink-2);
+  color: var(--ink);
+}
+
+.ms-rank.r3 {
+  background: #7d93c9;
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.ms-main {
+  min-width: 0;
+}
+
+.ms-name-line {
+  display: block;
+  min-width: 0;
+}
+
+/* 球员名独占一行：窄列下「名 + 位置 + 球队 + 次数」挤在一行会把名字截断
+   （实测 202px 宽时 De Cuyper 被截成 "De C…"），改为名在上、
+   位置/球队在下方的次级行。 */
+.ms-name {
+  display: block;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ms-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 2px;
+  min-width: 0;
+}
+
+.ms-pos {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0 4px;
+  line-height: 1.5;
+}
+
+.ms-club {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--ink-4);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 次数条：按相对最高值归一化 */
+.ms-bar-track {
+  margin-top: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(242, 213, 127, 0.10);
+  overflow: hidden;
+}
+
+.ms-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ink-4);
+}
+
+.ms-panel-in .ms-bar {
+  background: #7d93c9;
+}
+
+.ms-panel-out .ms-bar {
+  background: #b4512d;
+}
+
+.ms-panel-cap .ms-bar {
+  background: var(--ink);
+}
+
+.ms-count {
+  font-family: var(--font-yan);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  min-width: 26px;
+  text-align: right;
+}
+
+.ms-empty {
+  padding: 18px 12px;
+  border: none;
+}
+
+/* ---------- 响应式 ---------- */
+/* 主栏宽约 700px（容器 1120 − 侧栏 380 − 间距），3 列各约 220px。
+   900px 以下整体布局变单列，主栏变满宽，此时 2 列更合适。 */
+@media (max-width: 1100px) {
+  .ms-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .ms-columns {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .ms-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ms-gw-badge {
+    align-self: flex-start;
+  }
+}

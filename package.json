@@ -10,9 +10,10 @@
     "build": "node scripts/sync-config.js && vite build",
     "preview": "vite preview",
     "sync:config": "node scripts/sync-config.js",
-    "refresh": "node scripts/sync-config.js && node scripts/build-fpl-cache.js && node scripts/build-league-standings.js",
+    "refresh": "node scripts/sync-config.js && node scripts/build-fpl-cache.js && node scripts/build-league-standings.js && node scripts/build-manager-stats.js",
     "build:cache": "node scripts/build-fpl-cache.js",
     "build:standings": "node scripts/build-league-standings.js",
+    "build:stats": "node scripts/build-manager-stats.js",
     "sync:gameweeks": "node scripts/sync-gameweeks.js"
   },
   "devDependencies": {

@@ -4,7 +4,8 @@
  * 职责：
  *   1. 读取主配置（configService：只读 config.json，读不到直接报错）
  *   2. 解析当前轮次与倒计时（utils/gameweek.js）
- *   3. 渲染 Header / Classic Winner 手风琴 / Picks3 / 排行榜 / 规则
+ *   3. 渲染 Header / Classic Winner 手风琴 / 选人统计 / Picks3 /
+ *      排行榜 / 规则
  *   4. 驱动每秒倒计时
  *
  * 不在这里堆业务逻辑：数据读取在 services/，计算在 utils/，
@@ -15,6 +16,7 @@ import { loadConfig } from './services/configService.js';
 import { resolveCurrentGameweek } from './utils/gameweek.js';
 import { renderHeader, updateCountdownText } from './components/Header.js';
 import { renderClassicWinnerList } from './components/ClassicWinnerList.js';
+import { renderManagerStats } from './components/ManagerStats.js';
 import { renderPicks3Module } from './components/Picks3Module.js';
 import { renderPredictionLeaderboard } from './components/PredictionLeaderboard.js';
 import { renderLeagueStandings } from './components/LeagueStandings.js';
@@ -33,6 +35,7 @@ const els = {
   gwDeadlineLine: null,
   gwCountdown: null,
   classicWinnerList: null,
+  managerStatsView: null,
   picks3View: null,
   prizePoolAmount: null,
   leaderboardView: null,
@@ -62,6 +65,7 @@ async function init() {
     gwDeadlineLine: document.getElementById('gwDeadlineLine'),
     gwCountdown: document.getElementById('gwCountdown'),
     classicWinnerList: document.getElementById('classicWinnerList'),
+    managerStatsView: document.getElementById('managerStatsView'),
     picks3View: document.getElementById('picks3View'),
     prizePoolAmount: document.getElementById('prizePoolAmount'),
     leaderboardView: document.getElementById('leaderboardView'),
@@ -80,6 +84,7 @@ function renderAll() {
     config,
     currentGameweek: gwState.gameweek,
   });
+  renderManagerStats(els.managerStatsView);
   renderPicks3Module(els.picks3View, {
     config,
     currentGameweek: gwState.gameweek,

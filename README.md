@@ -24,6 +24,11 @@
 - 累计奖池 + 总榜：由 config 中的**原始竞猜记录自动汇总**（金额降序 → 获奖次数降序 → 配置顺序），无需手工维护排名数组
 - 头像统一复用 Picks 3 的头像（`pick3weeklywinner/`），匹配不到显示名字首字占位
 
+**每轮选人统计（左栏顶部）**
+- 只展示**最近一个已开始轮次**的三项统计，各取前五：转入最多 / 转出最多 / 队长选择最多
+- 三列瀑布流布局（CSS `columns`），窄屏自动降为 2 列 / 1 列
+- 数据覆盖全联赛 334 名成员，由构建脚本从 FPL API 拉取每人的真实 picks 后统计
+
 **联赛分数排名（右栏）**
 - Classic 联赛（12968）的"单轮分数前十"与"总分前十"，含名次升降标识
 - 数据由构建脚本从 FPL API 拉取缓存，前端只读；缓存缺失时尝试直连，仍失败则显示空状态
@@ -57,11 +62,12 @@ GitHub Pages 没有后端，页面运行时**只读静态文件**，浏览器不
 2. 同步真实 DDL 并生成缓存：
 
 ```bash
-npm run refresh         # 一条命令跑完下面三步（推荐：改完 config.json 后执行）
+npm run refresh         # 一条命令跑完下面四步（推荐：改完 config.json 后执行）
 npm run sync:config     # 仅同步 config 派生字段（currentGameweek / 排行榜 entries）
 npm run sync:gameweeks  # 从 bootstrap-static 同步真实 DDL（转北京时间）到 config.json
 npm run build:cache     # 按 config 里的 fplId 请求 FPL API 生成真实阵容
 npm run build:standings # 拉取 Classic 联赛 12968 排名，生成 data/leagueStandings.json
+npm run build:stats     # 统计队长 / 转入 / 转出，生成 data/managerStats.json
 ```
 
 3. 产物写入 `public/data/cachedSquads.json`，随仓库提交
@@ -72,7 +78,34 @@ npm run build:standings # 拉取 Classic 联赛 12968 排名，生成 data/leagu
 前端读取优先级：
 
 - 阵容：`data/cachedSquads.json` 缓存 → 缓存未命中显示「数据尚未生成」空状态
+- 选人统计：`data/managerStats.json` 缓存 → 缓存未命中显示「统计数据尚未生成」空状态
 - 联赛分数排名：`data/leagueStandings.json` 缓存 → FPL standings API 尝试直连 → 空状态
+
+### 队长 / 转会统计的口径
+
+`build-manager-stats.js` 统计**最近一个已开始轮次**（判定依据 `bootstrap-static`
+的 `events[].finished` 取最大值）。GW6 结束、GW7 未开赛时显示 GW6；
+GW7 开赛并结算后自动切换到 GW7，无需改配置。
+
+| 榜单 | 口径 |
+| --- | --- |
+| 队长最多 | 该轮全体成员 `picks` 中 `is_captain === true` 的球员，按人数计 |
+| 转入最多 | GW(N) 有、GW(N-1) 没有的球员，按人数计 |
+| 转出最多 | GW(N-1) 有、GW(N) 没有的球员，按人数计 |
+
+**为什么不用官方 `event_transfers` 字段**：它只统计「消耗转会次数」的转会。
+`freehit` / `wildcard` 芯片能无限次改动阵容却不消耗次数（实测 GW3 用 freehit
+时出现 13 进 13 出，而 `event_transfers = 0`）。以**相邻两轮 picks 集合差集**为准，
+才能同时覆盖普通转会与免费芯片，这才是真实的阵容变动。
+
+口径已用真实数据交叉验证：8 名成员 × 7 轮 = 48 组，普通轮次差集数量与
+`event_transfers` 完全一致，特殊芯片轮次由芯片解释，**48/48 全部可解释**。
+自动替补（`automatic_subs`）的 in/out 都在同一轮 picks 集合内（仅 position 变化），
+实测 19/19 不污染差集。
+
+**增量缓存**：全联赛 334 名成员 × 2 轮 = 668 个请求。脚本把每轮各成员的 picks
+摘要缓存到 `.cache/picks/`（仓库内提交，但不在 `public/` 下、不进部署产物），
+只有新轮次出现时才拉取，其余运行**零请求、零 diff**。缓存是纯派生数据，删掉会自动重建。
 
 ### 宁缺毋假：全站零 Mock 兜底
 
@@ -95,6 +128,7 @@ npm run build:standings # 拉取 Classic 联赛 12968 排名，生成 data/leagu
 现在数据缺失时的行为是**显式空状态**，各模块分别显示：
 
 - 阵容未生成 → 「本轮阵容数据尚未生成」+ 提示运行 `npm run build:cache`
+- 选人统计未生成 → 「统计数据尚未生成」+ 提示运行 `npm run build:stats`
 - config.json 不可读 → 整页报错「配置加载失败」+ 具体 HTTP 原因，不再降级渲染
 - 榜单未生成 → 「暂无排名数据」+ 提示运行 `npm run build:standings`
 - 未开赛轮次 → 分数显示 `—`（不显示 `0分`，避免被误读为发挥失常）

@@ -19,6 +19,7 @@ on:
       - 'public/config.json'
       - 'scripts/build-fpl-cache.js'
       - 'scripts/build-league-standings.js'
+      - 'scripts/build-manager-stats.js'
   schedule:
     # 每 5 分钟兜底。注意 GitHub 定时任务在高峰期可能明显延迟，
     # 所以配置变更一律走 push 触发，不依赖定时的准时性。
@@ -49,12 +50,18 @@ jobs:
       - name: 生成联赛排行榜静态缓存（真实 FPL API）
         run: node scripts/build-league-standings.js
 
+      # 队长 / 转入 / 转出统计。全联赛 334 名成员 × 2 轮 = 668 个请求，
+      # 通过 .cache/picks 的增量缓存只在「新轮次出现」时才拉取，
+      # 其余运行零请求、零 diff。
+      - name: 生成队长与转会统计缓存（真实 FPL API）
+        run: node scripts/build-manager-stats.js
+
       - name: 有变更时提交（[skip ci] 防止循环触发）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet public/data/cachedSquads.json public/data/leagueStandings.json; then
-            git add public/data/cachedSquads.json public/data/leagueStandings.json
+          if ! git diff --quiet public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks; then
+            git add public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks
             git commit -m "[skip ci] 更新 FPL 静态缓存"
             git push
           else
@@ -68,3 +75,4 @@ jobs:
         run: |
           echo "::warning::存在获取失败的轮次，详见下方 _failures"
           grep -A 30 '"_failures"' public/data/cachedSquads.json || true
+          grep -A 30 '"_failures"' public/data/managerStats.json || true

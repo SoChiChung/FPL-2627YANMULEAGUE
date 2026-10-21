@@ -54,8 +54,13 @@
   <!-- ==================== 主内容区：桌面双栏 / 移动端单列 ==================== -->
   <main class="container layout">
 
-    <!-- ---- 主栏：Classic Weekly Winner 手风琴 ---- -->
+    <!-- ---- 主栏：选人统计 → Classic Weekly Winner 手风琴 ---- -->
     <div class="column column-main">
+      <!-- 每轮选人统计（队长 / 转入 / 转出，src/components/ManagerStats.js 渲染） -->
+      <div id="managerStatsView">
+        <div class="loading">统计加载中…</div>
+      </div>
+
       <section class="card" aria-labelledby="classicTitle">
         <div class="card-header">
           <h2 class="card-title" id="classicTitle">Classic Weekly Winner</h2>
