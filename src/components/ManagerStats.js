@@ -151,7 +151,7 @@ function renderLayout(data) {
               data-slide-index="${i}"
               ${i === 0 ? '' : 'hidden'}
             >
-              ${renderPanel(p, data.stats[p.key] || [])}
+              ${renderPanel(p, data.stats[p.key] || [], { columns: 1 })}
             </div>`).join('')}
         </div>
 
@@ -164,12 +164,12 @@ function renderLayout(data) {
       </div>
 
       <div class="ms-own-block">
-        ${renderPanel(OWNERSHIP_PANEL, data.stats.ownership || [])}
+        ${renderPanel(OWNERSHIP_PANEL, data.stats.ownership || [], { columns: 2 })}
       </div>
     </div>`;
 }
 
-function renderPanel(panel, rows) {
+function renderPanel(panel, rows, { columns = 1 } = {}) {
   if (!rows.length) {
     return `
       <div class="ms-panel ms-panel-${panel.accent}">
@@ -198,7 +198,7 @@ function renderPanel(panel, rows) {
           <p class="ms-panel-hint">${escapeHtml(panel.hint)}</p>
         </div>
       </div>
-      <ol class="ms-list">
+      <ol class="ms-list${columns > 1 ? ' ms-list-2col' : ''}">
         ${rows.map((row, index) => renderRow(row, index, maxCount)).join('')}
       </ol>
     </div>`;
@@ -212,6 +212,10 @@ function renderRow(row, index, maxCount) {
   const value = row.pct !== undefined && row.pct !== null
     ? `${row.pct}%`
     : String(row.count);
+  // 当前身价（百万英镑），固定一位小数（8 → £8.0m）
+  const price = row.price !== undefined && row.price !== null
+    ? `£${row.price.toFixed(1)}m`
+    : null;
 
   return `
     <li class="ms-row">
@@ -219,6 +223,7 @@ function renderRow(row, index, maxCount) {
       <div class="ms-main">
         <div class="ms-name-line">
           <span class="ms-name">${escapeHtml(row.name)}</span>
+          ${price ? `<span class="ms-price">${escapeHtml(price)}</span>` : ''}
         </div>
         <div class="ms-meta">
           ${row.position ? `<span class="ms-pos">${escapeHtml(row.position)}</span>` : ''}

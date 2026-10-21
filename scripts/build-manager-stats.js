@@ -301,6 +301,8 @@ function computeTransfers(currentEntries, previousEntries) {
  *    （与 transformPicksToSquad 的做法保持一致）。
  * ⚠️ elements[].element_type 是 1–4 的数字，位置缩写同样要查
  *    element_types[]，且 FPL 用的是 GKP，前端统一显示 GK。
+ * ⚠️ elements[].now_cost 是当前身价，单位 0.1M 英镑（61 = £6.1m），
+ *    这里换算成「百万英镑」保留一位小数。
  */
 function topN(counter, elementsMap, teamsMap, elementTypes, n, { base = null } = {}) {
   return [...counter.entries()]
@@ -312,6 +314,8 @@ function topN(counter, elementsMap, teamsMap, elementTypes, n, { base = null } =
         name: el?.web_name ?? String(id),
         club: teamsMap.get(el?.team) ?? '',
         position: typeName.replace('GKP', 'GK'),
+        // 当前身价（百万英镑，一位小数）；球员不在册时为 null
+        price: Number.isFinite(el?.now_cost) ? Number((el.now_cost / 10).toFixed(1)) : null,
         count,
       };
       // 传入 base 时额外给出占比（持有率用：持有人数 / 参与统计人数）

@@ -78,6 +78,8 @@ function normalizeList(list) {
       name: String(row.name ?? ''),
       club: String(row.club ?? ''),
       position: String(row.position ?? ''),
+      // 当前身价（百万英镑）；缺失时为 null
+      price: Number.isFinite(Number(row.price)) ? Number(row.price) : null,
       count: Number(row.count ?? 0),
       // 持有率榜单带占比；其余榜单没有该字段
       pct: row.pct === undefined || row.pct === null ? null : String(row.pct),
