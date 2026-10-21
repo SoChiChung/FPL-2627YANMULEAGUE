@@ -1158,19 +1158,29 @@ details.cw-row[open] .cw-chevron::before {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- 瀑布流容器 ---------- */
-/* 用 CSS 多列实现：三个榜单自上而下填充，自动错落成瀑布状 */
-.ms-columns {
-  column-count: 3;
-  column-gap: 14px;
-  column-fill: balance;
+/* ---------- 布局：2×2 网格 ---------- */
+/* 左列三个 5 名榜单，右列持有率 10 名榜单。
+   用 grid 而非 CSS columns：columns 的 break-inside: avoid 在四块
+   高度不一时会排出难以预测的空隙。 */
+.ms-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.ms-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
 }
 
 .ms-panel {
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
-  margin: 0 0 14px;
+  margin: 0;
   border: 1px solid rgba(242, 213, 127, 0.24);
   border-radius: var(--radius-sm);
   background: rgba(13, 24, 48, 0.34);
@@ -1201,7 +1211,7 @@ details.cw-row[open] .cw-chevron::before {
   color: var(--ink-3);
 }
 
-/* 三类榜单用不同色相区分：转入=蓝紫 / 转出=暖褐 / 队长=奶黄 */
+/* 四类榜单用不同色相区分：转入=蓝紫 / 转出=暖褐 / 队长=奶黄 / 持有率=青绿 */
 .ms-panel-in .ms-panel-icon {
   border-color: #7d93c9;
   color: #a9bbec;
@@ -1216,6 +1226,11 @@ details.cw-row[open] .cw-chevron::before {
   border-color: var(--ink);
   color: var(--ink);
   background: rgba(242, 213, 127, 0.16);
+}
+
+.ms-panel-own .ms-panel-icon {
+  border-color: #4f9d7c;
+  color: #86d3ae;
 }
 
 .ms-panel-title {
@@ -1366,6 +1381,10 @@ details.cw-row[open] .cw-chevron::before {
   background: var(--ink);
 }
 
+.ms-panel-own .ms-bar {
+  background: #4f9d7c;
+}
+
 .ms-count {
   font-family: var(--font-yan);
   font-size: 17px;
@@ -1374,6 +1393,7 @@ details.cw-row[open] .cw-chevron::before {
   font-variant-numeric: tabular-nums;
   min-width: 26px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .ms-empty {
@@ -1382,17 +1402,10 @@ details.cw-row[open] .cw-chevron::before {
 }
 
 /* ---------- 响应式 ---------- */
-/* 主栏宽约 700px（容器 1120 − 侧栏 380 − 间距），3 列各约 220px。
-   900px 以下整体布局变单列，主栏变满宽，此时 2 列更合适。 */
+/* 主栏宽约 700px（容器 1120 − 侧栏 380 − 间距），两列各约 340px */
 @media (max-width: 1100px) {
-  .ms-columns {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 700px) {
-  .ms-columns {
-    column-count: 1;
+  .ms-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

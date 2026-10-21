@@ -42,11 +42,14 @@ export async function loadManagerStats({ force = false } = {}) {
           ? Number(raw.previousGameweek)
           : null,
         participantCount: Number(raw.participantCount ?? 0),
+        // 纳入转会统计的成员数（本轮消耗了转会次数的人）
+        transferSampleCount: Number(raw.transferSampleCount ?? 0),
         generatedAt: raw._generatedAt ?? null,
         stats: {
           transfersIn: normalizeList(raw.stats?.transfersIn),
           transfersOut: normalizeList(raw.stats?.transfersOut),
           captains: normalizeList(raw.stats?.captains),
+          ownership: normalizeList(raw.stats?.ownership),
         },
       };
 
@@ -76,6 +79,8 @@ function normalizeList(list) {
       club: String(row.club ?? ''),
       position: String(row.position ?? ''),
       count: Number(row.count ?? 0),
+      // 持有率榜单带占比；其余榜单没有该字段
+      pct: row.pct === undefined || row.pct === null ? null : String(row.pct),
     }))
     .filter((row) => row.name && row.count > 0);
 }

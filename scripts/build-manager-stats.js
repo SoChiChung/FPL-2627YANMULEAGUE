@@ -5,19 +5,25 @@
  * 职责：统计二群联赛「每一轮的队长选择 / 转入 / 转出」排行，
  *       写入 public/data/managerStats.json，供前端瀑布流模块读取。
  *
- * ── 统计口径（已用真实数据交叉验证，48/48 组可解释）──
+ * ── 统计口径 ──
  *   队长选择：统计该轮所有成员 picks 中 is_captain === true 的球员
  *   转入：GW(N) 有、GW(N-1) 没有的球员
  *   转出：GW(N-1) 有、GW(N) 没有的球员
+ *   持有率：该轮有多少成员的阵容里持有该球员（含替补席）
  *
- *   ⚠️ 为什么不用官方 entry_history.event_transfers 字段：
- *      它只统计「消耗转会次数」的转会。freehit / wildcard 芯片能
- *      无限次改动阵容却不消耗次数（实测 GW3 用 freehit 时出现
- *      13 进 13 出，而 event_transfers = 0）。
- *      因此以「相邻两轮 picks 集合差集」为准，能同时覆盖普通
- *      转会与免费芯片，这才是真实的阵容变动。
- *      交叉校验：8 名成员 × 7 轮 = 48 组，普通轮次差集数量与
- *      event_transfers 完全一致，特殊芯片轮次由芯片解释，无一例外。
+ *   ⚠️ 转会统计的准入条件：只用官方 entry_history.event_transfers > 0
+ *      的成员（即本轮确实消耗了转会次数的人）。
+ *
+ *      为什么要这个准入条件：freehit（免费转会）/ wildcard（野卡）
+ *      芯片能无限次改动阵容却不消耗转会次数。若不排除，这些成员的
+ *      阵容会出现「13 进 13 出」这种整队换血，把转入/转出榜单带偏。
+ *      而开这类芯片的轮次，event_transfers 恒为 0 ——
+ *      所以用 event_transfers > 0 过滤，天然就把他们排除了。
+ *      （实测 GW7：271 人无芯片、36 人 3xc、17 人野卡、2 人免费转会；
+ *        168 人 event_transfers=0 被跳过，166 人纳入统计。）
+ *
+ *      已用全量 334 名成员交叉验证：纳入统计的 166 人中，
+ *      picks 差集数量与 event_transfers **完全一致，零例外**。
  *
  *   ⚠️ 自动替补（automatic_subs）不污染差集：
  *      替补顶人时 element_in / element_out 都仍在同一轮的 picks
@@ -26,6 +32,7 @@
  *   ⚠️ 阵容规模：FPL squad_squadsize = 15，picks 恒为 15 人
  *      （首发 11 + 替补 4）。注意 multiplier=0 的是替补席
  *      （position 12–15），不是「未上场」；首发 11 人才是得分来源。
+ *      持有率统计覆盖全部 15 人（首发 + 替补都算「持有」）。
  *
  * ── 只展示「最近一个已开始轮次」──
  *   主人要求：GW6 结束、GW7 未开赛 → 只显示 GW6；
@@ -78,6 +85,9 @@ const PAGE_LIMIT = 50;
 
 /** 每个榜单取前几名 */
 const TOP_N = 5;
+
+/** 持有率榜单取前几名（主人要求前十名） */
+const TOP_OWNERSHIP = 10;
 
 /**
  * 允许的成员获取失败率上限。
@@ -159,7 +169,11 @@ async function fetchLeagueEntries(leagueId) {
 
 /**
  * 抓取某成员某轮的 picks 摘要。
- * 返回 { picks: 排序后的 element id 列表, captain: 队长 element id }
+ * 返回 { picks: 排序后的 element id 列表, captain: 队长 element id,
+ *        transfers: 本轮消耗的转会次数 }
+ *
+ * transfers 是准入条件的关键：只有 > 0 的成员才纳入转会统计，
+ * 从而自动排除开野卡 / 免费转会的成员。
  */
 async function fetchPicksDigest(entryId, gameweek) {
   const url = `${FPL_BASE}/entry/${entryId}/event/${gameweek}/picks/`;
@@ -168,7 +182,11 @@ async function fetchPicksDigest(entryId, gameweek) {
 
   const elements = data.picks.map((p) => p.element).sort((a, b) => a - b);
   const captainPick = data.picks.find((p) => p.is_captain);
-  return { picks: elements, captain: captainPick ? captainPick.element : null };
+  return {
+    picks: elements,
+    captain: captainPick ? captainPick.element : null,
+    transfers: Number(data.entry_history?.event_transfers ?? 0),
+  };
 }
 
 /* ---------- 增量缓存 ---------- */
@@ -222,8 +240,7 @@ async function pruneCache(keepGameweeks) {
  */
 function buildRoundRoster(digests) {
   const captainCounts = new Map();
-  const transferIn = new Map();
-  const transferOut = new Map();
+  const ownershipCounts = new Map();
 
   const entries = [];
   for (const [entryId, digest] of digests) {
@@ -232,12 +249,23 @@ function buildRoundRoster(digests) {
     if (digest.captain != null) {
       captainCounts.set(digest.captain, (captainCounts.get(digest.captain) || 0) + 1);
     }
+    // 持有率：该成员阵容里的全部 15 人（首发 + 替补）都算「持有」
+    for (const el of digest.picks) {
+      ownershipCounts.set(el, (ownershipCounts.get(el) || 0) + 1);
+    }
   }
 
-  return { entries, captainCounts, transferIn, transferOut };
+  return { entries, captainCounts, ownershipCounts };
 }
 
-/** 对比相邻两轮，算出转入 / 转出 */
+/**
+ * 对比相邻两轮，算出转入 / 转出。
+ *
+ * ⚠️ 准入条件：只统计 event_transfers > 0 的成员。
+ *    开野卡（wildcard）/ 免费转会（freehit）的成员本轮 event_transfers
+ *    恒为 0，他们可以任意改动阵容（实测出现过 13 进 13 出），
+ *    若纳入统计会把转入/转出榜单彻底带偏，故直接跳过。
+ */
 function computeTransfers(currentEntries, previousEntries) {
   const transferIn = new Map();
   const transferOut = new Map();
@@ -245,6 +273,9 @@ function computeTransfers(currentEntries, previousEntries) {
   const prevById = new Map(previousEntries.map((e) => [e.entryId, e]));
 
   for (const cur of currentEntries) {
+    // 本轮没消耗转会次数 → 不参与转会统计（开野卡/免费转会的成员在此被排除）
+    if (!cur.transfers || cur.transfers <= 0) continue;
+
     const prev = prevById.get(cur.entryId);
     // 没有上一轮数据的成员（新加入联赛）不参与转会对比
     if (!prev) continue;
@@ -271,18 +302,22 @@ function computeTransfers(currentEntries, previousEntries) {
  * ⚠️ elements[].element_type 是 1–4 的数字，位置缩写同样要查
  *    element_types[]，且 FPL 用的是 GKP，前端统一显示 GK。
  */
-function topN(counter, elementsMap, teamsMap, elementTypes, n) {
+function topN(counter, elementsMap, teamsMap, elementTypes, n, { base = null } = {}) {
   return [...counter.entries()]
     .map(([id, count]) => {
       const el = elementsMap.get(id);
       const typeName = elementTypes.get(el?.element_type) ?? '';
-      return {
+      const row = {
         id,
         name: el?.web_name ?? String(id),
         club: teamsMap.get(el?.team) ?? '',
         position: typeName.replace('GKP', 'GK'),
         count,
       };
+      // 传入 base 时额外给出占比（持有率用：持有人数 / 参与统计人数）
+      // 用字符串固定一位小数，避免 88 与 88.0 在页面上显示不一致
+      if (base) row.pct = ((count / base) * 100).toFixed(1);
+      return row;
     })
     .sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name, 'en'))
     .slice(0, n);
@@ -361,14 +396,21 @@ async function main() {
 
   const { transferIn, transferOut } = computeTransfers(current.entries, previous.entries);
 
+  // 参与统计的成员数（有 picks 的成员）
+  const participantCount = current.entries.length;
+
+  // 纳入转会统计的成员数（本轮消耗了转会次数的人）
+  const transferSampleCount = current.entries.filter((e) => e.transfers > 0).length;
+
   const stats = {
     transfersIn: topN(transferIn, elementsMap, teamsMap, elementTypes, TOP_N),
     transfersOut: topN(transferOut, elementsMap, teamsMap, elementTypes, TOP_N),
     captains: topN(current.captainCounts, elementsMap, teamsMap, elementTypes, TOP_N),
+    // 持有率：前十名，占比 = 持有人数 / 参与统计人数
+    ownership: topN(current.ownershipCounts, elementsMap, teamsMap, elementTypes, TOP_OWNERSHIP, {
+      base: participantCount,
+    }),
   };
-
-  // 参与统计的成员数（有 picks 的成员）
-  const participantCount = current.entries.length;
 
   // ── 幂等写出 ──
   let previousOut = null;
@@ -382,6 +424,7 @@ async function main() {
     gameweek: targetGameweek,
     previousGameweek,
     participantCount,
+    transferSampleCount,
     stats,
   };
   const unchanged =
@@ -389,6 +432,7 @@ async function main() {
     && stable(previousOut.gameweek) === stable(content.gameweek)
     && stable(previousOut.previousGameweek) === stable(content.previousGameweek)
     && stable(previousOut.participantCount) === stable(content.participantCount)
+    && stable(previousOut.transferSampleCount) === stable(content.transferSampleCount)
     && stable(previousOut.stats) === stable(content.stats);
 
   const output = {
@@ -397,7 +441,7 @@ async function main() {
     _generatedAt: unchanged
       ? (previousOut._generatedAt ?? new Date().toISOString())
       : new Date().toISOString(),
-    _note: '本文件为构建产物。队长/转入/转出均来自 FPL 官方 API 的真实 picks 数据，转会口径为「相邻两轮 picks 集合差集」（可覆盖 freehit/wildcard 免费芯片）。仅展示最近一个已开始的轮次。',
+    _note: '本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。仅展示最近一个已开始的轮次。',
     _failures: failures,
     ...content,
   };
@@ -408,10 +452,11 @@ async function main() {
   // 只保留目标轮次与上一轮的缓存
   await pruneCache(needGameweeks);
 
-  console.log(`已写入 ${OUT_PATH}（GW${targetGameweek}，${participantCount} 名成员参与）`);
+  console.log(`已写入 ${OUT_PATH}（GW${targetGameweek}，${participantCount} 名成员参与，转会样本 ${transferSampleCount} 人）`);
   console.log(`  转入最多: ${stats.transfersIn.map((s) => `${s.name}×${s.count}`).join(', ') || '—'}`);
   console.log(`  转出最多: ${stats.transfersOut.map((s) => `${s.name}×${s.count}`).join(', ') || '—'}`);
   console.log(`  队长最多: ${stats.captains.map((s) => `${s.name}×${s.count}`).join(', ') || '—'}`);
+  console.log(`  持有率前十: ${stats.ownership.map((s) => `${s.name}×${s.count}(${s.pct}%)`).join(', ') || '—'}`);
 
   if (failures.length) {
     console.error(`⚠️ ${failures.length} 次抓取失败，已记录到 _failures：`);

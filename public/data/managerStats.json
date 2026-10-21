@@ -1,12 +1,13 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-21T06:53:34.736Z",
-  "_note": "本文件为构建产物。队长/转入/转出均来自 FPL 官方 API 的真实 picks 数据，转会口径为「相邻两轮 picks 集合差集」（可覆盖 freehit/wildcard 免费芯片）。仅展示最近一个已开始的轮次。",
+  "_generatedAt": "2026-10-21T07:11:36.333Z",
+  "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。仅展示最近一个已开始的轮次。",
   "_failures": [],
   "gameweek": 7,
   "previousGameweek": 6,
   "participantCount": 334,
+  "transferSampleCount": 166,
   "stats": {
     "transfersIn": [
       {
@@ -14,35 +15,35 @@
         "name": "De Cuyper",
         "club": "BHA",
         "position": "DEF",
-        "count": 46
+        "count": 37
       },
       {
         "id": 399,
         "name": "Cherki",
         "club": "MCI",
         "position": "MID",
-        "count": 36
+        "count": 32
       },
       {
         "id": 124,
         "name": "Groß",
         "club": "BHA",
         "position": "MID",
-        "count": 30
+        "count": 19
       },
       {
         "id": 53,
         "name": "Manzambi",
         "club": "AVL",
         "position": "MID",
-        "count": 20
+        "count": 14
       },
       {
         "id": 40,
         "name": "Rogers",
         "club": "CHE",
         "position": "MID",
-        "count": 20
+        "count": 14
       }
     ],
     "transfersOut": [
@@ -51,35 +52,35 @@
         "name": "B.Fernandes",
         "club": "MUN",
         "position": "MID",
-        "count": 44
+        "count": 32
       },
       {
         "id": 368,
         "name": "Szoboszlai",
         "club": "LIV",
         "position": "MID",
-        "count": 30
+        "count": 23
       },
       {
         "id": 379,
         "name": "Isak",
         "club": "LIV",
         "position": "FWD",
-        "count": 22
+        "count": 18
       },
       {
         "id": 464,
         "name": "Wissa",
         "club": "NEW",
         "position": "FWD",
-        "count": 19
+        "count": 18
       },
       {
         "id": 480,
         "name": "Gibbs-White",
         "club": "NFO",
         "position": "MID",
-        "count": 17
+        "count": 11
       }
     ],
     "captains": [
@@ -117,6 +118,88 @@
         "club": "MCI",
         "position": "MID",
         "count": 5
+      }
+    ],
+    "ownership": [
+      {
+        "id": 411,
+        "name": "Haaland",
+        "club": "MCI",
+        "position": "FWD",
+        "count": 294,
+        "pct": "88.0"
+      },
+      {
+        "id": 165,
+        "name": "João Pedro",
+        "club": "CHE",
+        "position": "FWD",
+        "count": 278,
+        "pct": "83.2"
+      },
+      {
+        "id": 8,
+        "name": "Calafiori",
+        "club": "ARS",
+        "position": "DEF",
+        "count": 251,
+        "pct": "75.1"
+      },
+      {
+        "id": 124,
+        "name": "Groß",
+        "club": "BHA",
+        "position": "MID",
+        "count": 222,
+        "pct": "66.5"
+      },
+      {
+        "id": 40,
+        "name": "Rogers",
+        "club": "CHE",
+        "position": "MID",
+        "count": 204,
+        "pct": "61.1"
+      },
+      {
+        "id": 115,
+        "name": "De Cuyper",
+        "club": "BHA",
+        "position": "DEF",
+        "count": 200,
+        "pct": "59.9"
+      },
+      {
+        "id": 31,
+        "name": "Konsa",
+        "club": "ARS",
+        "position": "DEF",
+        "count": 150,
+        "pct": "44.9"
+      },
+      {
+        "id": 154,
+        "name": "Palmer",
+        "club": "CHE",
+        "position": "MID",
+        "count": 134,
+        "pct": "40.1"
+      },
+      {
+        "id": 1,
+        "name": "Raya",
+        "club": "ARS",
+        "position": "GK",
+        "count": 133,
+        "pct": "39.8"
+      },
+      {
+        "id": 109,
+        "name": "Verbruggen",
+        "club": "BHA",
+        "position": "GK",
+        "count": 124,
+        "pct": "37.1"
       }
     ]
   }

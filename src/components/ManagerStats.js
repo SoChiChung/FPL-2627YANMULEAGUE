@@ -26,7 +26,14 @@ function escapeHtml(str) {
   }[ch]));
 }
 
-/** 各榜单的展示配置 */
+/**
+ * 各榜单的展示配置。
+ *
+ * 布局：2×2 网格 —— 左列放「转入最多 / 转出最多 / 队长最多」三块，
+ * 右列放「持有率最高」一块（十名，条目更多，单独占一列高度正好）。
+ * 用 grid 而非 CSS columns：columns 需要 break-inside: avoid，
+ * 四块高度不一时会排出难以预测的空隙，grid 布局更可控。
+ */
 const PANELS = [
   {
     key: 'transfersIn',
@@ -48,6 +55,13 @@ const PANELS = [
     hint: '本轮担任队长',
     icon: 'C',
     accent: 'cap',
+  },
+  {
+    key: 'ownership',
+    title: '持有率最高',
+    hint: '本轮阵容持有人数占比 · 前十名',
+    icon: '%',
+    accent: 'own',
   },
 ];
 
@@ -82,13 +96,18 @@ export async function renderManagerStats(container) {
 
   const hasAny = PANELS.some((p) => data.stats[p.key]?.length);
 
+  // 副标题说明统计口径：转会只统计本轮消耗了转会次数的成员
+  const sampleNote = data.transferSampleCount
+    ? `，${data.transferSampleCount} 人计入转会`
+    : '';
+
   container.innerHTML = `
     <section class="card ms-card" aria-labelledby="msTitle">
       <div class="card-header ms-header">
         <div>
           <h2 class="card-title" id="msTitle">每轮选人统计</h2>
           <p class="ms-sub">
-            GW${data.gameweek} · ${data.participantCount} 名成员参与
+            GW${data.gameweek} · ${data.participantCount} 名成员参与${sampleNote}
             · 数据更新于 ${escapeHtml(updated)}
           </p>
         </div>
@@ -98,11 +117,24 @@ export async function renderManagerStats(container) {
     </section>`;
 }
 
-/** 三列瀑布流：每列一个榜单，条目按名次排布 */
+/**
+ * 2×2 网格布局。
+ * 左列：转入最多 + 转出最多；右列：队长最多 + 持有率最高。
+ * 持有率有 10 名、队长有 5 名，右列会略高一点，但仍比三块堆叠紧凑。
+ */
 function renderColumns(data) {
+  const byKey = Object.fromEntries(PANELS.map((p) => [p.key, p]));
+  const colLeft = ['transfersIn', 'transfersOut'];
+  const colRight = ['captains', 'ownership'];
+
+  const render = (keys) => keys
+    .map((k) => renderPanel(byKey[k], data.stats[k] || []))
+    .join('');
+
   return `
-    <div class="ms-columns">
-      ${PANELS.map((panel) => renderPanel(panel, data.stats[panel.key] || [])).join('')}
+    <div class="ms-grid">
+      <div class="ms-col">${render(colLeft)}</div>
+      <div class="ms-col">${render(colRight)}</div>
     </div>`;
 }
 
@@ -145,6 +177,10 @@ function renderRow(row, index, maxCount) {
   const rankClass = index < 3 ? ` r${index + 1}` : '';
   // 条形长度按相对最高次数归一化，直观表达「多少人这么做」
   const width = Math.max(8, Math.round((row.count / maxCount) * 100));
+  // 持有率榜单显示百分比，人数榜单显示绝对人数
+  const value = row.pct !== undefined && row.pct !== null
+    ? `${row.pct}%`
+    : String(row.count);
 
   return `
     <li class="ms-row">
@@ -161,7 +197,7 @@ function renderRow(row, index, maxCount) {
           <div class="ms-bar" style="width:${width}%"></div>
         </div>
       </div>
-      <span class="ms-count">${row.count}</span>
+      <span class="ms-count">${escapeHtml(value)}</span>
     </li>`;
 }
 
