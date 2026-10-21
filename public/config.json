@@ -202,6 +202,13 @@
       "wechatName": "博弈",
       "avatarBaseName": "GW6",
       "awardImageBaseName": "GW6"
+    },
+    {
+      "gameweek": 7,
+      "fplId": "5882",
+      "wechatName": "Remember",
+      "avatarBaseName": "GW7",
+      "awardImageBaseName": "GW7"
     }
   ],
   "picks3WeeklyWinners": [
@@ -220,7 +227,7 @@
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
-    "currentGameweek": 6
+    "currentGameweek": 7
   },
   "predictionLeaderboard": {
     "totalPrizePool": 190,

@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-16T16:36:05.350Z",
+  "_generatedAt": "2026-10-21T04:27:32.575Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -634,6 +634,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-10-16T16:36:05.348Z"
+    },
+    {
+      "gameweek": 7,
+      "fplId": "5882",
+      "totalPoints": 102,
+      "captain": "Haaland",
+      "viceCaptain": "João Pedro",
+      "players": [
+        {
+          "name": "Raya",
+          "position": "GK",
+          "club": "ARS",
+          "points": 9
+        },
+        {
+          "name": "De Cuyper",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 6
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 6
+        },
+        {
+          "name": "Konsa",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 9
+        },
+        {
+          "name": "Rogers",
+          "position": "MID",
+          "club": "CHE",
+          "points": 2
+        },
+        {
+          "name": "Palmer",
+          "position": "MID",
+          "club": "CHE",
+          "points": 2
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 5
+        },
+        {
+          "name": "Tavernier",
+          "position": "MID",
+          "club": "BOU",
+          "points": 10
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 2,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Kostoulas",
+          "position": "FWD",
+          "club": "BHA",
+          "points": 12
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 39,
+          "isCaptain": true
+        }
+      ],
+      "bench": [
+        {
+          "name": "Bentley",
+          "position": "GK",
+          "club": "COV",
+          "points": 0
+        },
+        {
+          "name": "Egan",
+          "position": "DEF",
+          "club": "HUL",
+          "points": 0
+        },
+        {
+          "name": "Thomas",
+          "position": "DEF",
+          "club": "COV",
+          "points": 0
+        },
+        {
+          "name": "Gibbs-White",
+          "position": "MID",
+          "club": "NFO",
+          "points": 0
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-10-21T04:27:32.573Z"
     }
   ]
 }
