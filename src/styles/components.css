@@ -1158,21 +1158,173 @@ details.cw-row[open] .cw-chevron::before {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- 布局：2×2 网格 ---------- */
-/* 左列三个 5 名榜单，右列持有率 10 名榜单。
-   用 grid 而非 CSS columns：columns 的 break-inside: avoid 在四块
-   高度不一时会排出难以预测的空隙。 */
-.ms-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-}
+/* ---------- 布局：上下两个板块 ---------- */
+/* 转入 / 队长 / 转出 三个榜单合成一个轮播板块（占满整行）；
+   持有率最高（前十名）单独占下方一块。
 
-.ms-col {
+   ⚠️ 曾试过「轮播 + 持有率左右并排」，但轮播只有约 340px 宽，
+   3 个标签 + 2 个箭头挤不下，标签文字被截成「转入最…」。
+   改为上下排布后标签有整行宽度（约 700px），文字完整。 */
+.ms-layout {
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+/* ---------- 轮播板块 ---------- */
+.ms-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+/* 顶部标签页。
+   ⚠️ 轮播只有主栏一半宽（约 340px），3 个标签 + 2 个箭头会挤爆，
+   导致文字被箭头压住。实测「转出最多」被右箭头盖住。
+   解决：标签独占整行（左右留 30px 给箭头），标签文字用 flex:1 均分，
+   窄一点就靠 flex-shrink + 省略号兜底。 */
+.ms-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 0 30px;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 8px;
+}
+
+.ms-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  padding: 8px 8px;
+  font-family: var(--font-kai);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-3);
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.ms-tab-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ms-tab:hover {
+  color: var(--ink);
+  background: rgba(242, 213, 127, 0.08);
+}
+
+.ms-tab.is-active {
+  color: var(--ink);
+  background: var(--paper-3);
+  border-color: var(--ink);
+  border-bottom-color: var(--paper-3);
+  box-shadow: 0 2px 0 rgba(242, 213, 127, 0.12);
+}
+
+/* 标签页左侧的小圆标，与对应榜单同色 */
+.ms-tab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  font-family: var(--font-yan);
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink-3);
+  color: var(--ink-3);
+}
+
+.ms-tab-icon-in {
+  border-color: #7d93c9;
+  color: #a9bbec;
+}
+
+.ms-tab-icon-out {
+  border-color: #b4512d;
+  color: #f0a884;
+}
+
+.ms-tab-icon-cap {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(242, 213, 127, 0.16);
+}
+
+/* 幻灯片容器：只显示当前一张 */
+.ms-slides {
+  position: relative;
+  min-width: 0;
+}
+
+.ms-slide[hidden] {
+  display: none;
+}
+
+.ms-slide {
+  animation: ms-fade 0.28s ease;
+}
+
+@keyframes ms-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 左右切换箭头。
+   ⚠️ 不要绝对定位到内容区中部 —— 会压住名次徽章与数值（实测遮挡第 2 行）。
+   改为放在标签页行的两端（标签栏本身有独立高度），不侵入内容。 */
+.ms-nav {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  width: 26px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--ink-3);
+  background: var(--paper-2);
+  border: 1.5px solid var(--ink-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.ms-nav:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--paper-3);
+}
+
+.ms-nav-prev {
+  left: 0;
+}
+
+.ms-nav-next {
+  right: 0;
+}
+
+/* 持有率独立板块 */
+.ms-own-block {
   min-width: 0;
 }
 
@@ -1256,25 +1408,39 @@ details.cw-row[open] .cw-chevron::before {
   padding: 0;
 }
 
+/* 整行宽度下，单列 5 条会显得稀疏 —— 改成两列排布（5 条 → 3+2）。
+   用 grid 而非 CSS columns：columns 的 break-inside: avoid 会把条目
+   整体推到下一列，排布不可控；grid 明确两列、行序从左到右再折行。 */
+.ms-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+}
+
+/* 两列排布下，改成独立「小卡片」条目：
+   底部分隔线在两列时会对不齐，用卡片边框代替，视觉更整齐。 */
 .ms-row {
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr) auto;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
   gap: 9px;
   align-items: center;
-  padding: 9px 12px;
-  border-bottom: 1px dashed rgba(242, 213, 127, 0.14);
+  margin: 0 0 8px;
+  padding: 9px 11px;
+  border: 1px solid rgba(242, 213, 127, 0.16);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 24, 48, 0.30);
 }
 
 .ms-row:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .ms-rank {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
   font-family: var(--font-yan);
   font-size: 12px;
@@ -1286,22 +1452,32 @@ details.cw-row[open] .cw-chevron::before {
   font-variant-numeric: tabular-nums;
 }
 
+/* 前三名用金/银/铜金属色。
+   ⚠️ 之前 r2/r3 用的是 --ink-2(#52689a 蓝紫) 与 #7d93c9，
+      两者在深藏青底（--paper-2 #1d2c56）上几乎融为一体，看不出名次差别。
+      改用高亮金属色 + 深色描边 + 外发光，保证在深底上足够跳。 */
 .ms-rank.r1 {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--accent);
+  background: linear-gradient(145deg, #ffe9a8 0%, #f2d57f 45%, #d9ab3f 100%);
+  border-color: #fff3cf;
+  color: #4a3410;
+  box-shadow: 0 0 0 1px rgba(255, 233, 168, 0.55), 0 0 10px rgba(242, 213, 127, 0.5);
+  font-size: 13px;
 }
 
 .ms-rank.r2 {
-  background: var(--ink-2);
-  border-color: var(--ink-2);
-  color: var(--ink);
+  background: linear-gradient(145deg, #ffffff 0%, #dfe4ee 45%, #a8b2c8 100%);
+  border-color: #f2f5fb;
+  color: #2b3448;
+  box-shadow: 0 0 0 1px rgba(223, 228, 238, 0.5), 0 0 8px rgba(223, 228, 238, 0.35);
+  font-size: 13px;
 }
 
 .ms-rank.r3 {
-  background: #7d93c9;
-  border-color: var(--ink-3);
-  color: var(--ink);
+  background: linear-gradient(145deg, #f0b487 0%, #d68a4e 45%, #a85f2c 100%);
+  border-color: #f7c9a4;
+  color: #3d1f08;
+  box-shadow: 0 0 0 1px rgba(214, 138, 78, 0.5), 0 0 8px rgba(214, 138, 78, 0.35);
+  font-size: 13px;
 }
 
 .ms-main {
@@ -1404,7 +1580,7 @@ details.cw-row[open] .cw-chevron::before {
 /* ---------- 响应式 ---------- */
 /* 主栏宽约 700px（容器 1120 − 侧栏 380 − 间距），两列各约 340px */
 @media (max-width: 1100px) {
-  .ms-grid {
+  .ms-layout {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -1417,5 +1593,53 @@ details.cw-row[open] .cw-chevron::before {
 
   .ms-gw-badge {
     align-self: flex-start;
+  }
+
+  /* 窄屏标签页改为纵向堆叠，避免文字被压缩换行 */
+  .ms-tabs {
+    flex-direction: column;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .ms-tab {
+    flex: none;
+    justify-content: flex-start;
+  }
+
+  /* 窄屏箭头移到标签栏下方两端，不遮挡内容 */
+  .ms-nav {
+    position: static;
+    width: 32px;
+    height: 30px;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .ms-carousel {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    grid-template-areas:
+      "tabs tabs tabs"
+      "prev slides next";
+    align-items: start;
+  }
+
+  .ms-tabs {
+    grid-area: tabs;
+  }
+
+  .ms-slides {
+    grid-area: slides;
+  }
+
+  .ms-nav-prev {
+    grid-area: prev;
+    margin-top: 0;
+  }
+
+  .ms-nav-next {
+    grid-area: next;
+    margin-top: 0;
   }
 }

@@ -1,10 +1,15 @@
 /* ============================================================
- * src/components/ManagerStats.js — 每轮队长 / 转会统计（瀑布流）
+ * src/components/ManagerStats.js — 每轮队长 / 转会统计
  *
- * 展示「最近一个已开始轮次」的三项统计，各取前五：
- *   1. 转入最多的球员
- *   2. 转出最多的球员
- *   3. 队长选择最多的球员
+ * 展示「最近一个已开始轮次」的四项统计：
+ *   1. 转入最多（5）
+ *   2. 转出最多（5）
+ *   3. 队长选择最多（5）
+ *   4. 持有率最高（10）
+ *
+ * 布局（主人要求）：
+ *   · 转入 / 转出 / 队长 三个榜单**合成一个轮播板块**，标签页切换
+ *   · 持有率最高**单独成一个板块**
  *
  * 轮次切换由构建脚本决定（取 bootstrap events[].finished 的最大轮次），
  * 前端只读产物里写好的 gameweek，不自行推算。
@@ -27,14 +32,10 @@ function escapeHtml(str) {
 }
 
 /**
- * 各榜单的展示配置。
- *
- * 布局：2×2 网格 —— 左列放「转入最多 / 转出最多 / 队长最多」三块，
- * 右列放「持有率最高」一块（十名，条目更多，单独占一列高度正好）。
- * 用 grid 而非 CSS columns：columns 需要 break-inside: avoid，
- * 四块高度不一时会排出难以预测的空隙，grid 布局更可控。
+ * 轮播板块的三个榜单。
+ * 顺序按主人要求：转入最多 → 选择队长最多 → 转出最多。
  */
-const PANELS = [
+const CAROUSEL_PANELS = [
   {
     key: 'transfersIn',
     title: '转入最多',
@@ -43,32 +44,33 @@ const PANELS = [
     accent: 'in',
   },
   {
+    key: 'captains',
+    title: '选择队长最多',
+    hint: '本轮担任队长',
+    icon: 'C',
+    accent: 'cap',
+  },
+  {
     key: 'transfersOut',
     title: '转出最多',
     hint: '本轮卖出',
     icon: '↑',
     accent: 'out',
   },
-  {
-    key: 'captains',
-    title: '队长最多',
-    hint: '本轮担任队长',
-    icon: 'C',
-    accent: 'cap',
-  },
-  {
-    key: 'ownership',
-    title: '持有率最高',
-    hint: '本轮阵容持有人数占比 · 前十名',
-    icon: '%',
-    accent: 'own',
-  },
 ];
 
-/**
- * 渲染统计模块。
- * @param {HTMLElement} container 挂载容器
- */
+/** 独立板块：持有率最高（10 名） */
+const OWNERSHIP_PANEL = {
+  key: 'ownership',
+  title: '持有率最高',
+  hint: '本轮阵容持有人数占比 · 前十名',
+  icon: '%',
+  accent: 'own',
+};
+
+/** 自动轮播间隔（毫秒） */
+const AUTOPLAY_MS = 6000;
+
 export async function renderManagerStats(container) {
   if (!container) return;
   container.innerHTML = '<div class="loading">统计加载中…</div>';
@@ -80,7 +82,7 @@ export async function renderManagerStats(container) {
       <section class="card ms-card">
         <div class="card-header">
           <h2 class="card-title">每轮选人统计</h2>
-          <span class="card-hint">队长 · 转入 · 转出</span>
+          <span class="card-hint">队长 · 转入 · 转出 · 持有率</span>
         </div>
         <div class="empty-state">
           <p class="empty-title">统计数据尚未生成</p>
@@ -94,12 +96,13 @@ export async function renderManagerStats(container) {
     ? formatStampBeijing(new Date(data.generatedAt))
     : '尚未生成';
 
-  const hasAny = PANELS.some((p) => data.stats[p.key]?.length);
-
   // 副标题说明统计口径：转会只统计本轮消耗了转会次数的成员
   const sampleNote = data.transferSampleCount
     ? `，${data.transferSampleCount} 人计入转会`
     : '';
+
+  const hasAny = [...CAROUSEL_PANELS, OWNERSHIP_PANEL]
+    .some((p) => data.stats[p.key]?.length);
 
   container.innerHTML = `
     <section class="card ms-card" aria-labelledby="msTitle">
@@ -113,28 +116,56 @@ export async function renderManagerStats(container) {
         </div>
         <span class="ms-gw-badge">GW${data.gameweek}</span>
       </div>
-      ${hasAny ? renderColumns(data) : renderEmpty(data)}
+      ${hasAny ? renderLayout(data) : renderEmpty(data)}
     </section>`;
+
+  if (hasAny) setupCarousel(container);
 }
 
 /**
- * 2×2 网格布局。
- * 左列：转入最多 + 转出最多；右列：队长最多 + 持有率最高。
- * 持有率有 10 名、队长有 5 名，右列会略高一点，但仍比三块堆叠紧凑。
+ * 整体布局：左轮播板块（转入/队长/转出），右持有率独立板块。
  */
-function renderColumns(data) {
-  const byKey = Object.fromEntries(PANELS.map((p) => [p.key, p]));
-  const colLeft = ['transfersIn', 'transfersOut'];
-  const colRight = ['captains', 'ownership'];
-
-  const render = (keys) => keys
-    .map((k) => renderPanel(byKey[k], data.stats[k] || []))
-    .join('');
-
+function renderLayout(data) {
   return `
-    <div class="ms-grid">
-      <div class="ms-col">${render(colLeft)}</div>
-      <div class="ms-col">${render(colRight)}</div>
+    <div class="ms-layout">
+      <div class="ms-carousel" data-carousel>
+        <div class="ms-tabs" role="tablist" aria-label="统计榜单切换">
+          ${CAROUSEL_PANELS.map((p, i) => `
+            <button
+              type="button"
+              class="ms-tab${i === 0 ? ' is-active' : ''}"
+              role="tab"
+              aria-selected="${i === 0 ? 'true' : 'false'}"
+              data-tab-index="${i}"
+            >
+              <span class="ms-tab-icon ms-tab-icon-${p.accent}">${escapeHtml(p.icon)}</span>
+              <span class="ms-tab-text">${escapeHtml(p.title)}</span>
+            </button>`).join('')}
+        </div>
+
+        <div class="ms-slides">
+          ${CAROUSEL_PANELS.map((p, i) => `
+            <div
+              class="ms-slide${i === 0 ? ' is-active' : ''}"
+              role="tabpanel"
+              data-slide-index="${i}"
+              ${i === 0 ? '' : 'hidden'}
+            >
+              ${renderPanel(p, data.stats[p.key] || [])}
+            </div>`).join('')}
+        </div>
+
+        <button type="button" class="ms-nav ms-nav-prev" data-nav="prev" aria-label="上一项">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button type="button" class="ms-nav ms-nav-next" data-nav="next" aria-label="下一项">
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+
+      <div class="ms-own-block">
+        ${renderPanel(OWNERSHIP_PANEL, data.stats.ownership || [])}
+      </div>
     </div>`;
 }
 
@@ -207,4 +238,83 @@ function renderEmpty(data) {
       <p class="empty-title">GW${data.gameweek} 暂无统计数据</p>
       <p>该轮尚未产生有效选人记录，请检查缓存内容。</p>
     </div>`;
+}
+
+/* ---------- 轮播交互 ---------- */
+
+/**
+ * 绑定轮播行为：标签页点击、左右箭头、自动播放、悬停暂停、键盘支持。
+ * 采用「就地更新」策略：只切换 hidden 属性与 is-active class，
+ * 不重建 DOM（与项目「手风琴刷新时不重建 DOM」的约定一致）。
+ */
+function setupCarousel(container) {
+  const root = container.querySelector('[data-carousel]');
+  if (!root) return;
+
+  const tabs = [...root.querySelectorAll('.ms-tab')];
+  const slides = [...root.querySelectorAll('.ms-slide')];
+  const total = tabs.length;
+  let current = 0;
+  let timer = null;
+
+  function goTo(index) {
+    current = (index + total) % total;
+    tabs.forEach((t, i) => {
+      const active = i === current;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    slides.forEach((s, i) => {
+      const active = i === current;
+      s.classList.toggle('is-active', active);
+      if (active) s.removeAttribute('hidden');
+      else s.setAttribute('hidden', '');
+    });
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    timer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => {
+      goTo(i);
+      startAutoplay();
+    });
+  });
+
+  root.querySelector('[data-nav="prev"]')?.addEventListener('click', () => {
+    goTo(current - 1);
+    startAutoplay();
+  });
+  root.querySelector('[data-nav="next"]')?.addEventListener('click', () => {
+    goTo(current + 1);
+    startAutoplay();
+  });
+
+  // 悬停时暂停自动播放，方便用户阅读
+  root.addEventListener('mouseenter', stopAutoplay);
+  root.addEventListener('mouseleave', startAutoplay);
+
+  // 键盘左右方向键切换
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { goTo(current - 1); startAutoplay(); }
+    else if (e.key === 'ArrowRight') { goTo(current + 1); startAutoplay(); }
+  });
+
+  // 页面切到后台时停止计时器，回来再继续
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  startAutoplay();
 }
