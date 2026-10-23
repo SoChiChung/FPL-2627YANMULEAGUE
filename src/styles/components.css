@@ -1323,9 +1323,15 @@ details.cw-row[open] .cw-chevron::before {
   right: 0;
 }
 
-/* 持有率独立板块 */
+/* 持有率独立板块。
+   作为容器查询的宿主：持有率内部的列数要按「本板块实际可用宽度」决定，
+   而不是按视口宽度 —— 主栏宽度与视口并非 1:1（右侧还占着 380px 侧栏），
+   视口 950px 时主栏只剩 ~466px，而视口 900px 时主栏反而有 ~816px，
+   同一个视口断点在这两处会得到完全不同的结论。 */
 .ms-own-block {
   min-width: 0;
+  container-type: inline-size;
+  container-name: ms-own;
 }
 
 .ms-panel {
@@ -1410,34 +1416,49 @@ details.cw-row[open] .cw-chevron::before {
 
 /* 榜单条目排布。
    默认单列：轮播里的三个榜单（5 条）单列展示，条目更舒展。
-   .ms-list-2col：持有率板块（10 条）区域更宽，排两列。 */
+   .ms-list-2col：持有率板块（10 条）宽度够时排两列。
+   垂直间距统一由 grid 的 row-gap 提供，条目本身不再带 margin，
+   这样单列 / 双列切换时行距保持一致。 */
 .ms-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   column-gap: 16px;
-}
-
-.ms-list-2col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 8px;
 }
 
+/* 持有率板块（10 条）排两列。
+   ⚠️ 不能写死 repeat(2, ...)：主栏宽度与视口不是 1:1（右侧还有 380px 侧栏），
+   视口 950px 时主栏只剩 ~466px，两列各 ~225px —— 右侧「88.0%」所在的
+   auto 列不可压缩，把球员名挤成 0 宽（实测 name 的 clientWidth = 0），
+   身价文字随即溢出压住百分比，条目直接糊成一团。
+   改用容器查询按「本板块实际可用宽度」决定：
+     ≥ 540px → 两列（每列 ≥ 250px，姓名/身价/数值都放得下）
+     < 540px → 单列
+   阈值 540px = 2 × 250px 列宽 + 16px 列间距 + 24px 面板内边距余量。 */
+.ms-list-2col {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@container ms-own (min-width: 540px) {
+  .ms-list-2col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* 两列排布下，改成独立「小卡片」条目：
-   底部分隔线在两列时会对不齐，用卡片边框代替，视觉更整齐。 */
+   底部分隔线在两列时会对不齐，用卡片边框代替，视觉更整齐。
+   ⚠️ 垂直间距交给 .ms-list 的 row-gap，条目自身不再带 margin，
+   否则行距会被 row-gap + margin 双重叠加。 */
 .ms-row {
   display: grid;
   grid-template-columns: 26px minmax(0, 1fr) auto;
   gap: 9px;
   align-items: center;
-  margin: 0 0 8px;
+  margin: 0;
   padding: 9px 11px;
   border: 1px solid rgba(242, 213, 127, 0.16);
   border-radius: var(--radius-sm);
   background: rgba(13, 24, 48, 0.30);
-}
-
-.ms-row:last-child {
-  margin-bottom: 0;
 }
 
 .ms-rank {
@@ -1489,10 +1510,14 @@ details.cw-row[open] .cw-chevron::before {
   min-width: 0;
 }
 
+/* 姓名行：姓名与身价在空间不足时允许换行，避免身价溢出压住数值列。
+   ⚠️ 之前 .ms-price 是 flex-shrink:0，窄容器里它会把 .ms-name 挤成 0 宽
+   （实测 360px 两列时 name 的 clientWidth = 0，整条球员名消失）。 */
 .ms-name-line {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 0 8px;
   min-width: 0;
 }
 
@@ -1580,6 +1605,9 @@ details.cw-row[open] .cw-chevron::before {
   background: #4f9d7c;
 }
 
+/* 右侧数值列（人数 / 百分比）。
+   ⚠️ 百分比如「88.0%」比人数「37」宽得多，若不给 min-width，
+   grid 的 auto 列会把它当基准宽度，反过来把中间的姓名列压到 0 宽。 */
 .ms-count {
   font-family: var(--font-yan);
   font-size: 17px;
@@ -1597,12 +1625,10 @@ details.cw-row[open] .cw-chevron::before {
 }
 
 /* ---------- 响应式 ---------- */
-/* 主栏宽约 700px（容器 1120 − 侧栏 380 − 间距），两列各约 340px */
-@media (max-width: 1100px) {
-  .ms-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+/* 说明：.ms-layout 是 flex 纵向容器，轮播与持有率始终上下排布，
+   不需要断点切换。持有率板块内部的两列由 @container 规则按
+   「本板块实际可用宽度」决定（见 .ms-list-2col 处的注释），
+   与视口宽度解耦，主栏/侧栏布局变化时也不会算错。 */
 
 @media (max-width: 600px) {
   .ms-header {
@@ -1619,11 +1645,18 @@ details.cw-row[open] .cw-chevron::before {
     flex-direction: column;
     border-bottom: none;
     padding: 0;
+    gap: 4px;
   }
 
   .ms-tab {
     flex: none;
     justify-content: flex-start;
+  }
+
+  /* 竖排时选中态不该再「吃掉」底边（那是横排时为了与下方内容连成一体
+     做的 paper-3 底色处理），否则标签底部会留一道断口。 */
+  .ms-tab.is-active {
+    border-bottom-color: var(--ink);
   }
 
   /* 窄屏箭头移到标签栏下方两端，不遮挡内容 */
