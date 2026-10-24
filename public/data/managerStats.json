@@ -1,38 +1,38 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-24T01:10:05.667Z",
-  "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。仅展示最近一个已开始的轮次。",
+  "_generatedAt": "2026-10-24T16:33:38.619Z",
+  "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
-  "gameweek": 7,
-  "previousGameweek": 6,
+  "gameweek": 8,
+  "previousGameweek": 7,
   "participantCount": 334,
-  "transferSampleCount": 166,
+  "transferSampleCount": 208,
   "stats": {
     "transfersIn": [
       {
-        "id": 115,
-        "name": "De Cuyper",
-        "club": "BHA",
-        "position": "DEF",
-        "price": 5.3,
+        "id": 154,
+        "name": "Palmer",
+        "club": "CHE",
+        "position": "MID",
+        "price": 9.8,
+        "count": 44
+      },
+      {
+        "id": 68,
+        "name": "Tavernier",
+        "club": "BOU",
+        "position": "MID",
+        "price": 6.3,
         "count": 37
       },
       {
-        "id": 399,
-        "name": "Cherki",
-        "club": "MCI",
+        "id": 427,
+        "name": "Mbeumo",
+        "club": "MUN",
         "position": "MID",
-        "price": 8,
-        "count": 32
-      },
-      {
-        "id": 124,
-        "name": "Groß",
-        "club": "BHA",
-        "position": "MID",
-        "price": 6.2,
-        "count": 19
+        "price": 7.9,
+        "count": 23
       },
       {
         "id": 53,
@@ -40,7 +40,7 @@
         "club": "AVL",
         "position": "MID",
         "price": 6,
-        "count": 14
+        "count": 21
       },
       {
         "id": 40,
@@ -48,17 +48,25 @@
         "club": "CHE",
         "position": "MID",
         "price": 8,
-        "count": 14
+        "count": 19
       }
     ],
     "transfersOut": [
+      {
+        "id": 12,
+        "name": "Saka",
+        "club": "ARS",
+        "position": "MID",
+        "price": 9.5,
+        "count": 67
+      },
       {
         "id": 426,
         "name": "B.Fernandes",
         "club": "MUN",
         "position": "MID",
         "price": 11.7,
-        "count": 32
+        "count": 30
       },
       {
         "id": 368,
@@ -66,31 +74,23 @@
         "club": "LIV",
         "position": "MID",
         "price": 6.8,
-        "count": 23
+        "count": 20
       },
       {
-        "id": 379,
-        "name": "Isak",
-        "club": "LIV",
-        "position": "FWD",
-        "price": 9,
-        "count": 18
+        "id": 397,
+        "name": "Semenyo",
+        "club": "MCI",
+        "position": "MID",
+        "price": 8.2,
+        "count": 15
       },
       {
-        "id": 464,
-        "name": "Wissa",
-        "club": "NEW",
+        "id": 346,
+        "name": "Calvert-Lewin",
+        "club": "LEE",
         "position": "FWD",
         "price": 6.1,
-        "count": 18
-      },
-      {
-        "id": 480,
-        "name": "Gibbs-White",
-        "club": "NFO",
-        "position": "MID",
-        "price": 7.9,
-        "count": 11
+        "count": 9
       }
     ],
     "captains": [
@@ -100,7 +100,7 @@
         "club": "MCI",
         "position": "FWD",
         "price": 15.7,
-        "count": 268
+        "count": 162
       },
       {
         "id": 165,
@@ -108,15 +108,23 @@
         "club": "CHE",
         "position": "FWD",
         "price": 7.9,
-        "count": 10
+        "count": 97
       },
       {
-        "id": 12,
-        "name": "Saka",
-        "club": "ARS",
+        "id": 154,
+        "name": "Palmer",
+        "club": "CHE",
         "position": "MID",
-        "price": 9.5,
-        "count": 8
+        "price": 9.8,
+        "count": 28
+      },
+      {
+        "id": 480,
+        "name": "Gibbs-White",
+        "club": "NFO",
+        "position": "MID",
+        "price": 7.9,
+        "count": 11
       },
       {
         "id": 426,
@@ -124,14 +132,6 @@
         "club": "MUN",
         "position": "MID",
         "price": 11.7,
-        "count": 7
-      },
-      {
-        "id": 399,
-        "name": "Cherki",
-        "club": "MCI",
-        "position": "MID",
-        "price": 8,
         "count": 5
       }
     ],
@@ -151,8 +151,8 @@
         "club": "CHE",
         "position": "FWD",
         "price": 7.9,
-        "count": 278,
-        "pct": "83.2"
+        "count": 288,
+        "pct": "86.2"
       },
       {
         "id": 8,
@@ -160,8 +160,8 @@
         "club": "ARS",
         "position": "DEF",
         "price": 6,
-        "count": 251,
-        "pct": "75.1"
+        "count": 252,
+        "pct": "75.4"
       },
       {
         "id": 124,
@@ -169,8 +169,8 @@
         "club": "BHA",
         "position": "MID",
         "price": 6.2,
-        "count": 222,
-        "pct": "66.5"
+        "count": 228,
+        "pct": "68.3"
       },
       {
         "id": 40,
@@ -178,8 +178,8 @@
         "club": "CHE",
         "position": "MID",
         "price": 8,
-        "count": 204,
-        "pct": "61.1"
+        "count": 225,
+        "pct": "67.4"
       },
       {
         "id": 115,
@@ -187,17 +187,8 @@
         "club": "BHA",
         "position": "DEF",
         "price": 5.3,
-        "count": 200,
-        "pct": "59.9"
-      },
-      {
-        "id": 31,
-        "name": "Konsa",
-        "club": "ARS",
-        "position": "DEF",
-        "price": 4.6,
-        "count": 150,
-        "pct": "44.9"
+        "count": 204,
+        "pct": "61.1"
       },
       {
         "id": 154,
@@ -205,8 +196,17 @@
         "club": "CHE",
         "position": "MID",
         "price": 9.8,
-        "count": 134,
-        "pct": "40.1"
+        "count": 178,
+        "pct": "53.3"
+      },
+      {
+        "id": 31,
+        "name": "Konsa",
+        "club": "ARS",
+        "position": "DEF",
+        "price": 4.6,
+        "count": 163,
+        "pct": "48.8"
       },
       {
         "id": 1,
@@ -214,8 +214,8 @@
         "club": "ARS",
         "position": "GK",
         "price": 6.2,
-        "count": 133,
-        "pct": "39.8"
+        "count": 146,
+        "pct": "43.7"
       },
       {
         "id": 109,
@@ -223,8 +223,8 @@
         "club": "BHA",
         "position": "GK",
         "price": 4.6,
-        "count": 124,
-        "pct": "37.1"
+        "count": 123,
+        "pct": "36.8"
       }
     ]
   }
