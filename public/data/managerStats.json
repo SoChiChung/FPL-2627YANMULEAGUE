@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-23T01:00:29.354Z",
+  "_generatedAt": "2026-10-24T01:10:05.667Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。仅展示最近一个已开始的轮次。",
   "_failures": [],
   "gameweek": 7,
@@ -57,7 +57,7 @@
         "name": "B.Fernandes",
         "club": "MUN",
         "position": "MID",
-        "price": 11.8,
+        "price": 11.7,
         "count": 32
       },
       {
@@ -115,7 +115,7 @@
         "name": "Saka",
         "club": "ARS",
         "position": "MID",
-        "price": 9.6,
+        "price": 9.5,
         "count": 8
       },
       {
@@ -123,7 +123,7 @@
         "name": "B.Fernandes",
         "club": "MUN",
         "position": "MID",
-        "price": 11.8,
+        "price": 11.7,
         "count": 7
       },
       {
@@ -213,7 +213,7 @@
         "name": "Raya",
         "club": "ARS",
         "position": "GK",
-        "price": 6.1,
+        "price": 6.2,
         "count": 133,
         "pct": "39.8"
       },
