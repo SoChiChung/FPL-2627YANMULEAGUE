@@ -1,12 +1,16 @@
 name: deploy
 
-# GitHub Pages 自动部署：push 到 main 后构建 dist/ 并发布。
+# GitHub Pages 自动部署：push 到 main，或 FPL 缓存更新完成后构建 dist/ 并发布。
 # 需在仓库 Settings → Pages → Source 选择 “GitHub Actions”。
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: [update-fpl-cache]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -19,6 +23,8 @@ concurrency:
 
 jobs:
   build-deploy:
+    # 缓存任务失败时保留上一版站点；成功时确保部署包含它刚生成的缓存。
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
