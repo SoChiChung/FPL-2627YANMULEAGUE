@@ -34,12 +34,9 @@
  *      （position 12–15），不是「未上场」；首发 11 人才是得分来源。
  *      持有率统计覆盖全部 15 人（首发 + 替补都算「持有」）。
  *
- * ── 只展示「最近一个已开始轮次」──
- *   主人要求：GW6 结束、GW7 未开赛 → 只显示 GW6；
- *   GW7 开赛后 → 自动切换到 GW7。
- *   判定依据 bootstrap-static 的 events[].finished：
- *   finished = true 的最大轮次即为「已开始的最新轮次」。
- *   （GW7 已 finished、GW8 未 finished → 当前显示 GW7。）
+ * ── 只展示「DDL 已过的最近一轮」──
+ *   DDL 一过，统计轮次就切到该轮，不等待比赛开始或 finished；
+ *   picks 接口提供的是截止时阵容，适合统计队长、持有率等选人数据。
  *
  *   转入/转出需要「上一轮」作对比基准，所以每轮取两轮数据。
  *   GW1 没有上一轮，此时转入/转出为空（仅队长统计有值）。
@@ -339,11 +336,12 @@ async function main() {
   const teamsMap = new Map((bootstrap.teams || []).map((t) => [t.id, t.short_name]));
   const elementTypes = new Map((bootstrap.element_types || []).map((t) => [t.id, t.plural_name_short]));
 
-  // ── 判定「最近一个已开始轮次」──
-  // bootstrap 的 events[].finished 为 true 的最大轮次。
-  // 主人要求：GW6 结束、GW7 未开赛 → 显示 GW6；GW7 开赛后 → 切到 GW7。
-  const finishedGameweeks = events.filter((e) => e.finished).map((e) => e.id);
-  const targetGameweek = finishedGameweeks.length ? Math.max(...finishedGameweeks) : null;
+  // ── 判定 DDL 已过的最近一轮 ──
+  // 选人统计不依赖赛果结算；DDL 一过即可使用该轮锁定的 picks。
+  const now = Date.now();
+  const targetGameweek = events
+    .filter((e) => Number.isFinite(Date.parse(e.deadline_time)) && Date.parse(e.deadline_time) <= now)
+    .reduce((latest, e) => Math.max(latest, e.id), 0) || null;
 
   if (!targetGameweek) {
     console.warn('尚无已结束的轮次，跳过统计构建');
@@ -445,7 +443,7 @@ async function main() {
     _generatedAt: unchanged
       ? (previousOut._generatedAt ?? new Date().toISOString())
       : new Date().toISOString(),
-    _note: '本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。仅展示最近一个已开始的轮次。',
+    _note: '本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。',
     _failures: failures,
     ...content,
   };
