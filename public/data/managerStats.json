@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-25T00:13:14.721Z",
+  "_generatedAt": "2026-10-26T00:35:17.719Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 8,
@@ -204,7 +204,7 @@
         "name": "Konsa",
         "club": "ARS",
         "position": "DEF",
-        "price": 4.6,
+        "price": 4.7,
         "count": 163,
         "pct": "48.8"
       },
