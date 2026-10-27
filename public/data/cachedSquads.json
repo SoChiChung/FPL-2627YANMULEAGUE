@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-21T04:27:32.575Z",
+  "_generatedAt": "2026-10-27T09:14:24.904Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -739,6 +739,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-10-21T04:27:32.573Z"
+    },
+    {
+      "gameweek": 8,
+      "fplId": "80322",
+      "totalPoints": 81,
+      "captain": "Isak",
+      "viceCaptain": "Raya",
+      "players": [
+        {
+          "name": "Raya",
+          "position": "GK",
+          "club": "ARS",
+          "points": 7,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Gabriel",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 17
+        },
+        {
+          "name": "Araujo",
+          "position": "DEF",
+          "club": "LIV",
+          "points": 10
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 1
+        },
+        {
+          "name": "Doku",
+          "position": "MID",
+          "club": "MCI",
+          "points": 2
+        },
+        {
+          "name": "Rogers",
+          "position": "MID",
+          "club": "CHE",
+          "points": 1
+        },
+        {
+          "name": "Tavernier",
+          "position": "MID",
+          "club": "BOU",
+          "points": 10
+        },
+        {
+          "name": "Rayan",
+          "position": "MID",
+          "club": "BOU",
+          "points": 10
+        },
+        {
+          "name": "Gakpo",
+          "position": "MID",
+          "club": "LIV",
+          "points": 3
+        },
+        {
+          "name": "Isak",
+          "position": "FWD",
+          "club": "LIV",
+          "points": 18,
+          "isCaptain": true
+        },
+        {
+          "name": "Calvert-Lewin",
+          "position": "FWD",
+          "club": "LEE",
+          "points": 2
+        }
+      ],
+      "bench": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 0
+        },
+        {
+          "name": "João Pedro",
+          "position": "FWD",
+          "club": "CHE",
+          "points": 0
+        },
+        {
+          "name": "Hato",
+          "position": "DEF",
+          "club": "CHE",
+          "points": 0
+        },
+        {
+          "name": "Kayode",
+          "position": "DEF",
+          "club": "BRE",
+          "points": 0
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-10-27T09:14:24.902Z"
     }
   ]
 }
