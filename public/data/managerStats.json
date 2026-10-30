@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-29T02:48:42.601Z",
+  "_generatedAt": "2026-10-30T00:53:47.574Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 8,
@@ -159,7 +159,7 @@
         "name": "Calafiori",
         "club": "ARS",
         "position": "DEF",
-        "price": 6,
+        "price": 5.9,
         "count": 252,
         "pct": "75.4"
       },
