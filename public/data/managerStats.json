@@ -1,22 +1,22 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-31T01:56:16.075Z",
+  "_generatedAt": "2026-10-31T14:37:38.804Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
-  "gameweek": 8,
-  "previousGameweek": 7,
+  "gameweek": 9,
+  "previousGameweek": 8,
   "participantCount": 334,
-  "transferSampleCount": 208,
+  "transferSampleCount": 238,
   "stats": {
     "transfersIn": [
       {
-        "id": 154,
-        "name": "Palmer",
-        "club": "CHE",
-        "position": "MID",
-        "price": 9.8,
-        "count": 44
+        "id": 166,
+        "name": "N.Jackson",
+        "club": "AVL",
+        "position": "FWD",
+        "price": 6.9,
+        "count": 133
       },
       {
         "id": 68,
@@ -24,73 +24,73 @@
         "club": "BOU",
         "position": "MID",
         "price": 6.5,
-        "count": 37
+        "count": 54
       },
       {
-        "id": 427,
-        "name": "Mbeumo",
-        "club": "MUN",
-        "position": "MID",
-        "price": 7.9,
-        "count": 23
+        "id": 79,
+        "name": "Evanilson",
+        "club": "BOU",
+        "position": "FWD",
+        "price": 6.3,
+        "count": 39
       },
       {
-        "id": 53,
-        "name": "Manzambi",
-        "club": "AVL",
-        "position": "MID",
-        "price": 6.1,
-        "count": 21
+        "id": 379,
+        "name": "Isak",
+        "club": "LIV",
+        "position": "FWD",
+        "price": 9.1,
+        "count": 28
       },
       {
-        "id": 40,
-        "name": "Rogers",
-        "club": "CHE",
-        "position": "MID",
-        "price": 8.1,
+        "id": 112,
+        "name": "Van Hecke",
+        "club": "TOT",
+        "position": "DEF",
+        "price": 4.9,
         "count": 19
       }
     ],
     "transfersOut": [
       {
-        "id": 12,
-        "name": "Saka",
-        "club": "ARS",
-        "position": "MID",
-        "price": 9.5,
-        "count": 67
+        "id": 165,
+        "name": "João Pedro",
+        "club": "CHE",
+        "position": "FWD",
+        "price": 7.8,
+        "count": 157
       },
       {
-        "id": 426,
-        "name": "B.Fernandes",
-        "club": "MUN",
+        "id": 268,
+        "name": "King",
+        "club": "FUL",
         "position": "MID",
-        "price": 11.7,
-        "count": 30
-      },
-      {
-        "id": 368,
-        "name": "Szoboszlai",
-        "club": "LIV",
-        "position": "MID",
-        "price": 6.7,
+        "price": 5.6,
         "count": 20
       },
       {
-        "id": 397,
-        "name": "Semenyo",
-        "club": "MCI",
-        "position": "MID",
-        "price": 8.2,
-        "count": 15
+        "id": 569,
+        "name": "Gonzalo",
+        "club": "FUL",
+        "position": "FWD",
+        "price": 6,
+        "count": 19
       },
       {
-        "id": 346,
-        "name": "Calvert-Lewin",
-        "club": "LEE",
-        "position": "FWD",
-        "price": 6.1,
-        "count": 9
+        "id": 399,
+        "name": "Cherki",
+        "club": "MCI",
+        "position": "MID",
+        "price": 8,
+        "count": 14
+      },
+      {
+        "id": 8,
+        "name": "Calafiori",
+        "club": "ARS",
+        "position": "DEF",
+        "price": 5.9,
+        "count": 13
       }
     ],
     "captains": [
@@ -100,15 +100,15 @@
         "club": "MCI",
         "position": "FWD",
         "price": 15.8,
-        "count": 162
+        "count": 256
       },
       {
-        "id": 165,
-        "name": "João Pedro",
-        "club": "CHE",
+        "id": 166,
+        "name": "N.Jackson",
+        "club": "AVL",
         "position": "FWD",
-        "price": 7.8,
-        "count": 97
+        "price": 6.9,
+        "count": 20
       },
       {
         "id": 154,
@@ -116,22 +116,22 @@
         "club": "CHE",
         "position": "MID",
         "price": 9.8,
-        "count": 28
+        "count": 8
       },
       {
-        "id": 480,
-        "name": "Gibbs-White",
-        "club": "NFO",
-        "position": "MID",
-        "price": 7.9,
-        "count": 11
+        "id": 165,
+        "name": "João Pedro",
+        "club": "CHE",
+        "position": "FWD",
+        "price": 7.8,
+        "count": 5
       },
       {
-        "id": 426,
-        "name": "B.Fernandes",
-        "club": "MUN",
+        "id": 40,
+        "name": "Rogers",
+        "club": "CHE",
         "position": "MID",
-        "price": 11.7,
+        "price": 8.1,
         "count": 5
       }
     ],
@@ -142,17 +142,8 @@
         "club": "MCI",
         "position": "FWD",
         "price": 15.8,
-        "count": 294,
-        "pct": "88.0"
-      },
-      {
-        "id": 165,
-        "name": "João Pedro",
-        "club": "CHE",
-        "position": "FWD",
-        "price": 7.8,
-        "count": 288,
-        "pct": "86.2"
+        "count": 302,
+        "pct": "90.4"
       },
       {
         "id": 8,
@@ -160,15 +151,6 @@
         "club": "ARS",
         "position": "DEF",
         "price": 5.9,
-        "count": 252,
-        "pct": "75.4"
-      },
-      {
-        "id": 124,
-        "name": "Groß",
-        "club": "BHA",
-        "position": "MID",
-        "price": 6.2,
         "count": 228,
         "pct": "68.3"
       },
@@ -178,8 +160,17 @@
         "club": "CHE",
         "position": "MID",
         "price": 8.1,
-        "count": 225,
-        "pct": "67.4"
+        "count": 223,
+        "pct": "66.8"
+      },
+      {
+        "id": 124,
+        "name": "Groß",
+        "club": "BHA",
+        "position": "MID",
+        "price": 6.2,
+        "count": 222,
+        "pct": "66.5"
       },
       {
         "id": 115,
@@ -187,8 +178,8 @@
         "club": "BHA",
         "position": "DEF",
         "price": 5.3,
-        "count": 204,
-        "pct": "61.1"
+        "count": 194,
+        "pct": "58.1"
       },
       {
         "id": 154,
@@ -196,8 +187,17 @@
         "club": "CHE",
         "position": "MID",
         "price": 9.8,
-        "count": 178,
-        "pct": "53.3"
+        "count": 171,
+        "pct": "51.2"
+      },
+      {
+        "id": 166,
+        "name": "N.Jackson",
+        "club": "AVL",
+        "position": "FWD",
+        "price": 6.9,
+        "count": 163,
+        "pct": "48.8"
       },
       {
         "id": 31,
@@ -205,8 +205,17 @@
         "club": "ARS",
         "position": "DEF",
         "price": 4.7,
-        "count": 163,
-        "pct": "48.8"
+        "count": 155,
+        "pct": "46.4"
+      },
+      {
+        "id": 68,
+        "name": "Tavernier",
+        "club": "BOU",
+        "position": "MID",
+        "price": 6.5,
+        "count": 151,
+        "pct": "45.2"
       },
       {
         "id": 1,
@@ -214,17 +223,8 @@
         "club": "ARS",
         "position": "GK",
         "price": 6.2,
-        "count": 146,
-        "pct": "43.7"
-      },
-      {
-        "id": 109,
-        "name": "Verbruggen",
-        "club": "BHA",
-        "position": "GK",
-        "price": 4.6,
-        "count": 123,
-        "pct": "36.8"
+        "count": 143,
+        "pct": "42.8"
       }
     ]
   }
