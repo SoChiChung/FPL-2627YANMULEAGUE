@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-31T14:37:38.804Z",
+  "_generatedAt": "2026-11-01T00:57:19.915Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 9,
@@ -15,7 +15,7 @@
         "name": "N.Jackson",
         "club": "AVL",
         "position": "FWD",
-        "price": 6.9,
+        "price": 7,
         "count": 133
       },
       {
@@ -23,7 +23,7 @@
         "name": "Tavernier",
         "club": "BOU",
         "position": "MID",
-        "price": 6.5,
+        "price": 6.6,
         "count": 54
       },
       {
@@ -31,7 +31,7 @@
         "name": "Evanilson",
         "club": "BOU",
         "position": "FWD",
-        "price": 6.3,
+        "price": 6.4,
         "count": 39
       },
       {
@@ -39,7 +39,7 @@
         "name": "Isak",
         "club": "LIV",
         "position": "FWD",
-        "price": 9.1,
+        "price": 9.2,
         "count": 28
       },
       {
@@ -47,7 +47,7 @@
         "name": "Van Hecke",
         "club": "TOT",
         "position": "DEF",
-        "price": 4.9,
+        "price": 5,
         "count": 19
       }
     ],
@@ -57,7 +57,7 @@
         "name": "João Pedro",
         "club": "CHE",
         "position": "FWD",
-        "price": 7.8,
+        "price": 7.7,
         "count": 157
       },
       {
@@ -65,7 +65,7 @@
         "name": "King",
         "club": "FUL",
         "position": "MID",
-        "price": 5.6,
+        "price": 5.5,
         "count": 20
       },
       {
@@ -81,7 +81,7 @@
         "name": "Cherki",
         "club": "MCI",
         "position": "MID",
-        "price": 8,
+        "price": 7.9,
         "count": 14
       },
       {
@@ -107,7 +107,7 @@
         "name": "N.Jackson",
         "club": "AVL",
         "position": "FWD",
-        "price": 6.9,
+        "price": 7,
         "count": 20
       },
       {
@@ -123,7 +123,7 @@
         "name": "João Pedro",
         "club": "CHE",
         "position": "FWD",
-        "price": 7.8,
+        "price": 7.7,
         "count": 5
       },
       {
@@ -177,7 +177,7 @@
         "name": "De Cuyper",
         "club": "BHA",
         "position": "DEF",
-        "price": 5.3,
+        "price": 5.4,
         "count": 194,
         "pct": "58.1"
       },
@@ -195,7 +195,7 @@
         "name": "N.Jackson",
         "club": "AVL",
         "position": "FWD",
-        "price": 6.9,
+        "price": 7,
         "count": 163,
         "pct": "48.8"
       },
@@ -213,7 +213,7 @@
         "name": "Tavernier",
         "club": "BOU",
         "position": "MID",
-        "price": 6.5,
+        "price": 6.6,
         "count": 151,
         "pct": "45.2"
       },
