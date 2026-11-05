@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-10-27T09:14:24.904Z",
+  "_generatedAt": "2026-11-05T05:36:47.308Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -844,6 +844,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-10-27T09:14:24.902Z"
+    },
+    {
+      "gameweek": 9,
+      "fplId": "22212",
+      "totalPoints": 81,
+      "captain": "Kudus",
+      "viceCaptain": "Haaland",
+      "players": [
+        {
+          "name": "Raya",
+          "position": "GK",
+          "club": "ARS",
+          "points": 5
+        },
+        {
+          "name": "Konsa",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 10
+        },
+        {
+          "name": "Van Hecke",
+          "position": "DEF",
+          "club": "TOT",
+          "points": 15
+        },
+        {
+          "name": "Van de Ven",
+          "position": "DEF",
+          "club": "TOT",
+          "points": 6
+        },
+        {
+          "name": "Enciso",
+          "position": "MID",
+          "club": "IPS",
+          "points": 8
+        },
+        {
+          "name": "Manzambi",
+          "position": "MID",
+          "club": "AVL",
+          "points": 7
+        },
+        {
+          "name": "Kudus",
+          "position": "MID",
+          "club": "TOT",
+          "points": 14,
+          "isCaptain": true
+        },
+        {
+          "name": "Schade",
+          "position": "MID",
+          "club": "BRE",
+          "points": 3
+        },
+        {
+          "name": "Brobbey",
+          "position": "FWD",
+          "club": "SUN",
+          "points": 2
+        },
+        {
+          "name": "N.Jackson",
+          "position": "FWD",
+          "club": "AVL",
+          "points": 9
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 2,
+          "isViceCaptain": true
+        }
+      ],
+      "bench": [
+        {
+          "name": "Kelleher",
+          "position": "GK",
+          "club": "BRE",
+          "points": 0
+        },
+        {
+          "name": "Belloumi",
+          "position": "MID",
+          "club": "HUL",
+          "points": 0
+        },
+        {
+          "name": "Hill",
+          "position": "DEF",
+          "club": "BOU",
+          "points": 0
+        },
+        {
+          "name": "Egan",
+          "position": "DEF",
+          "club": "HUL",
+          "points": 0
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-11-05T05:36:47.306Z"
     }
   ]
 }

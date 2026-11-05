@@ -216,6 +216,13 @@
       "wechatName": "anfield steward",
       "avatarBaseName": "GW8",
       "awardImageBaseName": "GW8"
+    },
+    {
+      "gameweek": 9,
+      "fplId": "22212",
+      "wechatName": "Micky VDV",
+      "avatarBaseName": "GW9",
+      "awardImageBaseName": "GW9"
     }
   ],
   "picks3WeeklyWinners": [
@@ -234,7 +241,7 @@
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
-    "currentGameweek": 8
+    "currentGameweek": 9
   },
   "predictionLeaderboard": {
     "totalPrizePool": 190,
