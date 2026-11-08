@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-07T03:07:24.861Z",
+  "_generatedAt": "2026-11-08T03:23:37.150Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 10,
@@ -23,7 +23,7 @@
         "name": "Tavernier",
         "club": "BOU",
         "position": "MID",
-        "price": 6.6,
+        "price": 6.7,
         "count": 20
       },
       {
@@ -131,7 +131,7 @@
         "name": "N.Jackson",
         "club": "AVL",
         "position": "FWD",
-        "price": 7,
+        "price": 7.1,
         "count": 8
       }
     ],
@@ -195,7 +195,7 @@
         "name": "N.Jackson",
         "club": "AVL",
         "position": "FWD",
-        "price": 7,
+        "price": 7.1,
         "count": 172,
         "pct": "51.5"
       },
@@ -204,7 +204,7 @@
         "name": "Tavernier",
         "club": "BOU",
         "position": "MID",
-        "price": 6.6,
+        "price": 6.7,
         "count": 171,
         "pct": "51.2"
       },
