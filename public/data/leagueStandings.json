@@ -1,6 +1,6 @@
 {
   "source": "FPL API leagues-classic/12968/standings",
-  "updatedAt": "2026-11-14T15:07:08.329Z",
+  "updatedAt": "2026-11-14T19:55:39.244Z",
   "league": {
     "admin_entry": 6837,
     "closed": false,
@@ -256,7 +256,7 @@
       "last_rank": 26,
       "player_name": "猪 肚鸡",
       "rank": 33,
-      "rank_sort": 34,
+      "rank_sort": 33,
       "total": 684
     },
     {
@@ -300,7 +300,7 @@
       "last_rank": 73,
       "player_name": "牧马人 -",
       "rank": 86,
-      "rank_sort": 86,
+      "rank_sort": 87,
       "total": 661
     },
     {
@@ -333,7 +333,7 @@
       "last_rank": 32,
       "player_name": "zz zzZ",
       "rank": 33,
-      "rank_sort": 36,
+      "rank_sort": 35,
       "total": 684
     },
     {
@@ -344,7 +344,7 @@
       "last_rank": 63,
       "player_name": "kimi young",
       "rank": 62,
-      "rank_sort": 62,
+      "rank_sort": 63,
       "total": 671
     },
     {
@@ -366,7 +366,7 @@
       "last_rank": 117,
       "player_name": "Johnson Yang",
       "rank": 127,
-      "rank_sort": 128,
+      "rank_sort": 129,
       "total": 649
     },
     {
@@ -377,7 +377,7 @@
       "last_rank": 87,
       "player_name": "进藤 光",
       "rank": 127,
-      "rank_sort": 127,
+      "rank_sort": 128,
       "total": 649
     },
     {
@@ -443,7 +443,7 @@
       "last_rank": 197,
       "player_name": "George Qian",
       "rank": 150,
-      "rank_sort": 150,
+      "rank_sort": 152,
       "total": 640
     },
     {
@@ -476,7 +476,7 @@
       "last_rank": 128,
       "player_name": "小新 Jerry",
       "rank": 137,
-      "rank_sort": 137,
+      "rank_sort": 138,
       "total": 647
     },
     {
@@ -498,7 +498,7 @@
       "last_rank": 183,
       "player_name": "Lee Chris",
       "rank": 150,
-      "rank_sort": 152,
+      "rank_sort": 150,
       "total": 640
     },
     {
@@ -564,7 +564,7 @@
       "last_rank": 75,
       "player_name": "Krez Gavi",
       "rank": 86,
-      "rank_sort": 87,
+      "rank_sort": 86,
       "total": 661
     },
     {
@@ -795,7 +795,7 @@
       "last_rank": 115,
       "player_name": "Heavy Serenade",
       "rank": 137,
-      "rank_sort": 138,
+      "rank_sort": 137,
       "total": 647
     },
     {
@@ -905,7 +905,7 @@
       "last_rank": 125,
       "player_name": "Jun Wong",
       "rank": 99,
-      "rank_sort": 100,
+      "rank_sort": 101,
       "total": 657
     },
     {
@@ -916,7 +916,7 @@
       "last_rank": 112,
       "player_name": "Jia C hen",
       "rank": 127,
-      "rank_sort": 129,
+      "rank_sort": 127,
       "total": 649
     },
     {
@@ -982,7 +982,7 @@
       "last_rank": 105,
       "player_name": "Madridista Swatow",
       "rank": 123,
-      "rank_sort": 123,
+      "rank_sort": 124,
       "total": 650
     },
     {
@@ -1059,7 +1059,7 @@
       "last_rank": 92,
       "player_name": "Tissier Chi",
       "rank": 66,
-      "rank_sort": 67,
+      "rank_sort": 66,
       "total": 669
     },
     {
@@ -1169,7 +1169,7 @@
       "last_rank": 31,
       "player_name": "Donald Trump",
       "rank": 99,
-      "rank_sort": 101,
+      "rank_sort": 99,
       "total": 657
     },
     {
@@ -1455,7 +1455,7 @@
       "last_rank": 134,
       "player_name": "Suwa ---ω--",
       "rank": 115,
-      "rank_sort": 116,
+      "rank_sort": 115,
       "total": 654
     },
     {
@@ -1620,7 +1620,7 @@
       "last_rank": 144,
       "player_name": "SL HID",
       "rank": 174,
-      "rank_sort": 174,
+      "rank_sort": 175,
       "total": 627
     },
     {
@@ -1631,7 +1631,7 @@
       "last_rank": 267,
       "player_name": "W W",
       "rank": 272,
-      "rank_sort": 273,
+      "rank_sort": 272,
       "total": 569
     },
     {
@@ -1653,7 +1653,7 @@
       "last_rank": 260,
       "player_name": "Pete Chen",
       "rank": 272,
-      "rank_sort": 272,
+      "rank_sort": 273,
       "total": 569
     },
     {
@@ -1829,7 +1829,7 @@
       "last_rank": 101,
       "player_name": "Jang Kyujin",
       "rank": 123,
-      "rank_sort": 124,
+      "rank_sort": 123,
       "total": 650
     },
     {
@@ -1884,7 +1884,7 @@
       "last_rank": 13,
       "player_name": "Yilu Chen",
       "rank": 29,
-      "rank_sort": 29,
+      "rank_sort": 30,
       "total": 687
     },
     {
@@ -1895,7 +1895,7 @@
       "last_rank": 13,
       "player_name": "五星红旗 迎风飘扬",
       "rank": 29,
-      "rank_sort": 30,
+      "rank_sort": 29,
       "total": 687
     },
     {
@@ -2071,7 +2071,7 @@
       "last_rank": 161,
       "player_name": "All Template No Differentials",
       "rank": 142,
-      "rank_sort": 142,
+      "rank_sort": 143,
       "total": 643
     },
     {
@@ -2148,7 +2148,7 @@
       "last_rank": 180,
       "player_name": "HoCheung Yee",
       "rank": 176,
-      "rank_sort": 177,
+      "rank_sort": 176,
       "total": 627
     },
     {
@@ -2258,7 +2258,7 @@
       "last_rank": 186,
       "player_name": "White Bai",
       "rank": 189,
-      "rank_sort": 190,
+      "rank_sort": 189,
       "total": 622
     },
     {
@@ -2324,7 +2324,7 @@
       "last_rank": 26,
       "player_name": "Xinghao Gu",
       "rank": 33,
-      "rank_sort": 35,
+      "rank_sort": 34,
       "total": 684
     },
     {
@@ -2335,7 +2335,7 @@
       "last_rank": 207,
       "player_name": "Michael Zhang",
       "rank": 174,
-      "rank_sort": 175,
+      "rank_sort": 174,
       "total": 627
     },
     {
@@ -2577,7 +2577,7 @@
       "last_rank": 167,
       "player_name": "Santi Gong",
       "rank": 193,
-      "rank_sort": 194,
+      "rank_sort": 193,
       "total": 621
     },
     {
@@ -2621,7 +2621,7 @@
       "last_rank": 120,
       "player_name": "Zeyu Wang",
       "rank": 115,
-      "rank_sort": 115,
+      "rank_sort": 116,
       "total": 654
     },
     {
@@ -2643,7 +2643,7 @@
       "last_rank": 199,
       "player_name": "Senhao Xu",
       "rank": 210,
-      "rank_sort": 211,
+      "rank_sort": 210,
       "total": 610
     },
     {
@@ -2720,7 +2720,7 @@
       "last_rank": 67,
       "player_name": "fishenal yu",
       "rank": 99,
-      "rank_sort": 99,
+      "rank_sort": 100,
       "total": 657
     },
     {
@@ -2775,7 +2775,7 @@
       "last_rank": 24,
       "player_name": "Michael Xu",
       "rank": 33,
-      "rank_sort": 33,
+      "rank_sort": 36,
       "total": 684
     },
     {
@@ -2830,7 +2830,7 @@
       "last_rank": 241,
       "player_name": "东方 大白象",
       "rank": 210,
-      "rank_sort": 210,
+      "rank_sort": 211,
       "total": 610
     },
     {
@@ -2896,7 +2896,7 @@
       "last_rank": 77,
       "player_name": "Kevin Chen",
       "rank": 102,
-      "rank_sort": 103,
+      "rank_sort": 102,
       "total": 657
     },
     {
@@ -3017,7 +3017,7 @@
       "last_rank": 193,
       "player_name": "S Zhang",
       "rank": 198,
-      "rank_sort": 199,
+      "rank_sort": 198,
       "total": 620
     },
     {
@@ -3072,7 +3072,7 @@
       "last_rank": 166,
       "player_name": "Shan Lin",
       "rank": 189,
-      "rank_sort": 189,
+      "rank_sort": 190,
       "total": 622
     },
     {
@@ -3204,7 +3204,7 @@
       "last_rank": 46,
       "player_name": "zuo jiamu",
       "rank": 62,
-      "rank_sort": 63,
+      "rank_sort": 62,
       "total": 671
     },
     {
@@ -3292,7 +3292,7 @@
       "last_rank": 172,
       "player_name": "Jacky Ji",
       "rank": 176,
-      "rank_sort": 176,
+      "rank_sort": 177,
       "total": 627
     },
     {
@@ -3314,7 +3314,7 @@
       "last_rank": 158,
       "player_name": "Justtoonit CN",
       "rank": 142,
-      "rank_sort": 143,
+      "rank_sort": 142,
       "total": 643
     },
     {
@@ -3369,7 +3369,7 @@
       "last_rank": 210,
       "player_name": "Shen JW",
       "rank": 198,
-      "rank_sort": 198,
+      "rank_sort": 199,
       "total": 620
     },
     {
@@ -3457,7 +3457,7 @@
       "last_rank": 82,
       "player_name": "Leo Lew",
       "rank": 66,
-      "rank_sort": 66,
+      "rank_sort": 67,
       "total": 669
     },
     {
@@ -3545,7 +3545,7 @@
       "last_rank": 217,
       "player_name": "Reed Zhong",
       "rank": 193,
-      "rank_sort": 193,
+      "rank_sort": 194,
       "total": 621
     },
     {
@@ -3622,7 +3622,7 @@
       "last_rank": 96,
       "player_name": "Zanshuo Wang",
       "rank": 102,
-      "rank_sort": 102,
+      "rank_sort": 103,
       "total": 657
     },
     {
