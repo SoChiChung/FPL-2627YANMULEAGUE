@@ -237,11 +237,17 @@
       "winnerName": "Isaac Chen",
       "avatarBaseName": "GW3",
       "prize": 5
+    },
+    {
+      "gameweek": 10,
+      "winnerName": "杰克船长",
+      "avatarBaseName": "GW10",
+      "prize": 35
     }
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
-    "currentGameweek": 9
+    "currentGameweek": 10
   },
   "predictionLeaderboard": {
     "totalPrizePool": 190,
@@ -257,6 +263,12 @@
         "awardImageBaseName": "GW3",
         "prediction": "pick3获奖",
         "prize": 5
+      },
+      {
+        "username": "杰克船长",
+        "awardImageBaseName": "GW10",
+        "prediction": "pick3获奖",
+        "prize": 35
       }
     ]
   }
