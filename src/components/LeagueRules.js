@@ -18,6 +18,12 @@ const LEAGUE_RULES = [
   (total) => `联赛共 <strong>${total}</strong> 轮，与 FPL 官方赛季同步。`,
   () => `每轮以 FPL 官方 <strong>Deadline（DDL）</strong> 为结算节点，截止后统计当轮成绩。`,
   () => `每轮记录本联赛<strong>周最佳</strong>（该轮总分最高玩家）。`,
+  () => `当出现<strong>同分</strong>时，由管理员投骰子决定获奖者：
+    <ul>
+      <li>骰子 <strong>1–2</strong>：比较当轮 <strong>FT</strong>（转会次数），<strong>次数多者被淘汰</strong>；</li>
+      <li>骰子 <strong>3–4</strong>：比较当轮 <strong>TV</strong>（球队总身价），<strong>身价多者被淘汰</strong>；</li>
+      <li>骰子 <strong>5–6</strong>：比较当轮 <strong>OR</strong>（总排名），<strong>排名靠后者被淘汰</strong>。</li>
+    </ul>`,
   () => `周最佳奖金：每轮 <strong>5 元</strong>，赛季共计 <strong>190 元</strong>。`,
   () => `联赛最终排名奖金：
     <ul>

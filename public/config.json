@@ -223,6 +223,13 @@
       "wechatName": "Micky VDV",
       "avatarBaseName": "GW9",
       "awardImageBaseName": "GW9"
+    },
+    {
+      "gameweek": 10,
+      "fplId": "8021",
+      "wechatName": "海绵宝宝萨卡",
+      "avatarBaseName": "GW10",
+      "awardImageBaseName": "GW10"
     }
   ],
   "picks3WeeklyWinners": [

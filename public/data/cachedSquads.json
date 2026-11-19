@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-05T05:36:47.308Z",
+  "_generatedAt": "2026-11-19T05:41:48.965Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -949,6 +949,111 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-11-05T05:36:47.306Z"
+    },
+    {
+      "gameweek": 10,
+      "fplId": "8021",
+      "totalPoints": 97,
+      "captain": "Gabriel",
+      "viceCaptain": "Haaland",
+      "players": [
+        {
+          "name": "Raya",
+          "position": "GK",
+          "club": "ARS",
+          "points": 6
+        },
+        {
+          "name": "Muharemović",
+          "position": "DEF",
+          "club": "LEE",
+          "points": 10
+        },
+        {
+          "name": "Gabriel",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 16,
+          "isCaptain": true
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 6
+        },
+        {
+          "name": "Manzambi",
+          "position": "MID",
+          "club": "AVL",
+          "points": 2
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 10
+        },
+        {
+          "name": "Rogers",
+          "position": "MID",
+          "club": "CHE",
+          "points": 2
+        },
+        {
+          "name": "Tavernier",
+          "position": "MID",
+          "club": "BOU",
+          "points": 3
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 2,
+          "isViceCaptain": true
+        },
+        {
+          "name": "N.Jackson",
+          "position": "FWD",
+          "club": "AVL",
+          "points": 11
+        },
+        {
+          "name": "Evanilson",
+          "position": "FWD",
+          "club": "BOU",
+          "points": 9
+        }
+      ],
+      "bench": [
+        {
+          "name": "Kinsky",
+          "position": "GK",
+          "club": "TOT",
+          "points": 2
+        },
+        {
+          "name": "Silva",
+          "position": "DEF",
+          "club": "BOU",
+          "points": 3
+        },
+        {
+          "name": "Ayari",
+          "position": "MID",
+          "club": "BHA",
+          "points": 3
+        },
+        {
+          "name": "Vuskovic",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 12
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-11-19T05:41:48.961Z"
     }
   ]
 }
