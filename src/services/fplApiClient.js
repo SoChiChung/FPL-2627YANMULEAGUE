@@ -85,16 +85,22 @@ export function transformPicksToSquad({ fplId, gameweek, bootstrap, picks, live 
   const captain = players.find((p) => p.isCaptain);
   const vice = players.find((p) => p.isViceCaptain);
 
-  // 总分 = 首发 + 替补的得分之和（live.total_points × multiplier）。
+  // 单轮成绩口径（联赛约定，2026-11-19 主人定）：
+  //   单轮成绩 = 球员毛分之和 + 当轮转会扣分（扣分为负向，即净值）
   // 不用 entry_history.points：该字段在比赛「临时结算」阶段（finished=false）
   // 会延迟更新（实测 GW3 返回 68，而球员累加已为 88），导致总分偏低、与页面
-  // 展示的每个球员分数之和对不上。改为球员分数累加，保证总分永远自洽。
-  const totalPoints = [...players, ...bench].reduce((sum, p) => sum + p.points, 0);
+  // 展示的每个球员分数之和对不上。改为球员分数累加后，再单独扣转会分，
+  // 保证总分永远自洽（球员分之和 − 转会扣分）。
+  const grossPoints = [...players, ...bench].reduce((sum, p) => sum + p.points, 0);
+  const transferCost = Number(picks?.entry_history?.event_transfers_cost ?? 0) || 0;
+  const totalPoints = grossPoints - transferCost;
 
   return {
     gameweek,
     fplId,
     totalPoints,
+    grossPoints,
+    transferCost,
     captain: captain?.name ?? null,
     viceCaptain: vice?.name ?? null,
     players,

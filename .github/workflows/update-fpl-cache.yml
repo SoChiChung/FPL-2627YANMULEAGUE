@@ -60,8 +60,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks; then
-            git add public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks
+          if ! git diff --quiet public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks .cache/transfers; then
+            git add public/data/cachedSquads.json public/data/leagueStandings.json public/data/managerStats.json .cache/picks .cache/transfers
             git commit -m "[skip ci] 更新 FPL 静态缓存"
             git push
           else

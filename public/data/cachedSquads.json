@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-19T05:41:48.965Z",
+  "_generatedAt": "2026-11-19T05:57:21.324Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -9,6 +9,8 @@
       "gameweek": 1,
       "fplId": "18092",
       "totalPoints": 92,
+      "grossPoints": 92,
+      "transferCost": 0,
       "captain": "Ødegaard",
       "viceCaptain": "Haaland",
       "players": [
@@ -108,12 +110,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-09-15T08:12:54.007Z"
+      "fetchedAt": "2026-11-19T05:57:18.294Z"
     },
     {
       "gameweek": 2,
       "fplId": "1440306",
       "totalPoints": 151,
+      "grossPoints": 151,
+      "transferCost": 0,
       "captain": "B.Fernandes",
       "viceCaptain": "Haaland",
       "players": [
@@ -213,12 +217,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-09-15T08:12:54.126Z"
+      "fetchedAt": "2026-11-19T05:57:18.400Z"
     },
     {
       "gameweek": 3,
       "fplId": "111162",
       "totalPoints": 88,
+      "grossPoints": 88,
+      "transferCost": 0,
       "captain": "Haaland",
       "viceCaptain": "Isak",
       "players": [
@@ -318,12 +324,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-09-15T08:12:54.367Z"
+      "fetchedAt": "2026-11-19T05:57:18.914Z"
     },
     {
       "gameweek": 4,
       "fplId": "14156",
       "totalPoints": 110,
+      "grossPoints": 110,
+      "transferCost": 0,
       "captain": "João Pedro",
       "viceCaptain": "Groß",
       "players": [
@@ -423,12 +431,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-09-15T14:09:44.554Z"
+      "fetchedAt": "2026-11-19T05:57:19.138Z"
     },
     {
       "gameweek": 5,
       "fplId": "5924618",
       "totalPoints": 81,
+      "grossPoints": 81,
+      "transferCost": 0,
       "captain": "Haaland",
       "viceCaptain": "Isak",
       "players": [
@@ -528,12 +538,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-10-09T07:15:34.547Z"
+      "fetchedAt": "2026-11-19T05:57:19.244Z"
     },
     {
       "gameweek": 6,
       "fplId": "1166053",
       "totalPoints": 102,
+      "grossPoints": 102,
+      "transferCost": 0,
       "captain": "João Pedro",
       "viceCaptain": "Palmer",
       "players": [
@@ -633,12 +645,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-10-16T16:36:05.348Z"
+      "fetchedAt": "2026-11-19T05:57:19.424Z"
     },
     {
       "gameweek": 7,
       "fplId": "5882",
       "totalPoints": 102,
+      "grossPoints": 102,
+      "transferCost": 0,
       "captain": "Haaland",
       "viceCaptain": "João Pedro",
       "players": [
@@ -738,12 +752,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-10-21T04:27:32.573Z"
+      "fetchedAt": "2026-11-19T05:57:19.538Z"
     },
     {
       "gameweek": 8,
       "fplId": "80322",
       "totalPoints": 81,
+      "grossPoints": 81,
+      "transferCost": 0,
       "captain": "Isak",
       "viceCaptain": "Raya",
       "players": [
@@ -843,12 +859,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-10-27T09:14:24.902Z"
+      "fetchedAt": "2026-11-19T05:57:20.574Z"
     },
     {
       "gameweek": 9,
       "fplId": "22212",
       "totalPoints": 81,
+      "grossPoints": 81,
+      "transferCost": 0,
       "captain": "Kudus",
       "viceCaptain": "Haaland",
       "players": [
@@ -948,12 +966,14 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-11-05T05:36:47.306Z"
+      "fetchedAt": "2026-11-19T05:57:20.861Z"
     },
     {
       "gameweek": 10,
       "fplId": "8021",
       "totalPoints": 97,
+      "grossPoints": 97,
+      "transferCost": 0,
       "captain": "Gabriel",
       "viceCaptain": "Haaland",
       "players": [
@@ -1053,7 +1073,7 @@
         }
       ],
       "status": "settled",
-      "fetchedAt": "2026-11-19T05:41:48.961Z"
+      "fetchedAt": "2026-11-19T05:57:21.323Z"
     }
   ]
 }

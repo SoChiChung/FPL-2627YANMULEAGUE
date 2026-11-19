@@ -627,6 +627,12 @@
   margin-bottom: 4px;
 }
 
+/* 阵容总分的转会扣分说明（净值 = 毛分 + 扣分） */
+.squad-cost {
+  color: var(--ink-4);
+  font-size: 11px;
+}
+
 .cw-award-link {
   display: block;
   max-width: 260px;
@@ -850,6 +856,15 @@
   line-height: 1.4;
 }
 
+/* 单轮成绩口径说明（净值 = 毛分 + 转会扣分） */
+.standings-note {
+  margin: 2px 0 0;
+  color: var(--ink-4);
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
 .standings-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -934,6 +949,20 @@
   display: block;
   color: var(--ink-4);
   font-size: 11px;
+}
+
+/* 单轮榜的转会扣分说明（净值 = 毛分 + 扣分）
+   ⚠️ 放在队名列（minmax(0,1fr)）里，分数列只有 56px，放不下会横向溢出。 */
+.standings-cost {
+  display: block;
+  min-width: 0;
+  margin-top: 2px;
+  color: var(--ink-4);
+  font-size: 10px;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rank-move {

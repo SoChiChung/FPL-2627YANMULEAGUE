@@ -43,9 +43,17 @@ export function renderSquad(container, squad, sourceLabel) {
   }
   const bench = squad.bench || [];
 
+  // 单轮成绩 = 毛分 + 转会扣分（净值）。有扣分时把构成写清楚，
+  // 避免「97 分」被误读成球员分之和。
+  const cost = Number(squad.transferCost ?? 0);
+  const gross = squad.grossPoints ?? squad.totalPoints;
+  const costNote = cost > 0
+    ? `<span class="squad-cost">（毛分 ${escapeHtml(String(gross))} · 扣转会 ${escapeHtml(String(cost))}）</span>`
+    : '';
+
   let html = `
     <div class="squad-summary">
-      总分 ${escapeHtml(String(squad.totalPoints ?? '—'))}
+      总分 ${escapeHtml(String(squad.totalPoints ?? '—'))}${costNote}
       · 队长 ${escapeHtml(squad.captain ?? '—')}（C）
       · 副队长 ${escapeHtml(squad.viceCaptain ?? '—')}（VC）
     </div>`;

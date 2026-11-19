@@ -30,6 +30,7 @@ export async function renderLeagueStandings(container, config) {
           <div>
             <h2 class="card-title" id="standingsTitle">联赛分数排名</h2>
             <p class="standings-sub">联赛号 ${escapeHtml(data.meta.leagueId)} · ${escapeHtml(data.meta.source)} · ${escapeHtml(updated)}</p>
+            <p class="standings-note">单轮成绩 = 当轮毛分 + 转会扣分（净值）</p>
           </div>
         </div>
         <div class="standings-grid">
@@ -76,12 +77,20 @@ function standingsRow(row, scoreLabel, scoreKey) {
     ? rankMovement(row.lastRank, row.rank)
     : '<span class="rank-move neutral">-</span>';
 
+  // 单轮榜展示的是净值（毛分 + 转会扣分）。有扣分时把构成写出来，
+  // 避免读者把「97 分」误读成毛分。
+  // ⚠️ 放在队名列（弹性宽度）而不是分数列（56px），否则窄屏必然溢出。
+  const costNote = scoreKey === 'eventTotal' && row.eventCost > 0
+    ? `<span class="standings-cost">毛分 ${row.eventGross} · 扣转会 ${row.eventCost}</span>`
+    : '';
+
   return `
     <li class="standings-row">
       <span class="lb-rank${rankClass}">${row.displayRank}</span>
       <div class="standings-team">
         <strong>${escapeHtml(row.entryName)}</strong>
         <span>${escapeHtml(row.playerName || 'Manager')}</span>
+        ${costNote}
       </div>
       <div class="standings-score">
         <strong>${formatNumber(row[scoreKey])}</strong>

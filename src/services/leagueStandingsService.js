@@ -90,11 +90,20 @@ function buildStandingsView(results, meta) {
 
 function normalizeEntry(row) {
   if (!row) return null;
+  const gross = Number(row.event_total ?? row.eventTotal ?? 0);
+  // 单轮成绩口径（联赛约定）：毛分 + 当轮转会扣分 = 净值。
+  // 构建脚本写出 event_total_net；老缓存没有该字段时退回毛分。
+  const cost = Number(row.event_transfers_cost ?? 0);
+  const net = row.event_total_net !== undefined && row.event_total_net !== null
+    ? Number(row.event_total_net)
+    : gross - cost;
   return {
     entry: row.entry,
     entryName: row.entry_name || row.entryName || 'Unknown Team',
     playerName: row.player_name || row.playerName || '',
-    eventTotal: Number(row.event_total ?? row.eventTotal ?? 0),
+    eventTotal: net,
+    eventGross: gross,
+    eventCost: cost,
     total: Number(row.total ?? 0),
     rank: Number(row.rank ?? 0),
     lastRank: Number(row.last_rank ?? row.lastRank ?? 0),
