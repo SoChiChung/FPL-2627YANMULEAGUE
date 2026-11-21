@@ -1,46 +1,30 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-21T03:21:00.295Z",
+  "_generatedAt": "2026-11-21T11:32:07.852Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
-  "gameweek": 10,
-  "previousGameweek": 9,
+  "gameweek": 11,
+  "previousGameweek": 10,
   "participantCount": 335,
-  "transferSampleCount": 172,
+  "transferSampleCount": 162,
   "stats": {
     "transfersIn": [
-      {
-        "id": 379,
-        "name": "Isak",
-        "club": "LIV",
-        "position": "FWD",
-        "price": 9.3,
-        "count": 20
-      },
-      {
-        "id": 68,
-        "name": "Tavernier",
-        "club": "BOU",
-        "position": "MID",
-        "price": 6.7,
-        "count": 20
-      },
       {
         "id": 112,
         "name": "Van Hecke",
         "club": "TOT",
         "position": "DEF",
         "price": 5.1,
-        "count": 19
+        "count": 49
       },
       {
-        "id": 115,
-        "name": "De Cuyper",
-        "club": "BHA",
-        "position": "DEF",
-        "price": 5.5,
-        "count": 15
+        "id": 166,
+        "name": "N.Jackson",
+        "club": "AVL",
+        "position": "FWD",
+        "price": 7.2,
+        "count": 33
       },
       {
         "id": 79,
@@ -48,6 +32,22 @@
         "club": "BOU",
         "position": "FWD",
         "price": 6.5,
+        "count": 16
+      },
+      {
+        "id": 45,
+        "name": "McGinn",
+        "club": "AVL",
+        "position": "MID",
+        "price": 5.5,
+        "count": 16
+      },
+      {
+        "id": 504,
+        "name": "Vuskovic",
+        "club": "BHA",
+        "position": "DEF",
+        "price": 5.3,
         "count": 15
       }
     ],
@@ -66,23 +66,23 @@
         "club": "NEW",
         "position": "DEF",
         "price": 5.2,
-        "count": 19
+        "count": 24
       },
       {
-        "id": 480,
-        "name": "Gibbs-White",
-        "club": "NFO",
-        "position": "MID",
-        "price": 7.8,
+        "id": 391,
+        "name": "Gvardiol",
+        "club": "MCI",
+        "position": "DEF",
+        "price": 5.6,
         "count": 18
       },
       {
-        "id": 399,
-        "name": "Cherki",
-        "club": "MCI",
+        "id": 453,
+        "name": "Barnes",
+        "club": "NEW",
         "position": "MID",
-        "price": 7.9,
-        "count": 17
+        "price": 6,
+        "count": 13
       },
       {
         "id": 346,
@@ -90,7 +90,7 @@
         "club": "LEE",
         "position": "FWD",
         "price": 6,
-        "count": 16
+        "count": 11
       }
     ],
     "captains": [
@@ -100,31 +100,7 @@
         "club": "MCI",
         "position": "FWD",
         "price": 15.8,
-        "count": 200
-      },
-      {
-        "id": 379,
-        "name": "Isak",
-        "club": "LIV",
-        "position": "FWD",
-        "price": 9.3,
-        "count": 34
-      },
-      {
-        "id": 8,
-        "name": "Calafiori",
-        "club": "ARS",
-        "position": "DEF",
-        "price": 5.9,
-        "count": 24
-      },
-      {
-        "id": 4,
-        "name": "Gabriel",
-        "club": "ARS",
-        "position": "DEF",
-        "price": 8.1,
-        "count": 10
+        "count": 256
       },
       {
         "id": 166,
@@ -132,7 +108,31 @@
         "club": "AVL",
         "position": "FWD",
         "price": 7.2,
-        "count": 8
+        "count": 24
+      },
+      {
+        "id": 379,
+        "name": "Isak",
+        "club": "LIV",
+        "position": "FWD",
+        "price": 9.3,
+        "count": 12
+      },
+      {
+        "id": 115,
+        "name": "De Cuyper",
+        "club": "BHA",
+        "position": "DEF",
+        "price": 5.5,
+        "count": 6
+      },
+      {
+        "id": 154,
+        "name": "Palmer",
+        "club": "CHE",
+        "position": "MID",
+        "price": 9.8,
+        "count": 6
       }
     ],
     "ownership": [
@@ -151,17 +151,8 @@
         "club": "CHE",
         "position": "MID",
         "price": 8.2,
-        "count": 239,
-        "pct": "71.3"
-      },
-      {
-        "id": 8,
-        "name": "Calafiori",
-        "club": "ARS",
-        "position": "DEF",
-        "price": 5.9,
-        "count": 237,
-        "pct": "70.7"
+        "count": 244,
+        "pct": "72.8"
       },
       {
         "id": 124,
@@ -169,8 +160,17 @@
         "club": "BHA",
         "position": "MID",
         "price": 6.3,
-        "count": 236,
-        "pct": "70.4"
+        "count": 242,
+        "pct": "72.2"
+      },
+      {
+        "id": 8,
+        "name": "Calafiori",
+        "club": "ARS",
+        "position": "DEF",
+        "price": 5.9,
+        "count": 231,
+        "pct": "69.0"
       },
       {
         "id": 115,
@@ -178,17 +178,8 @@
         "club": "BHA",
         "position": "DEF",
         "price": 5.5,
-        "count": 215,
-        "pct": "64.2"
-      },
-      {
-        "id": 154,
-        "name": "Palmer",
-        "club": "CHE",
-        "position": "MID",
-        "price": 9.8,
-        "count": 175,
-        "pct": "52.2"
+        "count": 220,
+        "pct": "65.7"
       },
       {
         "id": 166,
@@ -196,8 +187,8 @@
         "club": "AVL",
         "position": "FWD",
         "price": 7.2,
-        "count": 173,
-        "pct": "51.6"
+        "count": 215,
+        "pct": "64.2"
       },
       {
         "id": 68,
@@ -205,17 +196,8 @@
         "club": "BOU",
         "position": "MID",
         "price": 6.7,
-        "count": 172,
-        "pct": "51.3"
-      },
-      {
-        "id": 31,
-        "name": "Konsa",
-        "club": "ARS",
-        "position": "DEF",
-        "price": 4.9,
-        "count": 169,
-        "pct": "50.4"
+        "count": 180,
+        "pct": "53.7"
       },
       {
         "id": 1,
@@ -223,8 +205,26 @@
         "club": "ARS",
         "position": "GK",
         "price": 6.3,
-        "count": 155,
-        "pct": "46.3"
+        "count": 163,
+        "pct": "48.7"
+      },
+      {
+        "id": 31,
+        "name": "Konsa",
+        "club": "ARS",
+        "position": "DEF",
+        "price": 4.9,
+        "count": 159,
+        "pct": "47.5"
+      },
+      {
+        "id": 154,
+        "name": "Palmer",
+        "club": "CHE",
+        "position": "MID",
+        "price": 9.8,
+        "count": 158,
+        "pct": "47.2"
       }
     ]
   }
