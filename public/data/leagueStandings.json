@@ -1,6 +1,6 @@
 {
   "source": "FPL API leagues-classic/12968/standings",
-  "updatedAt": "2026-11-22T03:23:10.521Z",
+  "updatedAt": "2026-11-22T11:49:23.363Z",
   "_note": "单轮成绩（event_total_net）= FPL 毛分（event_total）+ 当轮转会扣分（event_transfers_cost）。联赛口径，2026-11-19 定。",
   "_gameweek": 11,
   "league": {
@@ -79,7 +79,7 @@
       "last_rank": 1,
       "player_name": "Binzhuo Yao",
       "rank": 1,
-      "rank_sort": 2,
+      "rank_sort": 1,
       "total": 760,
       "event_total_net": 24,
       "event_transfers_cost": 0
@@ -183,7 +183,7 @@
       "last_rank": 48,
       "player_name": "xy z",
       "rank": 58,
-      "rank_sort": 59,
+      "rank_sort": 58,
       "total": 700,
       "event_total_net": 22,
       "event_transfers_cost": 0
@@ -196,7 +196,7 @@
       "last_rank": 207,
       "player_name": "甜梅号 PlumFerry",
       "rank": 194,
-      "rank_sort": 195,
+      "rank_sort": 196,
       "total": 646,
       "event_total_net": 35,
       "event_transfers_cost": 0
@@ -261,7 +261,7 @@
       "last_rank": 180,
       "player_name": "枪迷 平原君",
       "rank": 174,
-      "rank_sort": 174,
+      "rank_sort": 175,
       "total": 656,
       "event_total_net": 31,
       "event_transfers_cost": 0
@@ -378,7 +378,7 @@
       "last_rank": 279,
       "player_name": "hengda zhu",
       "rank": 284,
-      "rank_sort": 284,
+      "rank_sort": 285,
       "total": 578,
       "event_total_net": 19,
       "event_transfers_cost": 0
@@ -417,7 +417,7 @@
       "last_rank": 146,
       "player_name": "dylan yao",
       "rank": 141,
-      "rank_sort": 141,
+      "rank_sort": 142,
       "total": 672,
       "event_total_net": 31,
       "event_transfers_cost": 0
@@ -508,7 +508,7 @@
       "last_rank": 21,
       "player_name": "D Cchen",
       "rank": 35,
-      "rank_sort": 36,
+      "rank_sort": 35,
       "total": 713,
       "event_total_net": 21,
       "event_transfers_cost": 0
@@ -534,7 +534,7 @@
       "last_rank": 135,
       "player_name": "KikiMao Yan",
       "rank": 126,
-      "rank_sort": 126,
+      "rank_sort": 127,
       "total": 675,
       "event_total_net": 28,
       "event_transfers_cost": 0
@@ -586,7 +586,7 @@
       "last_rank": 149,
       "player_name": "Lee Chris",
       "rank": 74,
-      "rank_sort": 75,
+      "rank_sort": 74,
       "total": 695,
       "event_total_net": 55,
       "event_transfers_cost": 0
@@ -612,7 +612,7 @@
       "last_rank": 95,
       "player_name": "M M N",
       "rank": 100,
-      "rank_sort": 103,
+      "rank_sort": 101,
       "total": 685,
       "event_total_net": 27,
       "event_transfers_cost": 0
@@ -664,7 +664,7 @@
       "last_rank": 85,
       "player_name": "Krez Gavi",
       "rank": 100,
-      "rank_sort": 101,
+      "rank_sort": 103,
       "total": 685,
       "event_total_net": 24,
       "event_transfers_cost": 0
@@ -898,7 +898,7 @@
       "last_rank": 305,
       "player_name": "oia Han",
       "rank": 303,
-      "rank_sort": 303,
+      "rank_sort": 304,
       "total": 562,
       "event_total_net": 25,
       "event_transfers_cost": 0
@@ -924,7 +924,7 @@
       "last_rank": 78,
       "player_name": "橙汁45龙卷阿化 德狗大翔一米七",
       "rank": 96,
-      "rank_sort": 97,
+      "rank_sort": 98,
       "total": 686,
       "event_total_net": 23,
       "event_transfers_cost": 0
@@ -963,7 +963,7 @@
       "last_rank": 144,
       "player_name": "Smirk yang",
       "rank": 144,
-      "rank_sort": 144,
+      "rank_sort": 145,
       "total": 671,
       "event_total_net": 28,
       "event_transfers_cost": 0
@@ -989,7 +989,7 @@
       "last_rank": 74,
       "player_name": "景旸 徐",
       "rank": 96,
-      "rank_sort": 98,
+      "rank_sort": 97,
       "total": 686,
       "event_total_net": 21,
       "event_transfers_cost": 0
@@ -1041,7 +1041,7 @@
       "last_rank": 93,
       "player_name": "猪 排",
       "rank": 91,
-      "rank_sort": 92,
+      "rank_sort": 91,
       "total": 687,
       "event_total_net": 29,
       "event_transfers_cost": 0
@@ -1067,7 +1067,7 @@
       "last_rank": 98,
       "player_name": "Jun Wong",
       "rank": 93,
-      "rank_sort": 93,
+      "rank_sort": 94,
       "total": 686,
       "event_total_net": 29,
       "event_transfers_cost": 0
@@ -1080,7 +1080,7 @@
       "last_rank": 126,
       "player_name": "Jia C hen",
       "rank": 126,
-      "rank_sort": 127,
+      "rank_sort": 126,
       "total": 675,
       "event_total_net": 26,
       "event_transfers_cost": 0
@@ -1249,7 +1249,7 @@
       "last_rank": 65,
       "player_name": "Tissier Chi",
       "rank": 62,
-      "rank_sort": 63,
+      "rank_sort": 62,
       "total": 699,
       "event_total_net": 30,
       "event_transfers_cost": 0
@@ -1262,7 +1262,7 @@
       "last_rank": 195,
       "player_name": "CARD PDJ",
       "rank": 197,
-      "rank_sort": 198,
+      "rank_sort": 197,
       "total": 645,
       "event_total_net": 25,
       "event_transfers_cost": 0
@@ -1327,7 +1327,7 @@
       "last_rank": 68,
       "player_name": "SKY NB",
       "rank": 41,
-      "rank_sort": 41,
+      "rank_sort": 42,
       "total": 708,
       "event_total_net": 40,
       "event_transfers_cost": 0
@@ -1353,7 +1353,7 @@
       "last_rank": 82,
       "player_name": "James Justin",
       "rank": 74,
-      "rank_sort": 74,
+      "rank_sort": 75,
       "total": 695,
       "event_total_net": 33,
       "event_transfers_cost": 0
@@ -1392,7 +1392,7 @@
       "last_rank": 211,
       "player_name": "WinK Gooner",
       "rank": 197,
-      "rank_sort": 197,
+      "rank_sort": 198,
       "total": 645,
       "event_total_net": 35,
       "event_transfers_cost": 0
@@ -1795,7 +1795,7 @@
       "last_rank": 286,
       "player_name": "shy shy",
       "rank": 281,
-      "rank_sort": 282,
+      "rank_sort": 281,
       "total": 579,
       "event_total_net": 24,
       "event_transfers_cost": 0
@@ -1990,7 +1990,7 @@
       "last_rank": 277,
       "player_name": "Bruce Sun",
       "rank": 284,
-      "rank_sort": 285,
+      "rank_sort": 284,
       "total": 578,
       "event_total_net": 16,
       "event_transfers_cost": 0
@@ -2016,7 +2016,7 @@
       "last_rank": 120,
       "player_name": "Romeo Zhao",
       "rank": 91,
-      "rank_sort": 91,
+      "rank_sort": 92,
       "total": 687,
       "event_total_net": 37,
       "event_transfers_cost": 0
@@ -2211,7 +2211,7 @@
       "last_rank": 110,
       "player_name": "Siu chaoping",
       "rank": 93,
-      "rank_sort": 94,
+      "rank_sort": 93,
       "total": 686,
       "event_total_net": 31,
       "event_transfers_cost": 0
@@ -2224,7 +2224,7 @@
       "last_rank": 28,
       "player_name": "Yilu Chen",
       "rank": 17,
-      "rank_sort": 17,
+      "rank_sort": 18,
       "total": 729,
       "event_total_net": 42,
       "event_transfers_cost": 0
@@ -2237,7 +2237,7 @@
       "last_rank": 28,
       "player_name": "五星红旗 迎风飘扬",
       "rank": 17,
-      "rank_sort": 18,
+      "rank_sort": 17,
       "total": 729,
       "event_total_net": 42,
       "event_transfers_cost": 0
@@ -2289,7 +2289,7 @@
       "last_rank": 104,
       "player_name": "Yemon1130 Huang",
       "rank": 87,
-      "rank_sort": 88,
+      "rank_sort": 87,
       "total": 690,
       "event_total_net": 33,
       "event_transfers_cost": 0
@@ -2341,7 +2341,7 @@
       "last_rank": 2,
       "player_name": "Jack Wu",
       "rank": 1,
-      "rank_sort": 1,
+      "rank_sort": 2,
       "total": 760,
       "event_total_net": 31,
       "event_transfers_cost": 0
@@ -2367,7 +2367,7 @@
       "last_rank": 168,
       "player_name": "轻 狂",
       "rank": 174,
-      "rank_sort": 175,
+      "rank_sort": 174,
       "total": 656,
       "event_total_net": 25,
       "event_transfers_cost": 0
@@ -2406,7 +2406,7 @@
       "last_rank": 41,
       "player_name": "chi zhang",
       "rank": 35,
-      "rank_sort": 35,
+      "rank_sort": 36,
       "total": 713,
       "event_total_net": 31,
       "event_transfers_cost": 0
@@ -2770,7 +2770,7 @@
       "last_rank": 129,
       "player_name": "Eddie Chen",
       "rank": 144,
-      "rank_sort": 145,
+      "rank_sort": 144,
       "total": 671,
       "event_total_net": 22,
       "event_transfers_cost": 0
@@ -2848,7 +2848,7 @@
       "last_rank": 177,
       "player_name": "Sun Tong",
       "rank": 186,
-      "rank_sort": 187,
+      "rank_sort": 186,
       "total": 649,
       "event_total_net": 23,
       "event_transfers_cost": 0
@@ -2874,7 +2874,7 @@
       "last_rank": 45,
       "player_name": "Gray Yin",
       "rank": 58,
-      "rank_sort": 58,
+      "rank_sort": 59,
       "total": 700,
       "event_total_net": 20,
       "event_transfers_cost": 0
@@ -2913,7 +2913,7 @@
       "last_rank": 201,
       "player_name": "Ethan Lin",
       "rank": 194,
-      "rank_sort": 196,
+      "rank_sort": 195,
       "total": 646,
       "event_total_net": 29,
       "event_transfers_cost": 0
@@ -2991,7 +2991,7 @@
       "last_rank": 154,
       "player_name": "Ray C",
       "rank": 176,
-      "rank_sort": 177,
+      "rank_sort": 176,
       "total": 655,
       "event_total_net": 16,
       "event_transfers_cost": 0
@@ -3069,7 +3069,7 @@
       "last_rank": 107,
       "player_name": "Yang Zhao",
       "rank": 87,
-      "rank_sort": 87,
+      "rank_sort": 88,
       "total": 690,
       "event_total_net": 34,
       "event_transfers_cost": 0
@@ -3368,7 +3368,7 @@
       "last_rank": 292,
       "player_name": "yellow sea",
       "rank": 281,
-      "rank_sort": 281,
+      "rank_sort": 282,
       "total": 579,
       "event_total_net": 29,
       "event_transfers_cost": 0
@@ -3472,7 +3472,7 @@
       "last_rank": 213,
       "player_name": "Allen Deng",
       "rank": 186,
-      "rank_sort": 186,
+      "rank_sort": 187,
       "total": 649,
       "event_total_net": 40,
       "event_transfers_cost": 0
@@ -3615,7 +3615,7 @@
       "last_rank": 298,
       "player_name": "Ka Shu Leung",
       "rank": 303,
-      "rank_sort": 304,
+      "rank_sort": 303,
       "total": 562,
       "event_total_net": 16,
       "event_transfers_cost": 0
@@ -3641,7 +3641,7 @@
       "last_rank": 140,
       "player_name": "Jerry Ping",
       "rank": 141,
-      "rank_sort": 142,
+      "rank_sort": 141,
       "total": 672,
       "event_total_net": 27,
       "event_transfers_cost": 0
@@ -3706,7 +3706,7 @@
       "last_rank": 169,
       "player_name": "Minan Xie",
       "rank": 176,
-      "rank_sort": 176,
+      "rank_sort": 177,
       "total": 655,
       "event_total_net": 25,
       "event_transfers_cost": 0
@@ -3992,7 +3992,7 @@
       "last_rank": 39,
       "player_name": "arle k",
       "rank": 62,
-      "rank_sort": 62,
+      "rank_sort": 63,
       "total": 699,
       "event_total_net": 16,
       "event_transfers_cost": 0
@@ -4109,7 +4109,7 @@
       "last_rank": 53,
       "player_name": "krez pedri",
       "rank": 41,
-      "rank_sort": 42,
+      "rank_sort": 41,
       "total": 708,
       "event_total_net": 34,
       "event_transfers_cost": 0
