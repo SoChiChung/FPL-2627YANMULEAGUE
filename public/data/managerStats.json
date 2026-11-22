@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-21T11:32:07.852Z",
+  "_generatedAt": "2026-11-22T03:23:10.773Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 11,
@@ -15,7 +15,7 @@
         "name": "Van Hecke",
         "club": "TOT",
         "position": "DEF",
-        "price": 5.1,
+        "price": 5.2,
         "count": 49
       },
       {
@@ -31,7 +31,7 @@
         "name": "Evanilson",
         "club": "BOU",
         "position": "FWD",
-        "price": 6.5,
+        "price": 6.6,
         "count": 16
       },
       {
@@ -150,7 +150,7 @@
         "name": "Rogers",
         "club": "CHE",
         "position": "MID",
-        "price": 8.2,
+        "price": 8.3,
         "count": 244,
         "pct": "72.8"
       },
