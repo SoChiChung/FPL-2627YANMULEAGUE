@@ -230,6 +230,13 @@
       "wechatName": "海绵宝宝萨卡",
       "avatarBaseName": "GW10",
       "awardImageBaseName": "GW10"
+    },
+    {
+      "gameweek": 11,
+      "fplId": "10539",
+      "wechatName": "I'm loving it",
+      "avatarBaseName": "GW11",
+      "awardImageBaseName": "GW11"
     }
   ],
   "picks3WeeklyWinners": [
@@ -254,7 +261,7 @@
   ],
   "picks3PrizePool": {
     "basePrizePerWeek": 5,
-    "currentGameweek": 10
+    "currentGameweek": 11
   },
   "predictionLeaderboard": {
     "totalPrizePool": 190,

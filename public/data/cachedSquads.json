@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-fpl-cache.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-19T05:57:21.324Z",
+  "_generatedAt": "2026-11-26T07:19:51.502Z",
   "_note": "本文件为构建产物，由脚本生成后随仓库提交，前端只读；不要手工编辑。逐轮结算状态见各 squad 的 status 字段。全部数据均来自 FPL 官方 API，无任何 Mock 兜底。",
   "_failures": [],
   "squads": [
@@ -1074,6 +1074,113 @@
       ],
       "status": "settled",
       "fetchedAt": "2026-11-19T05:57:21.323Z"
+    },
+    {
+      "gameweek": 11,
+      "fplId": "10539",
+      "totalPoints": 66,
+      "grossPoints": 66,
+      "transferCost": 0,
+      "captain": "Haaland",
+      "viceCaptain": "Palmer",
+      "players": [
+        {
+          "name": "Kinsky",
+          "position": "GK",
+          "club": "TOT",
+          "points": 7
+        },
+        {
+          "name": "Konsa",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 1
+        },
+        {
+          "name": "Calafiori",
+          "position": "DEF",
+          "club": "ARS",
+          "points": 1
+        },
+        {
+          "name": "De Cuyper",
+          "position": "DEF",
+          "club": "BHA",
+          "points": 1
+        },
+        {
+          "name": "Wirtz",
+          "position": "MID",
+          "club": "LIV",
+          "points": 14
+        },
+        {
+          "name": "Palmer",
+          "position": "MID",
+          "club": "CHE",
+          "points": 2,
+          "isViceCaptain": true
+        },
+        {
+          "name": "Rogers",
+          "position": "MID",
+          "club": "CHE",
+          "points": 5
+        },
+        {
+          "name": "Groß",
+          "position": "MID",
+          "club": "BHA",
+          "points": 4
+        },
+        {
+          "name": "Ødegaard",
+          "position": "MID",
+          "club": "ARS",
+          "points": 5
+        },
+        {
+          "name": "Haaland",
+          "position": "FWD",
+          "club": "MCI",
+          "points": 4,
+          "isCaptain": true
+        },
+        {
+          "name": "N.Jackson",
+          "position": "FWD",
+          "club": "AVL",
+          "points": 2
+        }
+      ],
+      "bench": [
+        {
+          "name": "Verbruggen",
+          "position": "GK",
+          "club": "BHA",
+          "points": 2
+        },
+        {
+          "name": "Van Hecke",
+          "position": "DEF",
+          "club": "TOT",
+          "points": 6
+        },
+        {
+          "name": "Evanilson",
+          "position": "FWD",
+          "club": "BOU",
+          "points": 6
+        },
+        {
+          "name": "Ajer",
+          "position": "DEF",
+          "club": "BRE",
+          "points": 6
+        }
+      ],
+      "status": "settled",
+      "fetchedAt": "2026-11-26T07:19:51.493Z"
     }
   ]
 }
