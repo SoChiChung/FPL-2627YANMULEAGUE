@@ -1,7 +1,7 @@
 {
   "_generatedBy": "scripts/build-manager-stats.js",
   "_mode": "real",
-  "_generatedAt": "2026-11-26T01:09:41.833Z",
+  "_generatedAt": "2026-11-27T02:17:56.539Z",
   "_note": "本文件为构建产物。队长/转入/转出/持有率均来自 FPL 官方 API 的真实 picks 数据。统计轮次按官方 DDL 已过判定，不等待比赛结算；转会统计只纳入本轮 event_transfers > 0 的成员（开野卡/免费转会的成员本轮 event_transfers 恒为 0，故被自动排除）。",
   "_failures": [],
   "gameweek": 11,
@@ -99,7 +99,7 @@
         "name": "Haaland",
         "club": "MCI",
         "position": "FWD",
-        "price": 15.8,
+        "price": 15.7,
         "count": 256
       },
       {
@@ -123,7 +123,7 @@
         "name": "De Cuyper",
         "club": "BHA",
         "position": "DEF",
-        "price": 5.5,
+        "price": 5.6,
         "count": 6
       },
       {
@@ -141,7 +141,7 @@
         "name": "Haaland",
         "club": "MCI",
         "position": "FWD",
-        "price": 15.8,
+        "price": 15.7,
         "count": 304,
         "pct": "90.7"
       },
@@ -177,7 +177,7 @@
         "name": "De Cuyper",
         "club": "BHA",
         "position": "DEF",
-        "price": 5.5,
+        "price": 5.6,
         "count": 220,
         "pct": "65.7"
       },
